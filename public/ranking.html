@@ -1,0 +1,269 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="Description" content="">
+    <title>葡萄酒微课堂</title>
+    <link rel="stylesheet" href="css/global.css" type="text/css"/>
+    <link rel="stylesheet" href="css/main.css" rel="stylesheet">
+    <script type="text/javascript" src="js/plugin/jquery-1.11.1.min.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script type="text/javascript" src="js/template.js"></script>
+    <script type="text/javascript" src="js/plugin/mustache.min.js"></script>
+    <script type="text/javascript" src="js/request.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/loading.js"></script>
+    <script type="text/javascript" src="js/enter.js"></script>
+    <script type="text/javascript" src="js/plugin/velocity.min.js"></script>
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-25338682-20', 'auto');
+        ga('send', 'pageview');
+
+        $(function () {
+            var arr = [];
+            var percent = $('.loading').find('.percent-num');
+            preloadimages(arr, percent);
+        });
+    </script>
+    <!-- Acxiom AbiliTag v2.0 for site: PRC009 -->
+    <script type="text/javascript">window.acxm={api:Function(),x:function(){var k=document,e=encodeURIComponent,r="script",m=k.getElementsByTagName(r)[0],i=k.createElement(r),t="&c=";try{t=t+k.cookie.match('_acxm=([^;]*)').slice(1);}catch(z){};i.async=true;i.src="//t-cn.acxiom-online.com/tag/5d4f3a6a3ef951e3c72b135e8e01c2ba/st.js?l="+e(k.location)+"&r="+e(k.referrer)+t+"&v=2.0&z="+Math.random();m.parentNode.insertBefore(i,m)}()}</script>
+    <script type="text/javascript">
+(function() {
+    window._CiQ11462 = window._CiQ11462 || [];
+    window._CiQ11462.push(['_cookieUseRootDomain', true]);
+    var c = document.createElement('script');
+    c.type = 'text/javascript';
+    c.async = true;
+    c.charset = 'utf-8';
+    c.src = '//collect.cn.miaozhen.com/ca/11462';
+    var h = document.getElementsByTagName('script')[0];
+    h.parentNode.insertBefore(c, h);
+})();
+</script>
+
+</head>
+<body>
+<div class="modal-orientation" id="orientation">
+    <img src="images/flip.jpg"/>
+</div>
+<div class="main-wrap">
+    <div class="main-wrap-cover"></div>
+    <div class="header"></div>
+    <img src="images/other/ranking-title.png" class="rank-title"/>
+
+    <div class="rank-title-text">微课堂总排行</div>
+    <div class="user-info">
+        <div class="user-name">
+            Derrick.JJ
+        </div>
+        <div class="left-r-n">
+            No.5
+        </div>
+        <div class="user-head">
+            <img src="images/other/user-head.jpg"/>
+
+            <div class="icons rank-num ">
+                <span>6</span>
+            </div>
+        </div>
+        <div class="right-s-n">
+            910
+        </div>
+    </div>
+    <div class="rank-tab">
+        <div class="current" data-type="1" data-ga="29">总排行</div>
+        <div data-type="2" data-ga="30">周排行</div>
+    </div>
+    <div class="r-rank-content">
+        <div class="rank-list r-rank-list">
+            <div class="rank-item">
+                <div class="fl user-head">
+                    <img src="images/other/user-head.jpg"/>
+                </div>
+                <div class="fl text">
+                    <div>
+                        No.1<br/>
+                        XAlexx.ya
+                    </div>
+                </div>
+                <div class="fl score">
+                    1200
+                </div>
+                <div class="icons rank-num fr">
+                    <span>6</span>
+                </div>
+                <div class="clear">
+
+                </div>
+            </div>
+            <div class="rank-item">
+                <div class="fl user-head">
+                    <img src="images/other/user-head.jpg"/>
+                </div>
+                <div class="fl text">
+                    <div>
+                        No.1<br/>
+                        XAlexx.ya
+                    </div>
+                </div>
+                <div class="fl score">
+                    1200
+                </div>
+                <div class="icons rank-num fr">
+                    <span>6</span>
+                </div>
+                <div class="clear">
+
+                </div>
+            </div>
+            <div class="rank-item">
+                <div class="fl user-head">
+                    <img src="images/other/user-head.jpg"/>
+                </div>
+                <div class="fl text">
+                    <div>
+                        No.1<br/>
+                        XAlexx.ya
+                    </div>
+                </div>
+                <div class="fl score">
+                    1200
+                </div>
+                <div class="icons rank-num fr">
+                    <span>6</span>
+                </div>
+                <div class="clear">
+
+                </div>
+            </div>
+        </div>
+        <div class="r-rank-more-btn" data-ga="31">
+            查看更多
+        </div>
+    </div>
+    <div class="top-btn" data-ga="6">
+        <img src="img2/top-btn.png"/>
+    </div>
+    <div class="footer">
+        <img src="images/other/footer-pic1.jpg"/>
+        <a class="office-weixin"
+           href="http://www.wemart.cn/v2/weimao/index.html?disableCache=true&shopId=shop000201508069955&from=singlemessage&isappinstalled=0#mad/shop000201508069955/214"></a>
+    </div>
+</div>
+
+<div id="kv-pop" class="pop-wrap hidden">
+    <img src="images/other/qr-code.jpg" style="padding-top:200px;padding-left:170px;">
+    <div class="qr-code-wrap" style="position: relative;float:left;">
+        长按二维码，关注杰卡斯官方微信<br>
+        及时获取最新资讯
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="js/plugin/swiper.min.js"></script>
+<script>
+    $(function () {
+        var swiper = new Swiper('.swiper-container', {
+            pagination: '.swiper-pagination',
+            paginationClickable: true
+        });
+        var rank = 0;
+        var nextPage = 0;
+        var type = 1;
+        $('.r-rank-list').html('');
+        getRank(1);
+        $('.rank-tab div').unbind('click').bind('click', function () {
+            $('.rank-tab div').removeClass('current');
+            $(this).addClass('current');
+            rank = 0;
+            nextPage = 0;
+            type = $(this).attr('data-type');
+            $('.r-rank-list').html('');
+            getRank(type);
+        });
+        $('.r-rank-more-btn').unbind('click').bind('click', function () {
+            getRank(type);
+        });
+//        Request.get_user(User.id, {
+//            success: function (data) {
+//                if (data.haserror) {
+////                    alert(data.msg);
+//                } else {
+//                    var userinfo = data.userinfo;
+//                    console.log(userinfo)
+//                    $('.user-info .left-r-n').html('No.' + userinfo.ranking);
+//                    $('.user-info .right-s-n').html(userinfo.score);
+//                    if (userinfo.name) {
+//                        $('.user-info .user-name').html(userinfo.name);
+//                    } else {
+//                        $('.user-info .user-name').html('匿名用户');
+//                    }
+//                    $('.user-info .rank-num').html(userinfo.medal.length);
+//                }
+//            }
+//        })
+        $(".user-info .user-head img").attr("src",User.avatarurl);
+        function getRank(type) {
+//            Request.get_ranking(type, nextPage, {
+//                success: function (data) {
+//                    if (data.haserror) {
+////                        alert(data.msg);
+//                    } else {
+//                        var list = data.rankinginfo;
+//                        if (list.length < 10) {
+//                            $('.r-rank-more-btn').hide();
+//                        } else {
+//                            $('.r-rank-more-btn').show();
+//                            ++nextPage;
+//                        }
+//
+//                        var html = "";
+//                        for (var i = 0; i < list.length; i++) {
+//                            rank++;
+//                            var obj = list[i];
+//                            var head, username;
+//                            if (obj.useravatar) {
+//                                if (obj.useravatar.indexOf("http") != -1) {
+//                                    head = obj.useravatar;
+//                                } else {
+//                                    head = ImageUrlHeader + obj.useravatar;
+//                                }
+//                            } else {
+//                                head = 'images/other/user-head.jpg';
+//                            }
+//                            if (obj.username) {
+//                                username = obj.username;
+//                            } else {
+//                                username = "匿名用户";
+//                            }
+//                            var score = obj.score;
+//                            var medal = obj.medal;
+//                            html += ' <div class="rank-item">';
+//                            html += '  <div class="fl user-head">';
+//                            html += '<img src="' + head + '" />';
+//                            html += ' </div>';
+//                            html += ' <div class="fl text">';
+//                            html += ' <div>';
+//                            html += ' No.' + rank + '<br/>' + username;
+//                            html += '</div></div>';
+//                            html += '<div class="fl score">' + score;
+//                            html += '</div>';
+//                            html += ' <div class="icons rank-num fr">';
+//                            html += ' <span>' + medal + '</span>';
+//                            html += '</div><div class="clear"> </div></div>'
+//
+//                        }
+//                        $('.r-rank-list').append(html);
+//                    }
+//                }
+//            });
+        }
+    })
+</script>
+<script type="text/javascript" src="js/tracking.js"></script>
+</html>

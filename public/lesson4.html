@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="Description" content="">
+    <title>葡萄酒微课堂</title>
+    <link rel="stylesheet" href="css/global.css" type="text/css"/>
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+    <link rel="stylesheet" href="css/main2.css" type="text/css">
+    <link rel="stylesheet" href="js/video/video-js.min.css" type="text/css">
+    <script type="text/javascript" src="js/plugin/jquery-1.11.1.min.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script type="text/javascript" src="js/template.js"></script>
+    <script type="text/javascript" src="js/plugin/mustache.min.js"></script>
+    <script type="text/javascript" src="js/request.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/loading.js"></script>
+    <script type="text/javascript" src="js/plugin/velocity.min.js"></script>
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-25338682-20', 'auto');
+        ga('send', 'pageview');
+
+        $(function () {
+            var arr = [];
+            var percent = $('.loading').find('.percent-num');
+            preloadimages(arr, percent);
+        });
+    </script>
+    <!-- Acxiom AbiliTag v2.0 for site: PRC009 -->
+    <script type="text/javascript">window.acxm={api:Function(),x:function(){var k=document,e=encodeURIComponent,r="script",m=k.getElementsByTagName(r)[0],i=k.createElement(r),t="&c=";try{t=t+k.cookie.match('_acxm=([^;]*)').slice(1);}catch(z){};i.async=true;i.src="//t-cn.acxiom-online.com/tag/5d4f3a6a3ef951e3c72b135e8e01c2ba/st.js?l="+e(k.location)+"&r="+e(k.referrer)+t+"&v=2.0&z="+Math.random();m.parentNode.insertBefore(i,m)}()}</script>
+    <script type="text/javascript">
+(function() {
+    window._CiQ11462 = window._CiQ11462 || [];
+    window._CiQ11462.push(['_cookieUseRootDomain', true]);
+    var c = document.createElement('script');
+    c.type = 'text/javascript';
+    c.async = true;
+    c.charset = 'utf-8';
+    c.src = '//collect.cn.miaozhen.com/ca/11462';
+    var h = document.getElementsByTagName('script')[0];
+    h.parentNode.insertBefore(c, h);
+})();
+</script>
+
+</head>
+<body>
+<div class="modal-orientation" id="orientation">
+    <img src="images/flip.jpg"/>
+</div>
+<div class="main-wrap">
+    <div class="main-wrap-cover"></div>
+    <div class="header"></div>
+    <div id="lesson-temp">
+    </div>
+    <div class="top-btn" data-ga="6">
+        <img src="img2/top-btn.png"/>
+    </div>
+    <div class="footer"></div>
+</div>
+<div id="kv-pop" class="pop-wrap hidden">
+    <img src="images/other/qr-code.jpg" style="padding-top:200px;padding-left:170px;">
+    <div class="qr-code-wrap" style="position: relative;float:left;">
+        长按二维码，关注杰卡斯官方微信<br>
+        及时获取最新资讯
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="js/plugin/swiper.min.js"></script>
+<script type="text/javascript" src="js/plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+<script type="text/javascript" src="js/video/video.min.js"></script>
+<script type="text/javascript" src="js/jquery.soap.js"></script>
+<script type="text/javascript" src="js/jquery.xml2json.js"></script>
+<script type="text/javascript" src="js/enter.js"></script>
+<script type="text/javascript" src="js/lesson_temp.js"></script>
+<script>
+    var CurrentLesson = 4,CurrentLessonText = "四"
+            CurrentTitle = "葡萄酒微课堂 - 如何做一个葡萄酒旅游达人",
+            CurrentShareImage = VHost + "images/share3.jpg";
+    saveLessonHistory(CurrentLesson);
+
+    var rendered = Mustache.render(LessonTemp,
+            {
+                lesson_number: CurrentLesson,
+                lesson_number_text:CurrentLessonText,
+                lesson_title: '如何做一个葡萄酒旅游达人',
+                video_duration: '1:12',
+                lesson_content: '在哪些葡萄酒产区被评为世界文化遗产？澳洲最耀眼的产区又在哪里呢？看完我们的葡萄酒产区介绍，让你瞬间变身葡萄酒旅游达人！',
+                wechat_shoplink: 'http://www.wemart.cn/v2/weimao/index.html?disableCache=true&shopId=shop000201508069955&from=singlemessage&isappinstalled=0#mad/shop000201508069955/214',
+                lesson1:true,
+                lesson2:true,
+                lesson3:true,
+                lesson5:true,
+                lesson6:true,
+                lesson7:true,
+                lesson8:true,
+                lesson9:true,
+                lesson10:true,
+                User:User
+            });
+    $('#lesson-temp').html(rendered);
+</script>
+<script type="text/javascript" src="js/lesson.js"></script>
+<script type="text/javascript" src="js/tracking.js"></script>
+</html>

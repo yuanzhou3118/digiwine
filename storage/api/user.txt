@@ -1,0 +1,32 @@
+//发送短信。
+$.ajax({
+type: 'POST',
+url: '/api-captcha',
+data: {mobile: '13636367264'},
+dataType: 'json',
+success: function(data){
+  console.log(data);
+}
+});
+
+//手机登陆。
+$.ajax({
+type: 'POST',
+url: '/api-mb-login',
+data: {mobile: '13636367264', captcha: '5393'},
+dataType: 'json',
+success: function(data){
+  console.log(data);
+}
+});
+
+//微信登陆。
+$.ajax({
+type: 'POST',
+url: '/api-wechat-login',
+data: {openid: 'otWGmt3n_Ov-AdqqVww28tJ3DGPQ', nick_name: 'Angel+Wang', head_url: 'http://wx.qlogo.cn/mmopen/ajNVdqHZLLCNFaRxicze5Lxux6KqmsvE6lQ60eRxfMYxabmMPc8ZtOBDDbqj857sgicP8IgLXfGjtKxlSPAyZJsw/0', source: 'wechat_own_post'},
+dataType: 'json',
+success: function(data){
+  console.log(data);
+}
+});

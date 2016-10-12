@@ -1,0 +1,490 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="Description" content="">
+    <meta name="format-detection" content="telephone=no">
+    <title>葡萄酒微课堂</title>
+    <link rel="stylesheet" href="css/global.css" type="text/css"/>
+    <link rel="stylesheet" href="css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/main2.css" rel="stylesheet">
+    <script type="text/javascript" src="js/plugin/jquery-1.11.1.min.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script type="text/javascript" src="js/template.js"></script>
+    <script type="text/javascript" src="js/plugin/mustache.min.js"></script>
+    <script type="text/javascript" src="js/request.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/loading.js"></script>
+    <script type="text/javascript" src="js/enter.js"></script>
+    <script type="text/javascript" src="js/plugin/velocity.min.js"></script>
+    <script type="text/javascript">
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                        (i[r].q = i[r].q || []).push(arguments)
+                    }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-25338682-20', 'auto');
+        ga('send', 'pageview');
+
+        $(function () {
+            var arr = [];
+            var percent = $('.loading').find('.percent-num');
+            preloadimages(arr, percent);
+        });
+    </script>
+    <!-- Acxiom AbiliTag v2.0 for site: PRC009 -->
+    <script type="text/javascript">window.acxm = {
+        api: Function(), x: function () {
+            var k = document, e = encodeURIComponent, r = "script", m = k.getElementsByTagName(r)[0], i = k.createElement(r), t = "&c=";
+            try {
+                t = t + k.cookie.match('_acxm=([^;]*)').slice(1);
+            } catch (z) {
+            }
+            ;
+            i.async = true;
+            i.src = "//t-cn.acxiom-online.com/tag/5d4f3a6a3ef951e3c72b135e8e01c2ba/st.js?l=" + e(k.location) + "&r=" + e(k.referrer) + t + "&v=2.0&z=" + Math.random();
+            m.parentNode.insertBefore(i, m)
+        }()
+    }</script>
+    <script type="text/javascript">
+        (function () {
+            window._CiQ11462 = window._CiQ11462 || [];
+            window._CiQ11462.push(['_cookieUseRootDomain', true]);
+            var c = document.createElement('script');
+            c.type = 'text/javascript';
+            c.async = true;
+            c.charset = 'utf-8';
+            c.src = '//collect.cn.miaozhen.com/ca/11462';
+            var h = document.getElementsByTagName('script')[0];
+            h.parentNode.insertBefore(c, h);
+        })();
+    </script>
+
+
+    <link rel="stylesheet" href="css/swiper.min.css" rel="stylesheet">
+
+</head>
+<body class="noteDetailPage f0bg">
+<div class="modal-orientation" id="orientation">
+    <img src="images/flip.jpg"/>
+</div>
+<div class="main-wrap">
+    <div class="main-wrap-cover"></div>
+    <div class="top-nav">
+        <div class="back-nav"></div>
+    </div>
+    <div class="swiper-container note-slider">
+        <div class="swiper-wrapper">
+            <!--<div class="swiper-slide">-->
+            <!--<img src="images/other/kv1.jpg"/>-->
+            <!--</div>-->
+            <img src="img2/loading.gif" class="loading">
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination three-center-pagination"></div>
+    </div>
+
+    <div class="pd30-wrap white-bg">
+        <div class="info">
+            <span>????/??/??</span>
+            <i class="fav">?</i>
+            <i class="zan">?</i>
+        </div>
+        <div class="person-topic">
+            <div class="person-frame">
+                <img src="">
+            </div>
+            <div class="person-info">
+                <span class="name">?</span>
+            </div>
+            <div class="content">
+                ...
+            </div>
+        </div>
+    </div>
+    <!-- 热门笔记 -->
+
+    <div class="pd30-wrap white-bg mgt25">
+        <ul class="form-group">
+            <li>
+                <div class="form-g-name fl">酒名</div>
+                <div class="form-g-content fl">
+                    ...
+                </div>
+            </li>
+            <li>
+                <div class="form-g-name fl">葡萄品种</div>
+                <div class="form-g-content fl">
+                    ...
+                </div>
+            </li>
+            <li>
+                <div class="form-g-name fl">国家</div>
+                <div class="form-g-content fl">
+                    ...
+                </div>
+            </li>
+            <li>
+                <div class="form-g-name fl">产区</div>
+                <div class="form-g-content fl">
+                    ...
+                </div>
+            </li>
+            <li>
+                <div class="form-g-name fl">价格</div>
+                <div class="form-g-content fl">
+                    ...
+                </div>
+            </li>
+            <li>
+                <div class="form-g-name fl">年份</div>
+                <div class="form-g-content fl">
+                    ...
+                </div>
+            </li>
+            <li>
+                <div class="form-g-name fl">评分</div>
+                <div class="form-g-content fl">
+                    <ul class="form-fav-start">
+                        <li class="selected"></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="pd30-wrap pd20-v white-bg mgt25">
+        <ul class="form-group">
+            <li>
+                <div class="form-g-name fl">外观</div>
+                <div class="form-g-content fl">
+                    ...
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="pd30-wrap white-bg mgt25">
+        <div class="add-tit">香气特征</div>
+        <div class="scroll-wrapper">
+            <div id="aroWrapper" class="scroll-wrapper" style="height:140px;">
+                <div class="selected-container" style="width:auto;">
+                    <img src="img2/loading.gif" class="loading">
+                </div>
+            </div>
+            <div class="toLeft"></div>
+            <div class="toRight"></div>
+        </div>
+    </div>
+
+    <div class="pd30-wrap white-bg mgt25">
+        <div class="add-tit">风味特征</div>
+        <div class="scroll-wrapper">
+            <div id="froWrapper" class="scroll-wrapper" style="height:140px;">
+                <div class="selected-container" style="width:auto;">
+                    <!--<div class="add-typer">-->
+                    <!--<img src="img2/add/t1.png">-->
+                    <!--皮革-->
+                    <!--</div>-->
+                    <img src="img2/loading.gif" class="loading">
+                </div>
+            </div>
+            <div class="toLeft"></div>
+            <div class="toRight"></div>
+        </div>
+    </div>
+
+    <div class="pd30-wrap white-bg mgt25">
+        <ul class="circle-wrap">
+            <li class="">
+                单宁
+                <span>?</span>
+            </li>
+            <li class="">
+                酒精度
+                <span>?</span>
+            </li>
+            <li class="">
+                酒体
+                <span>?</span>
+            </li>
+        </ul>
+
+        <img src="img2/note/icon-cup-b.png" class="rel-center pd30-wrap">
+        <div class="note-line-title">
+            回味
+        </div>
+        <div class="hui-bar">
+
+        </div>
+        <ul class="note-hui-word">
+            <li>短</li>
+            <li>中</li>
+            <li>长</li>
+        </ul>
+
+        <ul class="flex-split pd30-wrap note-suan-tian">
+            <li>
+                <div class="tit">酸度:<span class="suandu-word">?</span></div>
+                <ul class="suandu">
+                    <li class="active"></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </li>
+            <li>
+                <div class="tit">甜度:<span class="tiandu-word">?</span></div>
+                <ul class="tiandu">
+                    <li class="active"></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="status-bar">
+        <ul class="status-bar-ul-note">
+            <li class="fav" data-ga="99">收藏</li>
+            <li class="zan" data-ga="100">点赞</li>
+            <li class="share" data-ga="101">分享</li>
+            <li class="create" data-ga="102">创建笔记</li>
+        </ul>
+    </div>
+
+    <!--<div class="question-btn" style="bottom:220px;">-->
+    <!--<a href="noteCreate.html">-->
+    <!--<img src="img2/note/create-note.png">-->
+    <!--</a>-->
+    <!--</div>-->
+    <div class="top-btn" data-ga="6" style="bottom:110px;">
+        <img src="img2/top-btn.png"/>
+    </div>
+    <div class="clear"></div>
+    <div class="footer"></div>
+</div>
+<div id="kv-pop" class="pop-wrap hidden">
+</div>
+<!--<img src="images/other/footer-pic1.jpg" style="height: 10px;"></div>-->
+</body>
+<script type="text/javascript" src="js/plugin/swiper.min.js"></script>
+<script>
+    $().ready(function () {
+        var noteId = getUrlParameter("noteId");
+        if (!noteId) {
+            alert("没有找到相关笔记");
+            if (window.history.length > 1) {
+                window.history.go(-1);
+            } else {
+                location.href = "note.html";
+            }
+        }
+
+        $("#toKvPop").click(function () {
+            $("#kv-pop").show();
+        });
+
+        $(".back-nav").click(function () {
+            if (window.history.length > 1) {
+                window.history.go(-1);
+            } else {
+                location.href = "note.html";
+            }
+        })
+
+        //创建Note
+        $(".status-bar .create").click(function () {
+            if(getUser()){
+                location.href = 'noteCreate.html';
+            }else{
+                alert("请先登录");
+                location.href = 'login.html';
+            }
+
+        })
+        //收藏Note
+        $(".status-bar .fav").click(function () {
+            if ($(this).hasClass("selected")) {
+//                Request.profile_note_delete(function(){
+//                    console.log("笔记取消收藏成功");
+//                    $(".status-bar .fav").html("收藏").removClass("selected");
+//                },noteId)
+            } else {
+                //添加收藏
+                Request.note_favorite(function () {
+                    console.log("笔记收藏成功");
+                    $(".status-bar .fav").html("已收藏").addClass("selected");
+                    $(".info .fav").html(parseInt($(".info .fav").html())+1);
+                }, noteId)
+            }
+        })
+
+        //点赞Note
+        $(".status-bar .zan").click(function () {
+            if ($(this).hasClass("selected")) {
+                //
+            } else {
+                //添加赞
+                Request.note_like(function () {
+                    console.log("笔记点赞成功");
+                    $(".status-bar .zan").html("已点赞").addClass("selected");
+                    $(".info .zan").html(parseInt($(".info .zan").html())+1);
+                }, noteId)
+            }
+        })
+
+        var imgWrapper = $(".swiper-wrapper");
+        Request.note_view(function (resultData) {
+            var data = resultData.data[0];
+            imgWrapper.html("")
+            if (data.imga) {
+                imgWrapper.append('<div class="swiper-slide"><img src="' + data.imga + '"/></div>');
+            }
+            if (data.imgb) {
+                imgWrapper.append('<div class="swiper-slide"><img src="' + data.imgb + '"/></div>');
+            }
+            if (data.imgc) {
+                imgWrapper.append('<div class="swiper-slide"><img src="' + data.imgc + '"/></div>');
+            }
+
+            var swiper = new Swiper('.swiper-container', {
+                pagination: '.swiper-pagination',
+                paginationClickable: true
+            });
+
+            $(".info span").html(data.created_at);
+            $(".info .fav").html(data.note_favorites);
+            $(".info .zan").html(data.note_likes);
+
+            $(".person-frame img").attr("src", data.head_url);
+            $(".person-info .name").html(data.nickname);
+
+            $(".person-topic .content").html(data.content);
+
+            var $formContent = $(".form-g-content");
+            $formContent.eq(0).html(data.wine_name);
+            $formContent.eq(1).html(data.grape_varieties || "N/A");
+            $formContent.eq(2).html(data.country || "N/A");
+            $formContent.eq(3).html(data.place_of_origin || "N/A");
+            $formContent.eq(4).html(data.price || "N/A");
+            $formContent.eq(5).html(data.years || "N/A");
+
+            for (var i = 0; i < data.score; i++) {
+                $(".form-fav-start li").eq(i).addClass("selected");
+            }
+
+            $formContent.eq(7).html(colorMap[data.color]);
+
+            var aroList = data.aroma_characteristics.split("-");
+            var htmlList = [];
+            for (var i = 0; i < aroList.length; i++) {
+                htmlList.push('<div class="add-typer"><img src="img2/add/t' + aroList[i] + '.png">' + aroMap[aroList[i]] + '</div>')
+            }
+            $(".selected-container").eq(0).html(htmlList.join("")).width(htmlList.length * 130);
+
+            var fraList = data.flavor_characteristics.split("-");
+            var htmlList = [];
+            for (var i = 0; i < fraList.length; i++) {
+                htmlList.push('<div class="add-typer"><img src="img2/add/t' + fraList[i] + '.png">' + aroMap[fraList[i]] + '</div>')
+            }
+            $(".selected-container").eq(1).html(htmlList.join("")).width(htmlList.length * 130);
+
+            function getCircleClass(number) {
+                if (number == 1) {
+                    return "low";
+                } else if (number == 2) {
+                    return "middle"
+                } else if (number == 3) {
+                    return "high"
+                }
+            }
+
+            var tannicMap = {
+                1: "低",
+                2: "中",
+                3: "高"
+            }
+            $(".circle-wrap li").eq(0).addClass(getCircleClass(data.tannic)).find("span").html(tannicMap[data.tannic]);
+
+
+            $(".circle-wrap li").eq(1).addClass(getCircleClass(data.texture)).find("span").html(tannicMap[data.texture]);
+
+            var wine_bodycMap = {
+                1: "轻",
+                2: "中",
+                3: "重"
+            }
+            $(".circle-wrap li").eq(2).addClass(getCircleClass(data.wine_body)).find("span").html(wine_bodycMap[data.wine_body]);
+
+
+            $(".hui-bar").addClass(getCircleClass(data.aftertaste));
+
+            for (var i = 0; i < data.acid; i++) {
+                $(".suandu li").eq(i).addClass("active");
+            }
+
+            for (var i = 0; i < data.sweetness; i++) {
+                $(".tiandu li").eq(i).addClass("active");
+            }
+            var tianduWord = {
+                1:"干",
+                2:"半干",
+                3:"半甜",
+                4:"甜"
+            }
+
+            $(".suandu-word").html(tannicMap[data.acid]);
+            $(".tiandu-word").html(tianduWord[data.sweetness]);
+
+            resize();
+
+            leftScroll($("#aroWrapper"))
+            leftScroll($("#froWrapper"))
+
+        }, noteId)
+
+        if (getUser()) {
+            //查看笔记的点赞收藏状态
+            Request.note_status(function (resultData) {
+                if (resultData.result == 1) {
+                    if (resultData.note_like_status == 1) {
+                        //已点赞
+                        $(".status-bar .zan").addClass("selected").html("已点赞")
+                    } else {
+                        $(".status-bar .zan").removeClass("selected").html("点赞")
+                    }
+
+                    if (resultData.note_favorite_status == 1) {
+                        $(".status-bar .fav").addClass("selected").html("已收藏")
+                    } else {
+                        $(".status-bar .fav").removeClass("selected").html("收藏")
+                    }
+
+                } else {
+                    console.log("笔记点赞收藏状态异常")
+                }
+            }, noteId)
+        }
+
+        var utm_source = getUrlParameter("utm_source");
+        utm_source && Cookie.setCookie("digiwine-utm_source", utm_source);
+
+        var utm_medium = getUrlParameter("utm_medium");
+        utm_medium && Cookie.setCookie("digiwine-utm_medium", utm_medium);
+    })
+</script>
+<script type="text/javascript" src="js/tracking.js"></script>
+</html>

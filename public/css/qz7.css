@@ -1,0 +1,335 @@
+/* Q2 start */
+
+.q2-main{
+    width:100%;
+    height:100%;
+    position: absolute;
+    bottom:0;
+    left:0;
+}
+#q2-left {
+    position: absolute;
+    right: 52%;
+    bottom:20%;
+}
+
+#q2-right {
+    position: absolute;
+    left: 52%;
+    bottom:20%;
+}
+#q2-yes{
+    position: absolute;
+    left:140px;
+    bottom:43%;
+}
+#q2-no{
+    position: absolute;
+    right:140px;
+    bottom:43%;
+}
+#q2-phone{
+    position: absolute;
+    left: 250px;
+    bottom:10%;
+}
+#q2-tip{
+    position: absolute;
+    left:200px;
+    bottom:5%;
+}
+#q2-right-bg{
+    position: absolute;
+    left:57px;
+    bottom:40%;
+}
+#q2-score{
+    position: absolute;
+    left:220px;
+    bottom:-3%;
+}
+#q2-wrong-bg{
+    position: absolute;
+    left:80px;
+    bottom:7%;
+}
+#q2-wrong{
+    position: absolute;
+    left: 115px;
+    bottom: 12%;
+}
+
+/* Q2 end */
+
+/* Q1 START */
+.q1-main{
+    position: absolute;
+    width:100%;
+    height: 100%;
+    top:0;left:0;
+}
+.q1-submit{
+    position: absolute;
+    left:50%;
+    margin-left:-165px;
+    bottom:5%;
+    background:#b70031;
+}
+.q1-bg{
+    position: absolute;
+    width:100%;
+    height:auto;
+    bottom:0;
+}
+.q1-bottle{
+    position: absolute;
+    bottom:50%;
+    pointer-events: none;
+    z-index: 9;
+    margin-bottom:-265px;
+}
+.q1-bottle-a{
+    left:60px;
+}
+.q1-bottle-b{
+    left:280px;
+}
+.q1-bottle-c{
+    left:483px;
+}
+.q1-cube{
+    position: absolute;
+    bottom:50%;
+}
+.q1-cube.selected{
+    border-radius: 200px;
+    border:3px solid #fff;
+}
+.q1-a{
+    left:45px;
+    margin-bottom: 125px;
+}
+.q1-b{
+    left:260px;
+    margin-bottom: 120px;
+}
+.q1-c{
+    left:470px;
+    margin-bottom: 90px;
+}
+.q1-wrong{
+    position: absolute;
+    z-index: 10;
+    bottom:50%;
+}
+.q1-right{
+    position: absolute;
+    z-index: 10;
+    left: -10px;
+    top: 50%;
+    margin-top: -270px;
+}
+.q1-wrong-a{
+    left: 50px;
+    margin-bottom: 165px;
+}
+.q1-wrong-b{
+    left: 264px;
+    margin-bottom: 160px;
+}
+.q1-wrong-c{
+    left: 475px;
+    margin-bottom: 124px;
+}
+
+/* Q1 END */
+
+/* Q3 START */
+.q3-bottle{
+    position: absolute;
+    left:50%;
+    margin-left:-200px;
+    top:21%;
+}
+.q3-cube{
+    position: absolute;
+}
+.q3-a{
+    top:33%;
+    left:26px;
+}
+.q3-a-word{
+    position: absolute;
+    top:30%;
+    left:20px;
+}
+.q3-b{
+    top:17%;
+    left:125px;
+}
+.q3-b-word{
+    position: absolute;
+    top:16%;
+    left:225px;
+}
+.q3-c{
+     top:20%;
+     left:388px;
+ }
+.q3-c-word{
+    position: absolute;
+    top:18%;
+    left:470px;
+}
+.q3-d{
+    top:34%;
+    left:450px;
+}
+.q3-d-word{
+    position: absolute;
+    top:42%;
+    left:542px;
+}
+.q3-right{
+    position: absolute;
+    top: 20%;
+    left: 56px;
+}
+.q3-wrong{
+    position: absolute;
+    top: 15%;
+    left: 50px;
+}
+/* Q3 END */
+
+/* Q5 START */
+.q5-guo{
+    position: absolute;
+    top:35%;
+    left:80px;
+}
+.q5-cube{
+    position: absolute;
+}
+.q5-a{
+    top:38%;
+    left:34px;
+    width:146px;
+    height:135px;
+    background:url(../images/qz7/q5-ok-bg.png) no-repeat;
+}
+.q5-b{
+    top:29%;
+    left:215px;
+    width:146px;
+    height:135px;
+    background:url(../images/qz7/q5-no-bg.png) no-repeat;
+}
+.q5-w{
+    position: absolute;
+    width: 90%;
+    left: 4%;
+    top: 12%;
+}
+.q5-right{
+    position: absolute;
+    top: 27%;
+    left: 32px;
+}
+/* Q5 END */
+
+/* Q4 START */
+.q4-bg{
+    position: absolute;
+    top:50%;
+    margin-top:100px;
+}
+.q4-flower{
+    position: absolute;
+    top: 50%;
+    margin-top: -190px;
+    left: 70px;
+}
+.q4-flower-right {
+    position: absolute;
+    top: 50%;
+    margin-top: -191px;
+    left: 70px;
+}
+.q4-flower-wrong{
+    position: absolute;
+    top: 50%;
+    margin-top: -189px;
+    left: 70px;
+}
+.q4-pan{
+    position: absolute;
+    top: 50%;
+    margin-top: 85px;
+    left: 223px;
+    z-index:9;
+}
+.q4-bottle{
+    position: absolute;
+    bottom: 50%;
+    margin-bottom: -130px;
+    z-index: 8;
+}
+.q4-ba{
+    left:255px;
+}
+.q4-bb{
+    left: 335px;
+}
+.q4-bc{
+    left: 425px;
+}
+.q4-bd{
+    left: 505px;
+}
+.q4-cube{
+    position: absolute;
+    top: 50%;
+    margin-top: -210px;
+}
+.q4-a{
+    left: 245px;
+}
+.q4-b{
+    left: 330px;
+}
+.q4-c{
+    left: 415px;
+}
+.q4-d{
+    left: 500px;
+}
+.q4-liu{
+    position: absolute;
+    overflow: hidden;
+    width: 21px;
+    height: 0px;
+    top: 50%;
+    left: 210px;
+    margin-top: -10px;
+}
+.q4-liu img{
+    position: absolute;
+    top:0;
+    left:0;
+}
+.q4-wrong{
+    top: 50%;
+    position: absolute;
+    margin-top: -200px;
+    z-index: 10;
+    left: 50%;
+    margin-left: -85px;
+}
+.q4-right{
+    position: absolute;
+    top: 50%;
+    margin-top: -200px;
+    left: 175px;
+}
+/* Q4 END*/

@@ -1,0 +1,213 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="Description" content="">
+    <meta name="format-detection" content="telephone=no">
+    <title>葡萄酒微课堂</title>
+    <link rel="stylesheet" href="css/global.css" type="text/css"/>
+    <link rel="stylesheet" href="css/main.css" rel="stylesheet">
+    <script type="text/javascript" src="js/plugin/jquery-1.11.1.min.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script type="text/javascript" src="js/template.js"></script>
+    <script type="text/javascript" src="js/plugin/mustache.min.js"></script>
+    <script type="text/javascript" src="js/request.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/loading.js"></script>
+    <script type="text/javascript" src="js/enter.js"></script>
+    <script type="text/javascript" src="js/plugin/velocity.min.js"></script>
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-25338682-20', 'auto');
+        ga('send', 'pageview');
+
+        $(function () {
+            var arr = [];
+            var percent = $('.loading').find('.percent-num');
+            preloadimages(arr, percent);
+        });
+    </script>
+    <!-- Acxiom AbiliTag v2.0 for site: PRC009 -->
+    <script type="text/javascript">window.acxm={api:Function(),x:function(){var k=document,e=encodeURIComponent,r="script",m=k.getElementsByTagName(r)[0],i=k.createElement(r),t="&c=";try{t=t+k.cookie.match('_acxm=([^;]*)').slice(1);}catch(z){};i.async=true;i.src="//t-cn.acxiom-online.com/tag/5d4f3a6a3ef951e3c72b135e8e01c2ba/st.js?l="+e(k.location)+"&r="+e(k.referrer)+t+"&v=2.0&z="+Math.random();m.parentNode.insertBefore(i,m)}()}</script>
+    <script type="text/javascript">
+(function() {
+    window._CiQ11462 = window._CiQ11462 || [];
+    window._CiQ11462.push(['_cookieUseRootDomain', true]);
+    var c = document.createElement('script');
+    c.type = 'text/javascript';
+    c.async = true;
+    c.charset = 'utf-8';
+    c.src = '//collect.cn.miaozhen.com/ca/11462';
+    var h = document.getElementsByTagName('script')[0];
+    h.parentNode.insertBefore(c, h);
+})();
+</script>
+
+</head>
+<body>
+<div class="modal-orientation" id="orientation">
+    <img src="images/flip.jpg"/>
+</div>
+<div class="main-wrap">
+    <div class="main-wrap-cover"></div>
+    <div class="header"></div>
+    <div class="main pdv35 pdh40">
+        <div class="form-title pdb25">注册</div>
+        <div class="pdb30 hr wechat" style="display: none;">
+            <div id="registerWechatBtn" data-ga="20" class="fw-btn green-bg ft22 tx-center white letter-space btn">
+                <b class="weixin icons"></b>
+                微信登录
+            </div>
+        </div>
+        <div class="input-wrap">
+            <div class="input-border">
+                <b class="mobile icons fl"></b>
+                <input id="mobile" class="fr pdv20 pdh10" style="width:495px;" placeholder="输入手机号码">
+            </div>
+            <span id="mobile-error" class="fl form-error red"></span>
+        </div>
+        <div class="input-wrap">
+            <div class="input-border fl" style="width:325px;">
+                <input id="code" class="fr pdv20 pdh10" style="width:100%;" placeholder="输入验证码">
+            </div>
+            <div id="getCode-btn" class="fr black-bg ft22 tx-center white" data-ga="21"> 获取验证码</div>
+            <span id="code-error" class="fl form-error red"></span>
+        </div>
+
+        <div class="pdh10 overflow btn">
+            <div class="fl agree-cube active icons"></div>
+            <span class="fl pdv20 ft18 black">同意用户协议</span>
+        </div>
+        <div class="pdh30 hr">
+            <div id="registerBtn" class="fw-btn  red-bg ft22 tx-center white letter-space btn" data-ga="22"> 提交</div>
+        </div>
+    </div>
+</div>
+
+<div id="kv-pop" class="pop-wrap hidden">
+    <img src="images/other/qr-code.jpg" style="padding-top:200px;padding-left:170px;">
+    <div class="qr-code-wrap" style="position: relative;float:left;">
+        长按二维码，关注杰卡斯官方微信<br>
+        及时获取最新资讯
+    </div>
+</div>
+</body>
+<script type="text/javascript">
+    $().ready(function () {
+        if (isWechat()) {
+            $(".wechat").show();
+            $(".input-wrap").eq(0).addClass("pdt30");
+        } else {
+            $("#registerBtn").parent().removeClass("hr");
+        }
+
+        var $mobile = $("#mobile"), $mobile_error = $("#mobile-error"),
+                $code = $("#code"), $code_error = $("#code-error"),
+                $getCodeBtn = $("#getCode-btn"),
+                $registerBtn = $("#registerBtn"),
+                $registerWechatBtn = $("#registerWechatBtn");
+
+        $mobile.bind("blur", function () {
+            var v = $(this).val();
+            validate_mobile();
+        });
+
+        var codeTimeout = null;
+
+        $getCodeBtn.bind("click", function () {
+            if (!validate_mobile()) {
+//                alert("请输入正确的手机号码后点击发送");
+                return;
+            }
+            if (!codeTimeout) {
+                //发送验证码
+//                Request.get_code($mobile.val(), {
+//                    success: function (data) {
+//                        //计时
+//                        codeTimeout = function (second) {
+//                            $("#getCode-btn").html(second + "秒");
+//                            if (second == 0) {
+//                                codeTimeout = null;
+//                                $("#getCode-btn").html("重新获取验证码");
+//                                return;
+//                            }
+//                            setTimeout(function () {
+//                                codeTimeout(second);
+//                            }, 1000);
+//                            second--;
+//                        };
+//                        codeTimeout(60);
+//                        alert("验证码发送成功");
+//                    }
+//                })
+            }
+        });
+
+        $registerBtn.click(function () {
+            if (validate_mobile() && validate_code()) {
+                Request.mobile_register($mobile.val(), $code.val(), {
+                    success: function (data) {
+                        if (data.haserror) {
+//                            alert(data.msg);
+                        } else {
+                            alert("登录成功")
+                            //redirect
+                            location.href = "index.html";
+                        }
+                    }
+                })
+            }
+        });
+
+//        $registerWechatBtn.click(function () {
+//            if (!weChatUser) {
+//                Request.wechat_redirect(RedirectVhost + "register_wechat.html");
+//            } else {
+//                Request.wechat_register(weChatUser.name, weChatUser.avatarurl, weChatUser.openid, {
+//                    success: function (data) {
+//                        if (data.haserror) {
+////                            alert(data.msg);
+//                        } else {
+//                            alert("登录成功");
+//                            saveUser(dat.userinfo);
+//                            //redirect
+//                            location.href = "index.html";
+//                        }
+//                    }
+//                })
+//            }
+//        })
+
+        function validate_mobile() {
+            var v = $mobile.val();
+            if (Validate.isEmpty(v)) {
+                $mobile_error.html("请输入手机号!");
+                return false;
+            }
+            if (!Validate.isPhone(v)) {
+                $mobile_error.html("请输入正确的手机号");
+                return false;
+            }
+            $mobile_error.html("");
+            return true;
+        }
+
+        function validate_code() {
+            var v = $code.val();
+            if (Validate.isEmpty(v)) {
+                $code_error.html("请输入验证码!");
+                return false;
+            }
+            $code_error.html("");
+            return true;
+        }
+
+    })
+</script>
+<script type="text/javascript" src="js/tracking.js"></script>
+</html>

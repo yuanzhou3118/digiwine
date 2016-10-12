@@ -1,0 +1,233 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="Description" content="">
+    <meta name="format-detection" content="telephone=no">
+    <title>葡萄酒微课堂</title>
+    <link rel="stylesheet" href="css/global.css" type="text/css"/>
+    <link rel="stylesheet" href="css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/main2.css" rel="stylesheet">
+    <script type="text/javascript" src="js/plugin/jquery-1.11.1.min.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script type="text/javascript" src="js/template.js"></script>
+    <script type="text/javascript" src="js/plugin/mustache.min.js"></script>
+    <script type="text/javascript" src="js/request.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/loading.js"></script>
+    <script type="text/javascript" src="js/enter.js"></script>
+    <script type="text/javascript" src="js/plugin/velocity.min.js"></script>
+    <script type="text/javascript">
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                        (i[r].q = i[r].q || []).push(arguments)
+                    }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-25338682-20', 'auto');
+        ga('send', 'pageview');
+
+        $(function () {
+            var arr = [];
+            var percent = $('.loading').find('.percent-num');
+            preloadimages(arr, percent);
+        });
+    </script>
+    <!-- Acxiom AbiliTag v2.0 for site: PRC009 -->
+    <script type="text/javascript">window.acxm = {
+        api: Function(), x: function () {
+            var k = document, e = encodeURIComponent, r = "script", m = k.getElementsByTagName(r)[0], i = k.createElement(r), t = "&c=";
+            try {
+                t = t + k.cookie.match('_acxm=([^;]*)').slice(1);
+            } catch (z) {
+            }
+            ;
+            i.async = true;
+            i.src = "//t-cn.acxiom-online.com/tag/5d4f3a6a3ef951e3c72b135e8e01c2ba/st.js?l=" + e(k.location) + "&r=" + e(k.referrer) + t + "&v=2.0&z=" + Math.random();
+            m.parentNode.insertBefore(i, m)
+        }()
+    }</script>
+    <script type="text/javascript">
+        (function () {
+            window._CiQ11462 = window._CiQ11462 || [];
+            window._CiQ11462.push(['_cookieUseRootDomain', true]);
+            var c = document.createElement('script');
+            c.type = 'text/javascript';
+            c.async = true;
+            c.charset = 'utf-8';
+            c.src = '//collect.cn.miaozhen.com/ca/11462';
+            var h = document.getElementsByTagName('script')[0];
+            h.parentNode.insertBefore(c, h);
+        })();
+    </script>
+
+    <link rel="stylesheet" href="css/swiper.min.css" rel="stylesheet">
+
+</head>
+<body class="notePage f0bg">
+<div class="modal-orientation" id="orientation">
+    <img src="images/flip.jpg"/>
+</div>
+<div class="header">
+    <div class="nav-bar-backIcon"></div>
+    <div class="title">我的话题</div>
+</a>
+</div>
+<div class="main-wrap">
+    <div class="main-wrap-cover"></div>
+    <ul class="topic-tags-nav">
+        <li class="active right-border" tag="profile_topic" data-ga="53">
+            <span>我的提问</span>
+        </li>
+        <li tag="profile_topic_favorite" data-ga="54"><span>收藏话题</span></li>
+    </ul>
+    <!--  热门话题 -->
+    <!--  热门话题 -->
+    <ul class="topic-wrapper white-bg" id="topicWrapper">
+        <!--<li class="topic-li">-->
+        <!--<a href="topicDetail.html?topicId=">-->
+        <!--<div class="info">-->
+        <!--<span>2015/5/6</span>-->
+        <!--<i class="comment">123</i>-->
+        <!--<i class="fav">123</i>-->
+        <!--</div>-->
+        <!--<h4>哪里有葡萄酒的盲品会？想去品点,了解更多的葡萄酒,最好是进口的。</h4>-->
+        <!--<div class="person-topic">-->
+        <!--<div class="person-frame">-->
+        <!--<img src="TODO">-->
+        <!--<div class="zan">-->
+        <!--56-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<div class="content">-->
+        <!--新世界葡萄酒更崇尚技术，多倾向于工业化的生产，在企业规模、资本、技术和市场上...-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</a>-->
+        <!--</li>-->
+    </ul>
+    <img src="img2/loading.gif" class="loading">
+</div>
+
+<div class="question-btn" data-ga="55">
+    <a href="topicCreate.html">
+        <img src="img2/topic/question-btn.png">
+    </a>
+</div>
+<div class="top-btn" data-ga="56">
+    <img src="img2/top-btn.png"/>
+</div>
+<div class="clear"></div>
+</div>
+<div id="kv-pop" class="pop-wrap hidden">
+</div>
+<!--<img src="images/other/footer-pic1.jpg" style="height: 10px;"></div>-->
+</body>
+<script type="text/javascript" src="js/plugin/swiper.min.js"></script>
+<script>
+    $().ready(function () {
+        $("#toKvPop").click(function () {
+            $("#kv-pop").show();
+        })
+
+        //用户访问我的话题
+        Request.profile_topic_access(function(){
+            console.log("用户访问了我的话题");
+        })
+
+        $(".nav-bar-backIcon").click(function () {
+            window.history.length && window.history.go(-1);
+            location.href = "account.html";
+        })
+
+        //选择话题种类
+        $(".topic-tags-nav li").click(function () {
+            var tag = $(this).attr('tag');
+            if (tag != CurrentTag) {
+                $(".topic-tags-nav li.active").removeClass("active");
+                $(this).addClass("active");
+                CurrentTag = tag;
+                CurrentPageIndex = 1;
+                getTopic();
+            }
+        });
+
+        //加载热门话题
+        var CurrentTag = "profile_topic",
+                CurrentPageIndex = 1,
+                PageSize = 10,
+                MaxPage = 999;
+        footerHeight = $(".footer").height();
+        //滚动加载
+        $(document).scroll(function () {
+            var $this = $(this),
+                    viewH = $(window).height(),//可见高度
+                    contentH = $(this).height(),//内容高度
+                    scrollTop = $this.scrollTop();//滚动高度
+            if (contentH - (scrollTop + viewH) <= footerHeight) { //到达底部100px时,加载新内容
+                // 这里加载数据..
+                getTopic();
+            }
+        });
+
+        function getTopic() {
+            if (CurrentPageIndex > MaxPage) {
+                $(".loading").hide();
+                return;
+            } else {
+                $(".loading").show();
+            }
+            Request[CurrentTag](function (resultData) {
+                        data = (resultData && resultData.data) || null;
+                        var $wrapper = $("#topicWrapper");
+                        if (data && data.length) {
+                            var html = [];
+                            for (var i = 0; i < data.length; i++) {
+                                var d = data[i];
+                                var user = "";
+                                if (d.comment_user_id) {
+                                    d.content = splitWords(d.content,65);
+                                    user = '<div class="person-topic"><div class="person-frame"><img src="' + d.head_url + '"><div class="zan">' + d.comment_bang + '</div></div><div class="content">' + d.content + '</div></div>';
+                                } else {
+                                    user = '暂无评论';
+                                }
+                                d.question = splitWords(d.question,75);
+                                html.push('<li class="topic-li"><a href="topicDetail.html?topicId=' + d.topic_id + '"><div class="info"><span>' + d.created_at + '</span><i class="comment">' + d.comment_count + '</i><i class="fav">' + d.favorite + '</i></div><h4>' + d.question + '</h4>' + user + '</a></li>')
+                            }
+
+                            if (CurrentPageIndex == 1) {
+                                $wrapper.html(html.join(""));
+                            } else {
+                                $wrapper.append(html.join(""));
+                            }
+
+                            ++CurrentPageIndex;
+                            MaxPage = Math.ceil(resultData.total_count / PageSize);
+                        } else {
+                            $wrapper.html("<div class='pd20-v'>暂无数据</div>");
+                        }
+                        $(".loading").hide();
+                        resize();
+                    }
+                    , CurrentPageIndex, PageSize)
+        }
+
+        //load default data
+        getTopic();
+
+        var utm_source = getUrlParameter("utm_source");
+        utm_source && Cookie.setCookie("digiwine-utm_source", utm_source);
+
+        var utm_medium = getUrlParameter("utm_medium");
+        utm_medium && Cookie.setCookie("digiwine-utm_medium", utm_medium);
+    })
+</script>
+<script type="text/javascript" src="js/tracking.js"></script>
+</html>

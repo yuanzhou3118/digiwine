@@ -1,0 +1,23 @@
+
+//获取我的积分基本信息接口。
+$.ajax({
+type: 'GET',
+url: '/api-profile-point-basic',
+dataType: 'json',
+cache: false,
+success: function(data){
+  console.log(data);
+}
+});
+
+//获取我的积分明细接口。
+$.ajax({
+type: 'GET',
+url: '/api-profile-point-detail',
+data: {page_index: 1, page_size: 5},
+dataType: 'json',
+cache: false,
+success: function(data){
+  console.log(data);
+}
+});

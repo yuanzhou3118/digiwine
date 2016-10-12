@@ -1,0 +1,1673 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="Description" content="">
+    <meta name="format-detection" content="telephone=no">
+    <title>葡萄酒微课堂</title>
+    <link rel="stylesheet" href="css/global.css" type="text/css"/>
+    <link rel="stylesheet" href="css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/main2.css" rel="stylesheet">
+    <script type="text/javascript" src="js/plugin/jquery-1.11.1.min.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script type="text/javascript" src="js/template.js"></script>
+    <script type="text/javascript" src="js/plugin/mustache.min.js"></script>
+    <script type="text/javascript" src="js/request.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/loading.js"></script>
+    <script type="text/javascript" src="js/enter.js"></script>
+    <script type="text/javascript" src="js/plugin/velocity.min.js"></script>
+    <script type="text/javascript" src="js/plugin/createjs.js"></script>
+    <script type="text/javascript" src="js/plugin/exif.js"></script>
+    <script type="text/javascript" src="js/plugin/hammer.min.js"></script>
+    <script type="text/javascript" src="js/plugin/binaryajax.js"></script>
+    <script type="text/javascript" src="js/plugin/megapix-image.js"></script>
+    <script type="text/javascript" src="js/plugin/jquery.make-thumb.js"></script>
+    <script type="text/javascript" src="js/plugin/upload.js"></script>
+    <script type="text/javascript">
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                        (i[r].q = i[r].q || []).push(arguments)
+                    }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-25338682-20', 'auto');
+        ga('send', 'pageview');
+
+        $(function () {
+            var arr = [];
+            var percent = $('.loading').find('.percent-num');
+            preloadimages(arr, percent);
+        });
+    </script>
+    <!-- Acxiom AbiliTag v2.0 for site: PRC009 -->
+    <script type="text/javascript">window.acxm = {
+        api: Function(), x: function () {
+            var k = document, e = encodeURIComponent, r = "script", m = k.getElementsByTagName(r)[0], i = k.createElement(r), t = "&c=";
+            try {
+                t = t + k.cookie.match('_acxm=([^;]*)').slice(1);
+            } catch (z) {
+            }
+            ;
+            i.async = true;
+            i.src = "//t-cn.acxiom-online.com/tag/5d4f3a6a3ef951e3c72b135e8e01c2ba/st.js?l=" + e(k.location) + "&r=" + e(k.referrer) + t + "&v=2.0&z=" + Math.random();
+            m.parentNode.insertBefore(i, m)
+        }()
+    }</script>
+    <script type="text/javascript">
+        (function () {
+            window._CiQ11462 = window._CiQ11462 || [];
+            window._CiQ11462.push(['_cookieUseRootDomain', true]);
+            var c = document.createElement('script');
+            c.type = 'text/javascript';
+            c.async = true;
+            c.charset = 'utf-8';
+            c.src = '//collect.cn.miaozhen.com/ca/11462';
+            var h = document.getElementsByTagName('script')[0];
+            h.parentNode.insertBefore(c, h);
+        })();
+    </script>
+
+
+    <link rel="stylesheet" href="css/swiper.min.css" rel="stylesheet">
+
+</head>
+<body class="noteCreatePage">
+<div class="modal-orientation" id="orientation">
+    <img src="images/flip.jpg"/>
+</div>
+<div class="header red">
+    <div class="close-nav"></div>
+    <div class="submit" data-ga="98">提交</div>
+    </a>
+</div>
+<div class="main-wrap">
+    <div class="main-wrap-cover"></div>
+    <!--  热门话题 -->
+    <ul class="note-form-wrap">
+        <li>
+            <textarea class="tc-textarea" id="comment" maxlength="300" placeholder="留下你的感受，给小伙伴做个参考！"></textarea>
+            <span class="text-number fr">0/300</span>
+            <div class="pd30-wrap">
+                <!--<img class="photo-uploaded" src="">-->
+                <div class="uploaded-wrapper">
+                </div>
+                <div class="photo-upload">
+                    <input type="file" class="takepicture" target="0" accept="image/*">
+                </div>
+                <span class="form-error red fl tx-left hidden">请上传图片(1~3张)</span>
+            </div>
+
+        </li>
+
+        <li>
+            <div class="pd30-wrap no-padding-v">
+                <ul class="form-group">
+                    <li>
+                        <div class="form-g-name fl">酒名</div>
+                        <div class="form-g-content fl">
+                            <input id="wine_name" type="text" placeholder="请填写酒名(必填)">
+                        </div>
+
+                    </li>
+                    <span class="form-error red fl hidden">请填写酒名(必填)</span>
+                    <li>
+                        <div class="form-g-name fl">葡萄品种</div>
+                        <div class="form-g-content fl">
+                            <input id="grape_varieties" type="text" placeholder="请填写葡萄酒品种">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="form-g-name fl">国家</div>
+                        <div class="form-g-content fl">
+                            <input id="country" type="text" placeholder="请填写国家(必填)">
+                        </div>
+                    </li>
+                    <span class="form-error red fl hidden">请填写国家(必填)</span>
+                    <li>
+                        <div class="form-g-name fl">产区</div>
+                        <div class="form-g-content fl">
+                            <input id="place_of_origin" type="text" placeholder="请填写产区">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="form-g-name fl">价格</div>
+                        <div class="form-g-content fl">
+                            <input id="price" type="text" placeholder="请填写价格(必填)">
+                        </div>
+                    </li>
+                    <span class="form-error red fl hidden">请填写价格(必填)</span>
+                    <li>
+                        <div class="form-g-name fl">年份</div>
+                        <div class="form-g-content fl">
+                            <input id="year" type="text" placeholder="请填写年份">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="form-g-name fl">评分</div>
+                        <div class="form-g-content fl">
+                            <ul class="form-fav-start" id="score" val="1">
+                                <li class="selected" index="1"></li>
+                                <li index="2"></li>
+                                <li index="3"></li>
+                                <li index="4"></li>
+                                <li index="5"></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </li>
+
+        <li>
+            <div class="pd30-wrap no-padding-v">
+                <ul class="form-group">
+                    <li>
+                        <div class="form-g-name fl">外观</div>
+                        <div class="form-g-content fl">
+                            <div class="toSelectWai" id="color">请选择</div>
+                        </div>
+                    </li>
+                    <span class="form-error red fl hidden">请选择外观(必选)</span>
+                    <li style="height:110px;width:580px;" class="scroll-wrapper">
+                        <div id="colorScroll" style="height:110px;width:580px;overflow-x: auto;position: relative">
+                            <ul class="form-color-wrap" style="width:1100px;">
+                                <li class="cor1" index="1"><i></i></li>
+                                <li class="cor2" index="2"><i></i></li>
+                                <li class="cor3" index="3"><i></i></li>
+                                <li class="cor4" index="4"><i></i></li>
+                                <li class="cor5" index="5"><i></i></li>
+                                <li class="cor6" index="6"><i></i></li>
+                                <li class="cor7" index="7"><i></i></li>
+                                <li class="cor8" index="8"><i></i></li>
+                                <li class="cor9" index="9"><i></i></li>
+                                <li class="cor10" index="10"><i></i></li>
+                            </ul>
+                        </div>
+                        <div class="toLeft hidden"></div>
+                        <div class="toRight hidden"></div>
+                    </li>
+                </ul>
+            </div>
+        </li>
+
+        <li>
+            <div class="pd30-wrap no-padding-v">
+                <ul class="form-group">
+                    <li>
+                        <div class="form-g-name fl">香气特征</div>
+                        <div class="form-g-content fl" id="aroma_characteristics">
+                            <div class="toAddType">请添加</div>
+                        </div>
+                    </li>
+                    <div class="scroll-wrapper" id="addAro-scrollWrapper" style="display:none;height:140px;">
+                        <div id="addAro-scrollWrapper-selected" class="scroll-wrapper"
+                             style="margin-bottom: 30px;margin-top: -15px;">
+                            <div class="selected-aro-container" style="width:auto">
+                            </div>
+                        </div>
+                        <div class="toLeft hidden"></div>
+                        <div class="toRight hidden"></div>
+                    </div>
+                    <span class="form-error red fl hidden">请选择香气特征</span>
+                </ul>
+            </div>
+        </li>
+
+        <li>
+            <div class="pd30-wrap no-padding-v">
+                <ul class="form-group">
+                    <li>
+                        <div class="form-g-name fl">风味特征</div>
+                        <div class="form-g-content fl" id="flavor_characteristics">
+                            <div class="toAddType">请添加</div>
+                        </div>
+                    </li>
+                    <div class="scroll-wrapper" id="addFra-scrollWrapper" style="display:none;height:140px;">
+                        <div id="addFra-scrollWrapper-selected" class="scroll-wrapper"
+                             style="margin-bottom: 30px;margin-top: -15px;">
+                            <div class="selected-fra-container" style="width:auto">
+                            </div>
+                        </div>
+                        <div class="toLeft hidden"></div>
+                        <div class="toRight hidden"></div>
+                    </div>
+                    <span class="form-error red fl hidden">请选择风味特征</span>
+                </ul>
+            </div>
+        </li>
+
+        <li>
+            <div class="pd30-wrap">
+                <ul class="form-group no-border">
+                    <li>
+                        <div class="form-g-name fl">单宁</div>
+                        <div class="form-g-content fl">
+                            <ul class="selector-group" id="tannic" val="1">
+                                <li>低</li>
+                                <li>中</li>
+                                <li>高</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="form-g-name fl">酒精度</div>
+                        <div class="form-g-content fl">
+                            <ul class="selector-group" id="texture" val="1">
+                                <li>低</li>
+                                <li>中</li>
+                                <li>高</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="form-g-name fl">酒体</div>
+                        <div class="form-g-content fl">
+                            <ul class="selector-group" id="wine_body" val="1">
+                                <li>轻</li>
+                                <li>中</li>
+                                <li>重</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="form-g-name fl">回味</div>
+                        <div class="form-g-content fl">
+                            <ul class="selector-group" id="aftertaste" val="1">
+                                <li>短</li>
+                                <li>中</li>
+                                <li>长</li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="form-g-name fl">酸度</div>
+                        <div class="form-g-content fl">
+                            <ul class="selector-group" id="acid" val="1">
+                                <li>低</li>
+                                <li>中</li>
+                                <li>高</li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="form-g-name fl">甜度</div>
+                        <div class="form-g-content fl">
+                            <ul class="selector-group four" id="sweetness" val="1">
+                                <li>干</li>
+                                <li>半干</li>
+                                <li>半甜</li>
+                                <li>甜</li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<div id="kv-pop" class="pop-wrap hidden">
+</div>
+
+<div id="addFra" class="hidden f0bg">
+    <div class="header red">
+        <div class="close-nav"></div>
+        <div class="submit">确定</div>
+        </a>
+    </div>
+    <div class="main-wrap">
+        <div class="main-wrap-cover"></div>
+        <div class="pd30-wrap white-bg">
+            <div class="add-tit">风味特征(可多选)</div>
+            <div class="scroll-wrapper">
+                <div id="addFra-select-scroller" class="scroll-wrapper">
+                    <div class="add-selected-container">
+                        <!--<div class="add-typer">-->
+                        <!--<img src="img2/add/t1.png">-->
+                        <!--皮革-->
+                        <!--</div>-->
+                    </div>
+                </div>
+                <div class="toLeft hidden"></div>
+                <div class="toRight hidden"></div>
+            </div>
+        </div>
+
+        <div class="pd30-wrap">
+            <div class="add-header-wrap">
+                <div class="flex-row add-type-list-tit">
+                    <div class="flex1 selected" group="1">
+                        <span>水果类</span>
+                    </div>
+                    <div class="flex1" group="2">
+                        <span>花卉类</span>
+                    </div>
+                    <div class="flex1" group="3">
+                        <span>植物类</span>
+                    </div>
+                    <div class="flex1" group="4">
+                        <span>动物类</span>
+                    </div>
+                </div>
+                <div class="flex-row add-type-list-tit">
+                    <div class="flex1" group="5">
+                        <span>烘培类</span>
+                    </div>
+                    <div class="flex2" group="6">
+                        <span>新橡木桶带来的香气</span>
+                    </div>
+                    <div class="flex1" group="7">
+                        <span>浊味</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pd30-wrap" style="padding-top:10px;">
+            <div class="add-group" group="1">
+                <div class="type-title">·<span>柑橘类</span>·</div>
+                <div class="add-list">
+                    <div class="add-typer" index="1">
+                        <img src="img2/add/t1.png">
+                        柠檬
+                    </div>
+                    <div class="add-typer" index="2">
+                        <img src="img2/add/t2.png">
+                        葡萄柚
+                    </div>
+                    <div class="add-typer" index="3">
+                        <img src="img2/add/t3.png">
+                        橙子
+                    </div>
+                </div>
+                <div class="type-bar"></div>
+                <div class="type-title">·<span>热带水果类</span>·</div>
+                <div class="add-list">
+                    <div class="add-typer" index="4">
+                        <img src="img2/add/t4.png">
+                        菠萝
+                    </div>
+                    <div class="add-typer" index="5">
+                        <img src="img2/add/t5.png">
+                        香蕉
+                    </div>
+                    <div class="add-typer" index="6">
+                        <img src="img2/add/t6.png">
+                        荔枝
+                    </div>
+                    <div class="add-typer" index="7">
+                        <img src="img2/add/t7.png">
+                        香瓜
+                    </div>
+                </div>
+
+                <div class="type-bar"></div>
+                <div class="type-title">·<span>仁果类</span>·</div>
+                <div class="add-list">
+                    <div class="add-typer" index="8">
+                        <img src="img2/add/t8.png">
+                        麝香葡萄
+                    </div>
+                    <div class="add-typer" index="9">
+                        <img src="img2/add/t9.png">
+                        苹果
+                    </div>
+                    <div class="add-typer" index="10">
+                        <img src="img2/add/t10.png">
+                        水梨
+                    </div>
+                    <div class="add-typer" index="11">
+                        <img src="img2/add/t11.png">
+                        榲桲
+                    </div>
+                </div>
+
+                <div class="type-bar"></div>
+                <div class="type-title">·<span>红色水果类</span>·</div>
+                <div class="add-list">
+                    <div class="add-typer" index="12">
+                        <img src="img2/add/t12.png">
+                        草莓
+                    </div>
+                    <div class="add-typer" index="13">
+                        <img src="img2/add/t13.png">
+                        覆盆子
+                    </div>
+                    <div class="add-typer" index="14">
+                        <img src="img2/add/t14.png">
+                        红醋栗
+                    </div>
+                </div>
+
+                <div class="type-bar"></div>
+                <div class="type-title">·<span>黑色水果类</span>·</div>
+                <div class="add-list">
+                    <div class="add-typer" index="15">
+                        <img src="img2/add/t15.png">
+                        黑醋栗
+                    </div>
+                    <div class="add-typer" index="16">
+                        <img src="img2/add/t16.png">
+                        蓝圆莓
+                    </div>
+                    <div class="add-typer" index="17">
+                        <img src="img2/add/t17.png">
+                        黑莓
+                    </div>
+                </div>
+
+                <div class="type-bar"></div>
+                <div class="type-title">·<span>核果类</span>·</div>
+                <div class="add-list">
+                    <div class="add-typer" index="18">
+                        <img src="img2/add/t18.png">
+                        樱桃
+                    </div>
+                    <div class="add-typer" index="19">
+                        <img src="img2/add/t19.png">
+                        杏子
+                    </div>
+                    <div class="add-typer" index="20">
+                        <img src="img2/add/t20.png">
+                        水蜜桃
+                    </div>
+                </div>
+
+                <div class="type-bar"></div>
+                <div class="type-title">·<span>干果类</span>·</div>
+                <div class="add-list">
+                    <div class="add-typer" index="21">
+                        <img src="img2/add/t21.png">
+                        杏仁
+                    </div>
+                    <div class="add-typer" index="22">
+                        <img src="img2/add/t22.png">
+                        李子干
+                    </div>
+                    <div class="add-typer" index="23">
+                        <img src="img2/add/t23.png">
+                        核桃
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="add-group hidden" group="2">
+                <div class="type-title">·<span>花卉类</span>·</div>
+                <div class="add-list">
+                    <div class="add-typer" index="24">
+                        <img src="img2/add/t24.png">
+                        山楂花
+                    </div>
+                    <div class="add-typer" index="25">
+                        <img src="img2/add/t25.png">
+                        洋槐花
+                    </div>
+                    <div class="add-typer" index="26">
+                        <img src="img2/add/t26.png">
+                        椴花
+                    </div>
+                    <div class="add-typer" index="27">
+                        <img src="img2/add/t27.png">
+                        蜂蜜
+                    </div>
+                    <div class="add-typer" index="28">
+                        <img src="img2/add/t28.png">
+                        玫瑰
+                    </div>
+                    <div class="add-typer" index="29">
+                        <img src="img2/add/t29.png">
+                        紫罗兰
+                    </div>
+                </div>
+            </div>
+
+            <div class="add-group hidden" group="3">
+                <div class="type-title">·<span>蔬菜类</span>·</div>
+                <div class="add-list">
+                    <div class="add-typer" index="30">
+                        <img src="img2/add/t30.png">
+                        青椒
+                    </div>
+                </div>
+
+                <div class="type-bar"></div>
+                <div class="type-title">·<span>菌类</span>·</div>
+                <div class="add-list">
+                    <div class="add-typer" index="31">
+                        <img src="img2/add/t31.png">
+                        蘑菇
+                    </div>
+                    <div class="add-typer" index="32">
+                        <img src="img2/add/t32.png">
+                        松露
+                    </div>
+                    <div class="add-typer" index="33">
+                        <img src="img2/add/t33.png">
+                        酵母
+                    </div>
+                </div>
+
+                <div class="type-bar"></div>
+                <div class="type-title">·<span>树木类</span>·</div>
+                <div class="add-list">
+                    <div class="add-typer" index="34">
+                        <img src="img2/add/t34.png">
+                        雪松
+                    </div>
+                    <div class="add-typer" index="35">
+                        <img src="img2/add/t35.png">
+                        松树
+                    </div>
+                    <div class="add-typer" index="36">
+                        <img src="img2/add/t36.png">
+                        甘草
+                    </div>
+                </div>
+
+                <div class="type-bar"></div>
+                <div class="type-title">·<span>草本类</span>·</div>
+                <div class="add-list">
+                    <div class="add-typer" index="37">
+                        <img src="img2/add/t37.png">
+                        黑醋栗芽苞
+                    </div>
+                    <div class="add-typer" index="38">
+                        <img src="img2/add/t38.png">
+                        干牧草
+                    </div>
+                    <div class="add-typer" index="39">
+                        <img src="img2/add/t39.png">
+                        百里香
+                    </div>
+                </div>
+
+                <div class="type-bar"></div>
+                <div class="type-title">·<span>香料类</span>·</div>
+                <div class="add-list">
+                    <div class="add-typer" index="40">
+                        <img src="img2/add/t40.png">
+                        香草
+                    </div>
+                    <div class="add-typer" index="41">
+                        <img src="img2/add/t41.png">
+                        桂皮
+                    </div>
+                    <div class="add-typer" index="42">
+                        <img src="img2/add/t42.png">
+                        丁子香花蕾
+                    </div>
+                    <div class="add-typer" index="43">
+                        <img src="img2/add/t43.png">
+                        胡椒
+                    </div>
+                    <div class="add-typer" index="44">
+                        <img src="img2/add/t44.png">
+                        藏红花
+                    </div>
+                </div>
+            </div>
+
+            <div class="add-group hidden" group="4">
+                <div class="type-title">·<span>动物类</span>·</div>
+                <div class="add-list" add-style="4">
+                    <div class="add-typer" index="45">
+                        <img src="img2/add/t45.png">
+                        皮革
+                    </div>
+                    <div class="add-typer" index="46">
+                        <img src="img2/add/t46.png">
+                        麝香
+                    </div>
+                    <div class="add-typer" index="47">
+                        <img src="img2/add/t47.png">
+                        黄油
+                    </div>
+                </div>
+            </div>
+
+            <div class="add-group hidden" group="5">
+                <div class="type-title">·<span>烘培类</span>·</div>
+                <div class="add-list">
+                    <div class="add-typer" index="48">
+                        <img src="img2/add/t48.png">
+                        烤面包
+                    </div>
+                    <div class="add-typer" index="49">
+                        <img src="img2/add/t49.png">
+                        烤杏仁
+                    </div>
+                    <div class="add-typer" index="50">
+                        <img src="img2/add/t50.png">
+                        烤榛子
+                    </div>
+                    <div class="add-typer" index="51">
+                        <img src="img2/add/t51.png">
+                        焦糖
+                    </div>
+                    <div class="add-typer" index="52">
+                        <img src="img2/add/t52.png">
+                        咖啡
+                    </div>
+                    <div class="add-typer" index="53">
+                        <img src="img2/add/t53.png">
+                        黑巧克力
+                    </div>
+                    <div class="add-typer" index="54">
+                        <img src="img2/add/t54.png">
+                        烟熏味
+                    </div>
+                </div>
+            </div>
+
+            <div class="add-group hidden" group="6">
+                <div class="type-title">·<span>橡木桶带来的香气</span>·</div>
+                <div class="add-list">
+                    <div class="add-typer" index="55">
+                        <img src="img2/add/t55.png">
+                        橡木
+                    </div>
+                    <div class="add-typer" index="56">
+                        <img src="img2/add/t56.png">
+                        新木材<br>（未风干）
+                    </div>
+                    <div class="add-typer" index="57">
+                        <img src="img2/add/t57.png">
+                        椰子
+                    </div>
+                    <div class="add-typer" index="58">
+                        <img src="img2/add/t58.png">
+                        香草荚
+                    </div>
+                    <div class="add-typer" index="59">
+                        <img src="img2/add/t59.png">
+                        橡木辛香
+                    </div>
+                    <div class="add-typer" index="60">
+                        <img src="img2/add/t60.png">
+                        药物
+                    </div>
+                    <div class="add-typer" index="61">
+                        <img src="img2/add/t61.png">
+                        新皮革
+                    </div>
+                    <div class="add-typer" index="62">
+                        <img src="img2/add/t62.png">
+                        糠醛
+                    </div>
+                </div>
+            </div>
+
+            <div class="add-group hidden" group="7">
+                <div class="type-title">·<span>浊味</span>·</div>
+                <div class="add-list">
+                    <div class="add-typer" index="63">
+                        <img src="img2/add/t63.png">
+                        烂苹果
+                    </div>
+                    <div class="add-typer" index="64">
+                        <img src="img2/add/t64.png">
+                        醋
+                    </div>
+                    <div class="add-typer" index="65">
+                        <img src="img2/add/t65.png">
+                        胶水
+                    </div>
+                    <div class="add-typer" index="66">
+                        <img src="img2/add/t66.png">
+                        肥皂
+                    </div>
+                    <div class="add-typer" index="67">
+                        <img src="img2/add/t67.png">
+                        硫磺
+                    </div>
+                    <div class="add-typer" index="68">
+                        <img src="img2/add/t68.png">
+                        蔬菜
+                    </div>
+                    <div class="add-typer" index="69">
+                        <img src="img2/add/t69.png">
+                        臭鸡蛋
+                    </div>
+                    <div class="add-typer" index="70">
+                        <img src="img2/add/t70.png">
+                        洋葱
+                    </div>
+                    <div class="add-typer" index="71">
+                        <img src="img2/add/t71.png">
+                        花椰菜
+                    </div>
+                    <div class="add-typer" index="72">
+                        <img src="img2/add/t72.png">
+                        马臭
+                    </div>
+                    <div class="add-typer" index="73">
+                        <img src="img2/add/t73.png">
+                        霉土
+                    </div>
+                    <div class="add-typer" index="74">
+                        <img src="img2/add/t74.png">
+                        软木塞
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="addAro" class="hidden f0bg">
+    <div class="header red">
+        <div class="close-nav"></div>
+        <div class="submit">确定</div>
+        </a>
+    </div>
+    <div class="main-wrap">
+        <div class="main-wrap-cover"></div>
+        <div class="pd30-wrap white-bg">
+            <div class="add-tit">香味特征(可多选)</div>
+            <div class="scroll-wrapper">
+                <div id="addAro-select-scroller" class="scroll-wrapper">
+                    <div class="add-selected-container">
+                        <!--<div class="add-typer">-->
+                        <!--<img src="img2/add/t1.png">-->
+                        <!--皮革-->
+                        <!--</div>-->
+                    </div>
+                </div>
+                <div class="toLeft hidden"></div>
+                <div class="toRight hidden"></div>
+            </div>
+        </div>
+
+        <div class="pd30-wrap">
+            <div class="add-header-wrap">
+                <div class="flex-row add-type-list-tit">
+                    <div class="flex1 selected" group="1">
+                        <span>水果类</span>
+                    </div>
+                    <div class="flex1" group="2">
+                        <span>花卉类</span>
+                    </div>
+                    <div class="flex1" group="3">
+                        <span>植物类</span>
+                    </div>
+                    <div class="flex1" group="4">
+                        <span>动物类</span>
+                    </div>
+                </div>
+                <div class="flex-row add-type-list-tit">
+                    <div class="flex1" group="5">
+                        <span>烘培类</span>
+                    </div>
+                    <div class="flex2" group="6">
+                        <span>新橡木桶带来的香气</span>
+                    </div>
+                    <div class="flex1" group="7">
+                        <span>浊味</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pd30-wrap" style="padding-top:10px;">
+            <div class="add-group" group="1">
+                <div class="type-title">·<span>柑橘类</span>·</div>
+                <div class="add-list">
+                    <div class="add-typer" index="1">
+                        <img src="img2/add/t1.png">
+                        柠檬
+                    </div>
+                    <div class="add-typer" index="2">
+                        <img src="img2/add/t2.png">
+                        葡萄柚
+                    </div>
+                    <div class="add-typer" index="3">
+                        <img src="img2/add/t3.png">
+                        橙子
+                    </div>
+                </div>
+                <div class="type-bar"></div>
+                <div class="type-title">·<span>热带水果类</span>·</div>
+                <div class="add-list">
+                    <div class="add-typer" index="4">
+                        <img src="img2/add/t4.png">
+                        菠萝
+                    </div>
+                    <div class="add-typer" index="5">
+                        <img src="img2/add/t5.png">
+                        香蕉
+                    </div>
+                    <div class="add-typer" index="6">
+                        <img src="img2/add/t6.png">
+                        荔枝
+                    </div>
+                    <div class="add-typer" index="7">
+                        <img src="img2/add/t7.png">
+                        香瓜
+                    </div>
+                </div>
+
+                <div class="type-bar"></div>
+                <div class="type-title">·<span>仁果类</span>·</div>
+                <div class="add-list">
+                    <div class="add-typer" index="8">
+                        <img src="img2/add/t8.png">
+                        麝香葡萄
+                    </div>
+                    <div class="add-typer" index="9">
+                        <img src="img2/add/t9.png">
+                        苹果
+                    </div>
+                    <div class="add-typer" index="10">
+                        <img src="img2/add/t10.png">
+                        水梨
+                    </div>
+                    <div class="add-typer" index="11">
+                        <img src="img2/add/t11.png">
+                        榲桲
+                    </div>
+                </div>
+
+                <div class="type-bar"></div>
+                <div class="type-title">·<span>红色水果类</span>·</div>
+                <div class="add-list">
+                    <div class="add-typer" index="12">
+                        <img src="img2/add/t12.png">
+                        草莓
+                    </div>
+                    <div class="add-typer" index="13">
+                        <img src="img2/add/t13.png">
+                        覆盆子
+                    </div>
+                    <div class="add-typer" index="14">
+                        <img src="img2/add/t14.png">
+                        红醋栗
+                    </div>
+                </div>
+
+                <div class="type-bar"></div>
+                <div class="type-title">·<span>黑色水果类</span>·</div>
+                <div class="add-list">
+                    <div class="add-typer" index="15">
+                        <img src="img2/add/t15.png">
+                        黑醋栗
+                    </div>
+                    <div class="add-typer" index="16">
+                        <img src="img2/add/t16.png">
+                        蓝圆莓
+                    </div>
+                    <div class="add-typer" index="17">
+                        <img src="img2/add/t17.png">
+                        黑莓
+                    </div>
+                </div>
+
+                <div class="type-bar"></div>
+                <div class="type-title">·<span>核果类</span>·</div>
+                <div class="add-list">
+                    <div class="add-typer" index="18">
+                        <img src="img2/add/t18.png">
+                        樱桃
+                    </div>
+                    <div class="add-typer" index="19">
+                        <img src="img2/add/t19.png">
+                        杏子
+                    </div>
+                    <div class="add-typer" index="20">
+                        <img src="img2/add/t20.png">
+                        水蜜桃
+                    </div>
+                </div>
+
+                <div class="type-bar"></div>
+                <div class="type-title">·<span>干果类</span>·</div>
+                <div class="add-list">
+                    <div class="add-typer" index="21">
+                        <img src="img2/add/t21.png">
+                        杏仁
+                    </div>
+                    <div class="add-typer" index="22">
+                        <img src="img2/add/t22.png">
+                        李子干
+                    </div>
+                    <div class="add-typer" index="23">
+                        <img src="img2/add/t23.png">
+                        核桃
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="add-group hidden" group="2">
+                <div class="type-title">·<span>花卉类</span>·</div>
+                <div class="add-list">
+                    <div class="add-typer" index="24">
+                        <img src="img2/add/t24.png">
+                        山楂花
+                    </div>
+                    <div class="add-typer" index="25">
+                        <img src="img2/add/t25.png">
+                        洋槐花
+                    </div>
+                    <div class="add-typer" index="26">
+                        <img src="img2/add/t26.png">
+                        椴花
+                    </div>
+                    <div class="add-typer" index="27">
+                        <img src="img2/add/t27.png">
+                        蜂蜜
+                    </div>
+                    <div class="add-typer" index="28">
+                        <img src="img2/add/t28.png">
+                        玫瑰
+                    </div>
+                    <div class="add-typer" index="29">
+                        <img src="img2/add/t29.png">
+                        紫罗兰
+                    </div>
+                </div>
+            </div>
+
+            <div class="add-group hidden" group="3">
+                <div class="type-title">·<span>蔬菜类</span>·</div>
+                <div class="add-list">
+                    <div class="add-typer" index="30">
+                        <img src="img2/add/t30.png">
+                        青椒
+                    </div>
+                </div>
+
+                <div class="type-bar"></div>
+                <div class="type-title">·<span>菌类</span>·</div>
+                <div class="add-list">
+                    <div class="add-typer" index="31">
+                        <img src="img2/add/t31.png">
+                        蘑菇
+                    </div>
+                    <div class="add-typer" index="32">
+                        <img src="img2/add/t32.png">
+                        松露
+                    </div>
+                    <div class="add-typer" index="33">
+                        <img src="img2/add/t33.png">
+                        酵母
+                    </div>
+                </div>
+
+                <div class="type-bar"></div>
+                <div class="type-title">·<span>树木类</span>·</div>
+                <div class="add-list">
+                    <div class="add-typer" index="34">
+                        <img src="img2/add/t34.png">
+                        雪松
+                    </div>
+                    <div class="add-typer" index="35">
+                        <img src="img2/add/t35.png">
+                        松树
+                    </div>
+                    <div class="add-typer" index="36">
+                        <img src="img2/add/t36.png">
+                        甘草
+                    </div>
+                </div>
+
+                <div class="type-bar"></div>
+                <div class="type-title">·<span>草本类</span>·</div>
+                <div class="add-list">
+                    <div class="add-typer" index="37">
+                        <img src="img2/add/t37.png">
+                        黑醋栗芽苞
+                    </div>
+                    <div class="add-typer" index="38">
+                        <img src="img2/add/t38.png">
+                        干牧草
+                    </div>
+                    <div class="add-typer" index="39">
+                        <img src="img2/add/t39.png">
+                        百里香
+                    </div>
+                </div>
+
+                <div class="type-bar"></div>
+                <div class="type-title">·<span>香料类</span>·</div>
+                <div class="add-list">
+                    <div class="add-typer" index="40">
+                        <img src="img2/add/t40.png">
+                        香草
+                    </div>
+                    <div class="add-typer" index="41">
+                        <img src="img2/add/t41.png">
+                        桂皮
+                    </div>
+                    <div class="add-typer" index="42">
+                        <img src="img2/add/t42.png">
+                        丁子香花蕾
+                    </div>
+                    <div class="add-typer" index="43">
+                        <img src="img2/add/t43.png">
+                        胡椒
+                    </div>
+                    <div class="add-typer" index="44">
+                        <img src="img2/add/t44.png">
+                        藏红花
+                    </div>
+                </div>
+            </div>
+
+            <div class="add-group hidden" group="4">
+                <div class="type-title">·<span>动物类</span>·</div>
+                <div class="add-list" add-style="4">
+                    <div class="add-typer" index="45">
+                        <img src="img2/add/t45.png">
+                        皮革
+                    </div>
+                    <div class="add-typer" index="46">
+                        <img src="img2/add/t46.png">
+                        麝香
+                    </div>
+                    <div class="add-typer" index="47">
+                        <img src="img2/add/t47.png">
+                        黄油
+                    </div>
+                </div>
+            </div>
+
+            <div class="add-group hidden" group="5">
+                <div class="type-title">·<span>烘培类</span>·</div>
+                <div class="add-list">
+                    <div class="add-typer" index="48">
+                        <img src="img2/add/t48.png">
+                        烤面包
+                    </div>
+                    <div class="add-typer" index="49">
+                        <img src="img2/add/t49.png">
+                        烤杏仁
+                    </div>
+                    <div class="add-typer" index="50">
+                        <img src="img2/add/t50.png">
+                        烤榛子
+                    </div>
+                    <div class="add-typer" index="51">
+                        <img src="img2/add/t51.png">
+                        焦糖
+                    </div>
+                    <div class="add-typer" index="52">
+                        <img src="img2/add/t52.png">
+                        咖啡
+                    </div>
+                    <div class="add-typer" index="53">
+                        <img src="img2/add/t53.png">
+                        黑巧克力
+                    </div>
+                    <div class="add-typer" index="54">
+                        <img src="img2/add/t54.png">
+                        烟熏味
+                    </div>
+                </div>
+            </div>
+
+            <div class="add-group hidden" group="6">
+                <div class="type-title">·<span>橡木桶带来的香气</span>·</div>
+                <div class="add-list">
+                    <div class="add-typer" index="55">
+                        <img src="img2/add/t55.png">
+                        橡木
+                    </div>
+                    <div class="add-typer" index="56">
+                        <img src="img2/add/t56.png">
+                        新木材<br>（未风干）
+                    </div>
+                    <div class="add-typer" index="57">
+                        <img src="img2/add/t57.png">
+                        椰子
+                    </div>
+                    <div class="add-typer" index="58">
+                        <img src="img2/add/t58.png">
+                        香草荚
+                    </div>
+                    <div class="add-typer" index="59">
+                        <img src="img2/add/t59.png">
+                        橡木辛香
+                    </div>
+                    <div class="add-typer" index="60">
+                        <img src="img2/add/t60.png">
+                        药物
+                    </div>
+                    <div class="add-typer" index="61">
+                        <img src="img2/add/t61.png">
+                        新皮革
+                    </div>
+                    <div class="add-typer" index="62">
+                        <img src="img2/add/t62.png">
+                        糠醛
+                    </div>
+                </div>
+            </div>
+
+            <div class="add-group hidden" group="7">
+                <div class="type-title">·<span>浊味</span>·</div>
+                <div class="add-list">
+                    <div class="add-typer" index="63">
+                        <img src="img2/add/t63.png">
+                        烂苹果
+                    </div>
+                    <div class="add-typer" index="64">
+                        <img src="img2/add/t64.png">
+                        醋
+                    </div>
+                    <div class="add-typer" index="65">
+                        <img src="img2/add/t65.png">
+                        胶水
+                    </div>
+                    <div class="add-typer" index="66">
+                        <img src="img2/add/t66.png">
+                        肥皂
+                    </div>
+                    <div class="add-typer" index="67">
+                        <img src="img2/add/t67.png">
+                        硫磺
+                    </div>
+                    <div class="add-typer" index="68">
+                        <img src="img2/add/t68.png">
+                        蔬菜
+                    </div>
+                    <div class="add-typer" index="69">
+                        <img src="img2/add/t69.png">
+                        臭鸡蛋
+                    </div>
+                    <div class="add-typer" index="70">
+                        <img src="img2/add/t70.png">
+                        洋葱
+                    </div>
+                    <div class="add-typer" index="71">
+                        <img src="img2/add/t71.png">
+                        花椰菜
+                    </div>
+                    <div class="add-typer" index="72">
+                        <img src="img2/add/t72.png">
+                        马臭
+                    </div>
+                    <div class="add-typer" index="73">
+                        <img src="img2/add/t73.png">
+                        霉土
+                    </div>
+                    <div class="add-typer" index="74">
+                        <img src="img2/add/t74.png">
+                        软木塞
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--<img src="images/other/footer-pic1.jpg" style="height: 10px;"></div>-->
+</body>
+<script type="text/javascript" src="js/plugin/swiper.min.js"></script>
+<script>
+    toLogin();
+    $().ready(function () {
+        $("#toKvPop").click(function () {
+            $("#kv-pop").show();
+        })
+        var $colorScroll = $("#colorScroll");
+        leftScroll($colorScroll);
+
+        $(".noteCreatePage>.header>.close-nav").click(function () {
+            if (window.history.length) {
+                window.history.go(-1);
+            } else {
+                location.href = "note.html";
+            }
+        })
+
+        var $textArea = $(".tc-textarea"), maxLength = 300;
+        $textArea.bind("change input", function () {
+            $(".text-number").html($textArea.val().length + "/" + maxLength);
+        });
+
+        //三项选,四项选
+        for (var i = 0; i < $(".selector-group").length; i++) {
+            bindSelector(i);
+        }
+        function bindSelector(i) {
+            var $selector = $(".selector-group").eq(i);
+            $selector.find("li").eq(0).click(function () {
+                var parent = $(this).parent(".selector-group");
+                parent.removeClass("three-two").removeClass("three-three").removeClass("four-two").removeClass("four-three").removeClass("four-four");
+                parent.attr("val", 1);
+
+            })
+            $selector.find("li").eq(1).click(function () {
+                var parent = $(this).parent(".selector-group");
+                parent.removeClass("three-three").removeClass("four-three").removeClass("four-four");
+                if (i <= 4) {
+                    parent.addClass("three-two")
+                } else {
+                    parent.addClass("four-two");
+                }
+                parent.attr("val", 2);
+            });
+            $selector.find("li").eq(2).click(function () {
+                var parent = $(this).parent(".selector-group");
+                parent.removeClass("three-two").removeClass("four-two").removeClass("four-four");
+                if (i <= 4) {
+                    parent.addClass("three-three")
+                } else {
+                    parent.addClass("four-three");
+                }
+                parent.attr("val", 3);
+            })
+            $selector.find("li").eq(3).click(function () {
+                var parent = $(this).parent(".selector-group");
+                parent.removeClass("four-two").removeClass("four-three");
+                parent.addClass("four-four");
+                parent.attr("val", 4);
+            })
+        }
+
+        //颜色选择
+        $(".form-color-wrap li").click(function () {
+            var index = $(this).attr("index");
+            $(".toSelectWai").html(colorMap[index]).attr("val", index).addClass("selected");
+        });
+
+        //评分选择
+        $(".form-fav-start li").click(function () {
+            var index = $(this).attr("index");
+            $("#score").attr("val", index);
+            $(".form-fav-start li").removeClass("selected");
+            for (var i = 0; i < parseInt(index); i++) {
+                $(".form-fav-start li").eq(i).addClass("selected");
+            }
+        })
+
+        var submitBlock = false;
+        $(".header .submit").eq(0).click(function () {
+            if (submitBlock) {
+                return;
+            }
+            var submitValid = true
+            var comment = $("#comment").val();
+//            if (!comment || comment.length <15 || comment.length > 300) {
+////                alert("请输入正确的评论内容 (字数限制15~300)");
+//                submitValid = false;
+//                $(".form-error").eq(0).removeClass("hidden");
+//            } else {
+//                $(".form-error").eq(0).addClass("hidden");
+//            }
+
+            var $photoError = $(".form-error").eq(0);
+            if (!$(".uploaded-wrapper img").length) {
+                submitValid = false;
+                $photoError.removeClass("hidden");
+            } else {
+                $photoError.addClass("hidden");
+            }
+            var imga = null, imgb = null, imgc = null;
+            for (var i = 0; i < $(".uploaded-wrapper img").length; i++) {
+                if (i == 0) {
+                    imga = $(".uploaded-wrapper img").eq(i).attr("src");
+                }
+                if (i == 1) {
+                    imgb = $(".uploaded-wrapper img").eq(i).attr("src");
+                }
+                if (i == 2) {
+                    imgc = $(".uploaded-wrapper img").eq(i).attr("src");
+                }
+            }
+
+            var $wineNameError = $(".form-error").eq(1);
+            if (!$("#wine_name").val()) {
+                submitValid = false;
+                $wineNameError.removeClass("hidden");
+            } else {
+                $wineNameError.addClass("hidden")
+            }
+
+//            var $wineTypeError = $(".form-error").eq(3);
+//            if (!$("#grape_varieties").val()) {
+//                submitValid = false;
+//                $wineTypeError.removeClass("hidden");
+//            } else {
+//                $wineTypeError.addClass("hidden");
+//            }
+
+            var $countryError = $(".form-error").eq(2);
+            if (!$("#country").val()) {
+                submitValid = false;
+                $countryError.removeClass("hidden");
+            } else {
+                $countryError.addClass("hidden");
+            }
+
+//            var $place_of_originError = $(".form-error").eq(5);
+//            if (!$("#place_of_origin").val()) {
+//                submitValid = false;
+//                $place_of_originError.removeClass("hidden");
+//            } else {
+//                $place_of_originError.addClass("hidden");
+//            }
+
+            var $priceError = $(".form-error").eq(3);
+            if (!$("#price").val()) {
+                submitValid = false;
+                $priceError.removeClass("hidden");
+            } else {
+                $priceError.addClass("hidden");
+            }
+
+//            var $yearError = $(".form-error").eq(7);
+//            if (!$("#year").val()) {
+//                submitValid = false;
+//                $yearError.removeClass("hidden");
+//            } else {
+//                $yearError.addClass("hidden");
+//            }
+
+            var $colorError = $(".form-error").eq(4);
+            if (!$("#color").attr("val")) {
+                submitValid = false;
+                $colorError.removeClass("hidden");
+            } else {
+                $colorError.addClass("hidden");
+            }
+
+            var $aroma_characteristicsError = $(".form-error").eq(5);
+            var adddedAro = $(".selected-aro-container .add-typer");
+            var aro_characteristicsList = [];
+            for (var i = 0; i < adddedAro.length; i++) {
+                aro_characteristicsList.push(adddedAro.eq(i).attr("index"));
+            }
+            var aroValue = aro_characteristicsList.join("-");
+            if (!aroValue) {
+                submitValid = false;
+                $aroma_characteristicsError.removeClass("hidden");
+            } else {
+                $aroma_characteristicsError.addClass("hidden");
+            }
+
+            var $flavor_characteristicsError = $(".form-error").eq(6);
+            var addedFra = $(".selected-fra-container .add-typer");
+            var flavor_characteristicsList = [];
+            for (var i = 0; i < addedFra.length; i++) {
+                flavor_characteristicsList.push(addedFra.eq(i).attr("index"));
+            }
+            var flavorValue = flavor_characteristicsList.join("-");
+            if (!flavorValue) {
+                submitValid = false;
+                $flavor_characteristicsError.removeClass("hidden");
+            } else {
+                $flavor_characteristicsError.addClass("hidden");
+            }
+
+            if (submitValid) {
+                submitBlock = true;
+                var windName = $("#wine_name").val(),
+                        grapeVarieties = $("#grape_varieties").val(),
+                        countryVal = $("#country").val(),
+                        placeOfOrigin = $("#place_of_origin").val(),
+                        priceVal = $("#price").val(),
+                        yearVal = $("#year").val();
+
+                windName && (windName = windName.trim());
+                grapeVarieties && (grapeVarieties = grapeVarieties.trim());
+                countryVal && (countryVal = countryVal.trim());
+                placeOfOrigin && (placeOfOrigin = placeOfOrigin.trim());
+                priceVal && (priceVal = priceVal.trim());
+                yearVal && (yearVal = yearVal.trim());
+
+//                alert("内容:"+comment);
+//                alert("酒名:"+windName);
+//                alert("品种:"+grapeVarieties);
+//                alert("国家:"+countryVal);
+//                alert("产地:"+placeOfOrigin);
+//                alert("价格:"+priceVal);
+//                alert("年份:"+yearVal);
+//                alert("评分:"+parseInt($("#score").attr("val") || 1));
+//                alert("颜色:"+parseInt($("#color").attr("val")));
+//                alert("香气:"+aroValue);
+//                alert("风味:"+flavorValue);
+//                alert("单宁:"+parseInt($("#tannic").attr("val")) || 1);
+//                alert("酒精度:"+parseInt($("#texture").attr("val")) || 1);
+//                alert("酒体:"+parseInt($("#wine_body").attr("val")) || 1);
+//                alert("回味:"+parseInt($("#aftertaste").attr("val")) || 1);
+//                alert("酸度:"+parseInt($("#acid").attr("val")) || 1);
+//                alert("甜度:"+parseInt($("#sweetness").attr("val")) || 1);
+
+                Request.note_create(function (data) {
+                            if (data.result == 1) {
+                                alert("笔记创建成功");
+                                if (window.history.length > 1) {
+                                    window.history.go(-1);
+                                } else {
+                                    location.href = "note.html";
+                                }
+                            } else if (data.result == 0) {
+                                alert("创建笔记失败");
+                            } else if (data.result == 2) {
+                                alert("图片上传失败");
+                            } else if (data.result == 3) {
+                                alert("数字超出范围");
+                            } else if (data.result == 4) {
+                                alert("笔记内容字数超限15~150");
+                            }
+                            submitBlock = false;
+                        },
+                        comment,
+                        imga,
+                        imgb,
+                        imgc,
+                        windName,
+                        grapeVarieties,
+                        countryVal,
+                        placeOfOrigin,
+                        priceVal,
+                        yearVal,
+                        parseInt($("#score").attr("val") || 1),
+                        parseInt($("#color").attr("val")),
+                        aroValue,
+                        flavorValue,
+                        parseInt($("#acid").attr("val")) || 1,
+                        parseInt($("#tannic").attr("val")) || 1,
+                        parseInt($("#texture").attr("val")) || 1,
+                        parseInt($("#wine_body").attr("val")) || 1,
+                        parseInt($("#sweetness").attr("val")) || 1,
+                        parseInt($("#aftertaste").attr("val")) || 1,
+                        function (data) {
+                            if (data.result == 1) {
+                                alert("笔记创建成功");
+                                location.href = "note.html";
+                            } else if (data.result == 0) {
+                                alert("创建笔记失败");
+                            } else if (data.result == 2) {
+                                alert("图片上传失败");
+                            } else if (data.result == 3) {
+                                alert("数字超出范围");
+                            } else if (data.result == 4) {
+                                alert("请输入笔记内容15~300");
+                            }
+                            submitBlock = false;
+                        }
+                )
+            }
+        });
+
+        //点击添加香气
+        $(".toAddType").eq(0).click(function () {
+            $("#addAro").removeClass("hidden");
+//            $(".noteCreatePage").scrollTop(0);
+        });
+
+        $(".selected-aro-container").click(function () {
+            $("#addAro").removeClass("hidden");
+//            $(".noteCreatePage").scrollTop(0);
+        })
+
+        //点击添加风味
+        $(".toAddType").eq(1).click(function () {
+            $("#addFra").removeClass("hidden");
+//            $(".noteCreatePage").scrollTop(0);
+        });
+
+        $(".selected-fra-container").click(function () {
+            $("#addFra").removeClass("hidden");
+//            $(".noteCreatePage").scrollTop(0);
+        })
+
+        //选择香味
+        $("#addAro .add-type-list-tit>div").click(function () {
+            if (!$(this).hasClass("selected")) {
+                $("#addAro .add-type-list-tit>div").removeClass("selected");
+                var group = parseInt($(this).attr("group"));
+
+                $("#addAro .add-group").addClass("hidden");
+                $("#addAro .add-group[group=" + group + "]").removeClass("hidden");
+                $(this).addClass("selected");
+                leftScroll($("#addAro-select-scroller"));
+            }
+        });
+
+        //选择风味
+        $("#addFra .add-type-list-tit>div").click(function () {
+            if (!$(this).hasClass("selected")) {
+                $("#addFra .add-type-list-tit>div").removeClass("selected");
+                var group = parseInt($(this).attr("group"));
+
+                $("#addFra .add-group").addClass("hidden");
+                $("#addFra .add-group[group=" + group + "]").removeClass("hidden");
+                $(this).addClass("selected");
+                leftScroll($("#addFra-select-scroller"));
+            }
+        });
+
+        var $addedAroWrapper = $("#addAro .add-selected-container");
+        //选择添加香味
+        $("#addAro .add-group .add-typer").click(function () {
+            if (!$(this).hasClass("selected")) {
+                $addedAroWrapper.append($(this).clone());
+
+                $(this).addClass("selected");
+                $addedAroWrapper.width($addedAroWrapper.find(".add-typer").length * 130);
+                $addedAroWrapper.find(".add-typer").unbind("click").bind("click", function () {
+                    var index = $(this).attr("index");
+                    $("#addAro .add-typer[index=" + index + "]").removeClass("selected");
+                    $(this).remove();
+                })
+                leftScroll($("#addAro-select-scroller"));
+                $("#addAro-select-scroller").css({height:"140px"});
+            }
+        });
+
+        //提交香味
+        $("#addAro .submit").click(function () {
+            $("#addAro").addClass("hidden");
+            if ($("#addAro .add-selected-container .add-typer").length) {
+                $(".toAddType").eq(0).addClass("hidden");
+                $("#addAro-scrollWrapper").show();
+            } else {
+                $(".toAddType").eq(0).removeClass("hidden");
+                $("#addAro-scrollWrapper").hide();
+            }
+            var currentFraType = $(".add-type-list-tit>.selected").eq(1).attr("group");
+            var trackMap = {
+                1: 94,
+                2: 93,
+                3: 97,
+                5: 92,
+                4: 91,
+                6: 96,
+                7: 95,
+            }
+            datapush(gaTrackingData[trackMap[currentFraType]], trackMap[currentFraType]);
+            var selected = $("#addAro .add-selected-container").html();
+            $(".selected-aro-container").html(selected).width($("#addAro .add-selected-container .add-typer").length * 130);
+            leftScroll($("#addAro-scrollWrapper-selected"));
+        });
+
+
+        var $addedWrapper = $("#addFra .add-selected-container");
+        //选择风味
+        $("#addFra .add-group .add-typer").click(function () {
+            if (!$(this).hasClass("selected")) {
+                $addedWrapper.append($(this).clone());
+
+                $(this).addClass("selected");
+                $addedWrapper.width($addedWrapper.find(".add-typer").length * 130);
+                $addedWrapper.find(".add-typer").unbind("click").bind("click", function () {
+                    var index = $(this).attr("index");
+                    $("#addFra .add-typer[index=" + index + "]").removeClass("selected");
+                    $(this).remove();
+                })
+                $("#addFra-select-scroller").css({height:"140px"});
+            }
+        });
+
+        //提交风味
+        $("#addFra .submit").click(function () {
+            $("#addFra").addClass("hidden");
+            if ($("#addFra .add-selected-container .add-typer").length) {
+                $(".toAddType").eq(1).addClass("hidden");
+                $("#addFra-scrollWrapper").show();
+            } else {
+                $(".toAddType").eq(1).removeClass("hidden");
+                $("#addFra-scrollWrapper").hide();
+            }
+
+            var currentFraType = $(".add-type-list-tit>.selected").eq(0).attr("group");
+            var trackMap = {
+                1: 94,
+                2: 93,
+                3: 97,
+                5: 92,
+                4: 91,
+                6: 96,
+                7: 95,
+            }
+            datapush(gaTrackingData[trackMap[currentFraType]], trackMap[currentFraType]);
+
+
+            var selected = $("#addFra .add-selected-container").html();
+            $(".selected-fra-container").html(selected).width($("#addFra .add-selected-container .add-typer").length * 130);
+            leftScroll($("#addFra-scrollWrapper-selected"));
+        });
+
+        //关闭香味界面
+        $("#addAro .close-nav").click(function () {
+            $("#addAro").addClass("hidden");
+        })
+        //关闭风味界面
+        $("#addFra .close-nav").click(function () {
+            $("#addFra").addClass("hidden");
+        })
+
+        var utm_source = getUrlParameter("utm_source");
+        utm_source && Cookie.setCookie("digiwine-utm_source", utm_source);
+
+        var utm_medium = getUrlParameter("utm_medium");
+        utm_medium && Cookie.setCookie("digiwine-utm_medium", utm_medium);
+    });
+
+    var $uploadedImg = $(".uploaded-wrapper"), maxImgLength = 3, $uploadBtn = $(".photo-upload");
+    function afterLoadedImage(data) {
+        // <!--<img class="photo-uploaded" src="">-->
+        $uploadedImg.append('<img class="photo-uploaded" src="' + data + '">')
+        if ($uploadedImg.find("img").length >= 3) {
+            $uploadBtn.hide();
+        }
+    }
+
+    readyToUploadImg(afterLoadedImage);
+</script>
+<script type="text/javascript" src="js/tracking.js"></script>
+</html>

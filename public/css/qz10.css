@@ -1,0 +1,710 @@
+/* Q1 START */
+.q1-container {
+    position: absolute;
+    width: 475px;
+    height: 480px;
+    top: 28%;
+    left: 50%;
+    margin-left: -237px;
+    transform: rotateZ(2deg);
+    background: url(../images/qz10/q1-bg.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.q1-cube {
+    position: absolute;
+    width: 237px;
+    height: 105px;
+}
+
+.q1-a {
+    bottom: 120px;
+    left: 0;
+}
+
+.q1-a.selected {
+    background: url(../images/qz10/q1-a.png) no-repeat;
+    background-position: bottom right;
+}
+
+.q1-b {
+    bottom: 120px;
+    right: 0;
+}
+
+.q1-b.selected {
+    background: url(../images/qz10/q1-b.png) no-repeat;
+    background-position: bottom right;
+}
+
+.q1-c {
+    bottom: 15px;
+    left: 0;
+}
+
+.q1-c.selected {
+    background: url(../images/qz10/q1-c.png) no-repeat;
+    background-position: bottom right;
+}
+
+.q1-d {
+    bottom: 15px;
+    right: 0;
+}
+
+.q1-d.selected {
+    background: url(../images/qz10/q1-d.png) no-repeat;
+    background-position: bottom right;
+}
+
+.q1-right {
+    background: url(../images/qz10/q1-right.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.q1-wrong {
+    background: url(../images/qz10/q1-wrong.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+/* Q2 START */
+.q2-bg {
+    position: absolute;
+    left: 50%;
+    margin-left: -213px;
+    top: 30%;
+}
+
+.q2-cube {
+    position: absolute;
+}
+
+.q2-a {
+    width: 170px;
+    height: 160px;
+    background: url(../images/qz10/q2-a-bg.png) no-repeat;
+    left: 20px;
+    top: 41%;
+}
+
+.q2-b {
+    width: 138px;
+    height: 148px;
+    background: url(../images/qz10/q2-b-bg.png) no-repeat;
+    left: 120px;
+    top: 23%;
+}
+
+.q2-c {
+    width: 128px;
+    height: 134px;
+    background: url(../images/qz10/q2-c-bg.png) no-repeat;
+    right: 120px;
+    top: 23%;
+}
+
+.q2-d {
+    width: 173px;
+    height: 150px;
+    background: url(../images/qz10/q2-d-bg.png) no-repeat;
+    right: 20px;
+    top: 42%;
+}
+
+.q2-a .q2-wrong {
+    position: absolute;
+    width: 80%;
+    left: 6%;
+    top: 8%;
+}
+
+.q2-b .q2-wrong {
+    position: absolute;
+    width: 80%;
+    left: 6%;
+    top: 8%;
+}
+
+.q2-c .q2-wrong {
+    position: absolute;
+    width: 80%;
+    right: 6%;
+    top: 8%;
+}
+
+.q2-d .q2-wrong {
+    position: absolute;
+    width: 80%;
+    right: 6%;
+    top: 8%;
+}
+
+.q2-right {
+    position: absolute;
+    left: 50%;
+    margin-left: -267px;
+    top: 20%;
+}
+
+/* Q3 START */
+.q3-main {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+#q3-left {
+    position: absolute;
+    right: 52%;
+    bottom: 20%;
+}
+
+#q3-right {
+    position: absolute;
+    left: 52%;
+    bottom: 20%;
+}
+
+#q3-yes {
+    position: absolute;
+    left: 140px;
+    bottom: 43%;
+}
+
+#q3-no {
+    position: absolute;
+    right: 140px;
+    bottom: 43%;
+}
+
+#q3-phone {
+    position: absolute;
+    left: 250px;
+    bottom: 10%;
+}
+
+#q3-tip {
+    position: absolute;
+    left: 200px;
+    bottom: 5%;
+}
+
+#q3-right-bg {
+    position: absolute;
+    left: 57px;
+    bottom: 40%;
+}
+
+#q3-score {
+    position: absolute;
+    left: 220px;
+    bottom: -3%;
+}
+
+#q3-wrong-bg {
+    position: absolute;
+    left: 80px;
+    bottom: 7%;
+}
+
+#q3-wrong {
+    position: absolute;
+    left: 115px;
+    bottom: 12%;
+}
+
+/* Q4 START */
+.q4-main {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 85%;
+}
+
+.q4-cube {
+    width: 50%;
+    height: 50%;
+    float: left;
+    position: relative;
+}
+
+.q4-cube > div {
+    width: 190px;
+    height: 80%;
+    margin: 10%;
+    position: relative;
+}
+
+.q4-cube .icon {
+    position: absolute;
+    top: 31%;
+    right: 6%;
+}
+
+.q4-cube .animal {
+    position: absolute;
+    bottom: 40%;
+    left: 9%;
+}
+
+.q4-cube .cube {
+    position: absolute;
+    bottom: 85px;
+    left: 50%;
+}
+
+.q4-cube .word {
+    position: absolute;
+    bottom: 0;
+}
+
+.q4-right {
+    position: absolute;
+    left: 50%;
+    margin-left: -142px;
+    top: 8%;
+}
+
+.q4-cube .pant {
+    position: absolute;
+}
+
+.q4-a {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.q4-b {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.q4-c {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.q4-d {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.q4-right-bg {
+    position: absolute;
+    left: -39px;
+    bottom: 90px;
+}
+
+/* Q5 START */
+.q5-c .q5-wrong {
+    width: 70%;
+    left: 14%;
+    top: 23%;
+    position: absolute;
+}
+
+.q5-b .q5-wrong {
+    width: 65%;
+    left: 15%;
+    top: 17%;
+    position: absolute;
+}
+
+.q5-a .q5-wrong {
+    width: 65%;
+    left: 18%;
+    top: 30%;
+    position: absolute;
+}
+
+.q5-d .q5-wrong {
+    width: 65%;
+    left: 17%;
+    top: 29%;
+    position: absolute;
+}
+
+.q5-bottom {
+    position: absolute;
+    bottom: 0;
+}
+
+.q5-bottle {
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    margin-left: -91px;
+}
+
+.q5-cube {
+    position: absolute;
+}
+
+.q5-a {
+    width: 169px;
+    height: 197px;
+    top: 45%;
+    left: 25px;
+    background: url(../images/qz10/q5-a.png) no-repeat;
+}
+
+.q5-a.selected {
+    background: url(../images/qz10/q5-selected-a.png) no-repeat;
+}
+
+.q5-b {
+    top: 20%;
+    left: 60px;
+    width: 193px;
+    height: 180px;
+    background: url(../images/qz10/q5-b.png) no-repeat;
+}
+
+.q5-b.selected {
+    background: url(../images/qz10/q5-selected-b.png) no-repeat;
+}
+
+.q5-c {
+    top: 17%;
+    right: 56px;
+    width: 188px;
+    height: 203px;
+    background: url(../images/qz10/q5-c.png) no-repeat;
+}
+
+.q5-c.selected {
+    background: url(../images/qz10/q5-selected-c.png) no-repeat;
+}
+
+.q5-c.wrong.selected {
+    background: url(../images/qz10/q5-bg-c.png) no-repeat !important;
+}
+
+.q5-b.wrong.selected {
+    background: url(../images/qz10/q5-bg-b.png) no-repeat !important;
+}
+
+.q5-a.wrong.selected {
+    background: url(../images/qz10/q5-bg-a.png) no-repeat !important;
+}
+
+.q5-d.wrong.selected {
+    background: url(../images/qz10/q5-bg-d.png) no-repeat !important;
+}
+
+.q5-d {
+    top: 41%;
+    right: 20px;
+    width: 187px;
+    height: 214px;
+    background: url(../images/qz10/q5-d.png) no-repeat;
+}
+
+.q5-d.selected {
+    background: url(../images/qz10/q5-selected-d.png) no-repeat;
+}
+
+.q5-right {
+    left: 50px;
+    position: absolute;
+    top: 16%;
+}
+
+/* Q3 START
+
+
+/* Q3 end */
+
+/* Q1 START
+.q1-bg{
+    position: absolute;
+    bottom:-5%;
+    left:50%;
+    margin-left:-207px;
+}
+.q1-cube{
+    position: absolute;
+    overflow: hidden;
+    box-sizing: border-box;
+    border-radius: 200px;
+}
+.q1-cube.selected{
+    border:5px solid #fff;
+}
+.q1-a{
+    top:43%;
+    left:50px;
+    background:#28eaf0;
+    width:161px;
+    height:161px;
+}
+.q1-b{
+    top:29%;
+    left:191px;
+    background:#fff446;
+    width:145px;
+    height:145px;
+}
+.q1-c{
+    top:55%;
+    left:289px;
+    background:#51f897;
+    width:184px;
+    height:184px;
+}
+.q1-d{
+    top:38%;
+    left:452px;
+    background:#ff8941;
+    width:150px;
+    height:150px;
+}
+.q1-wrong{
+    width: 80%;
+    position: absolute;
+    left: 10%;
+    top: 16%;
+}
+.q1-right{
+    position: absolute;
+    top:50%;
+    left:50%;
+    margin-top:-134px;
+    margin-left:-123px;
+}
+/* Q1 END */
+
+/* Q2 START
+.q2-cube{
+    position: absolute;
+}
+.q2-border{
+    position: absolute;
+}
+.q2-border-a{
+    top:40%;
+    left:38px;
+    width:163px;
+    height:171px;
+    background:url(../images/qz9/q2-border-a.png) no-repeat;
+    pointer-events: none;
+}
+.q2-a{
+    top:40%;
+    left:38px;
+    width:163px;
+    height:171px;
+    background:url(../images/qz9/q2-a.png) no-repeat;
+    background-position: 21px 28px;
+}
+.q2-border-b{
+    top:16%;
+    left:148px;
+    width:189px;
+    height:208px;
+    background:url(../images/qz9/q2-border-b.png) no-repeat;
+    pointer-events: none;
+}
+.q2-b{
+    top:16%;
+    left:148px;
+    width:189px;
+    height:208px;
+    background:url(../images/qz9/q2-b.png) no-repeat;
+    background-position: 23px 41px;
+}
+.q2-border-c{
+    top:42%;
+    left:260px;
+    width:206px;
+    height:207px;
+    background:url(../images/qz9/q2-border-c.png) no-repeat;
+    pointer-events: none;
+}
+.q2-c {
+    top:42%;
+    left:260px;
+    width:206px;
+    height:207px;
+    background:url(../images/qz9/q2-c.png) no-repeat;
+    background-position: 25px 28px;
+}
+.q2-border-d{
+    top:23%;
+    left:422px;
+    width:161px;
+    height:161px;
+    background:url(../images/qz9/q2-border-d.png) no-repeat;
+    pointer-events: none;
+}
+.q2-d {
+    top:23%;
+    left:422px;
+    width:161px;
+    height:161px;
+    background:url(../images/qz9/q2-d.png) no-repeat;
+    background-position: 22px 21px;
+}
+.q2-bag1{
+    position: absolute;
+    bottom:-150px;
+    left:75px;
+}
+.q2-tip{
+    position: absolute;
+    bottom:50px;
+    left:170px;
+}
+.q2-wrong{
+    position: absolute;
+    bottom:35px;
+    left:50%;
+    margin-left:-96px;
+}
+.q2-right{
+    position: absolute;
+    top:38%;
+    left:50%;
+    margin-top:-112px;
+    margin-left:-231px;
+}
+.q2-right-bg{
+    position: absolute;
+    bottom: -12%;
+    right: -23%;
+}
+/* Q2 END
+
+/* Q4 START
+.q4-word{
+    position: absolute;
+}
+.q4-word-a{
+    top:33%;
+    left:50px;
+}
+.q4-word-b{
+    top:22%;
+    left:196px;
+}
+.q4-word-c{
+    top:28%;
+    left:430px;
+}
+.q4-word-d{
+    top:40%;
+    left:320px;
+}
+.q4-bg{
+    position: absolute;
+    bottom:0px;
+    left:5px;
+}
+.q4-cube{
+    position: absolute;
+    border-radius: 200px;
+    overflow: hidden;
+}
+.q4-a{
+    top:33%;
+    left:68px;
+    width:151px;
+    height:151px;
+    background:#51f897;
+}
+.q4-b{
+    top:23%;
+    left:237px;
+    width:131px;
+    height:131px;
+    background:#fff446;
+}
+.q4-c{
+    top:27%;
+    left:463px;
+    width:123px;
+    height:123px;
+    background:#51f6f8;
+}
+.q4-d{
+    top:41%;
+    left:353px;
+    width:142px;
+    height:142px;
+    background:#fe72b0;
+}
+.q4-wrong{
+    width: 90%;
+    left: 5%;
+    position: absolute;
+    top: 7%;
+}
+.q4-right{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -200px;
+    margin-left: -217px;
+}
+/* Q4 END*/
+
+/* Q5 START
+
+.q5-bg{
+    position: absolute;
+    width:538px;
+    height:575px;
+    top:25%;
+    left:51px;
+    background:url(../images/qz9/q5-bg.png) no-repeat;
+}
+.q5-point{
+    position: absolute;
+    left: 268px;
+    top: 265px;
+    pointer-events: none;
+    transform-origin: left center;
+    -webkit-transform-origin: left center;
+    -webkit-transform: rotateZ(-146deg);
+}
+.q5-right{
+    position: absolute;
+    top: 22%;
+    left: 75px;
+}
+.q5-w{
+    position: absolute;
+    top: 16%;
+    left: 50%;
+    margin-left: -96px;
+}
+.q5-cloud1{
+    position: absolute;
+    top: 30%;
+    left: 60px;
+}
+.q5-cloud2{
+    position: absolute;
+    top: 27%;
+    left: 325px;
+}
+.q5-cloud3{
+    position: absolute;
+    top: 30%;
+    right: 13px;
+    width: 100px;
+}
+.q5-wrong{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -200px;
+    margin-top: -266px;
+}
+/* Q5 END */

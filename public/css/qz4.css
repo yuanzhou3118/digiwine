@@ -1,0 +1,395 @@
+.q1-main{
+    background:url(../images/qz4/q1-bg.png) no-repeat;
+    background-size:auto 100%;
+    background-position: center bottom;
+    width:100%;
+    height: 75%;
+    position: absolute;
+    bottom: 0;
+}
+
+.q1-submit{
+    position: absolute;
+    left:50%;
+    margin-left:-165px;
+    bottom:5%;
+    background:#b70031;
+}
+.q1-cube{
+    position:absolute;
+    width:200px;
+    height: 13%;
+}
+.q1-cube img{
+    position: absolute;
+    bottom: 0;
+    right: 0%;
+    display: none;
+}
+.q1-cube.selected img{
+    display: block;
+}
+.q1-a{
+    left: 14%;
+    top: 22%;
+}
+.q1-b{
+    left: 49%;
+    top: 23%;
+}
+.q1-c{
+    left: 12%;
+    top: 39%;
+}
+.q1-d{
+    left: 48%;
+    top: 40%;
+}
+.q1-e{
+    left: 13%;
+    top: 57%;
+}
+.q1-right{
+    position: absolute;
+    top:25%;
+    left:50%;
+    margin-left:-224px;
+}
+.q1-wrong{
+    position: absolute;
+    top:25%;
+    left:50%;
+    margin-left:-216px;
+}
+.q1-right-cube1{
+    position: absolute;
+}
+.q1-right-cube2{
+    position: absolute;
+}
+
+
+.q2-main{
+    width:100%;
+    height:100%;
+    position: absolute;
+    bottom:0;
+    left:0;
+}
+#q2-left {
+    position: absolute;
+    right: 52%;
+    bottom:20%;
+}
+
+#q2-right {
+    position: absolute;
+    left: 52%;
+    bottom:20%;
+}
+#q2-yes{
+    position: absolute;
+    left:140px;
+    bottom:43%;
+}
+#q2-no{
+    position: absolute;
+    right:140px;
+    bottom:43%;
+}
+#q2-phone{
+    position: absolute;
+    left: 250px;
+    bottom:10%;
+}
+#q2-tip{
+    position: absolute;
+    left:200px;
+    bottom:5%;
+}
+#q2-right-bg{
+    position: absolute;
+    left:57px;
+    bottom:40%;
+}
+#q2-score{
+    position: absolute;
+    left:220px;
+    bottom:-3%;
+}
+#q2-wrong-bg{
+    position: absolute;
+    left:80px;
+    bottom:7%;
+}
+#q2-wrong{
+    position: absolute;
+    left: 115px;
+    bottom: 12%;
+}
+
+
+.q3-main{
+    position: absolute;
+    bottom:0;
+    width:100%;
+    height:100%;
+}
+.q3-bg,.q3-wbg{
+    position: absolute;
+    bottom:8%;
+    left:50%;
+    margin-left:-280px;
+}
+.q3-cube{
+    position: absolute;
+    border-radius: 200px;
+}
+.q3-cube .q3-right-pan{
+    width: 100%;
+}
+.q3-a{
+    top:30%;
+    left:55px;
+    width:106px;
+    height:106px;
+    background:#fd6858;
+}
+.q3-b{
+    top:25%;
+    left:180px;
+    width:102px;
+    height:102px;
+    background: #3cb2b5;
+}
+.q3-c{
+    top:32%;
+    left:295px;
+    width:106px;
+    height:106px;
+    background:#fdbd58;
+}
+.q3-d{
+    top:23%;
+    left:378px;
+    width:106px;
+    height: 106px;
+    background: #12d673;
+}
+.q3-e{
+    top:28%;
+    left:485px;
+    width:112px;
+    height:112px;
+    background: #128ad6;
+}
+.q3-cube.selected .q3-wd{
+    box-sizing: border-box;
+    border-radius: 100px;
+    border:3px solid #fff;
+}
+.q3-submit{
+    position: absolute;
+    left:50%;
+    margin-left:-165px;
+    bottom:5%;
+    background:#b70031;
+}
+.q3-wrong-word{
+    position: absolute;
+    top:0;
+    left:0;
+    width:90%;
+    top:12%;
+    left:5%;
+}
+.q3-right{
+    position: absolute;
+    top: 22%;
+    left: 50%;
+    margin-left: -278px;
+}
+
+.q4-main{
+    position: absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+}
+
+.q4-bg,.q4-wrong-bg,.q4-right-bg{
+    position: absolute;
+    bottom:15%;
+    left:50%;
+    margin-left:-292px;
+}
+.q4-cube{
+    position: absolute;
+}
+.q4-cube .q4-word{
+    position: relative;
+    width: auto;
+    top: 5%;
+    margin: auto;
+    display: block;
+}
+.q4-wrong-icon{
+    position: absolute;
+    top: 12%;
+    width: 90%;
+    left: 5%;
+}
+.q4-a{
+    top:32%;
+    left:60px;
+    width:105px;
+    height:133px;
+    background:url(../images/qz4/q4-a-bg.png) no-repeat;
+}
+.q4-b{
+    top:24%;
+    left:185px;
+    width:120px;
+    height:149px;
+    background:url(../images/qz4/q4-bb-bg.png) no-repeat!important;
+}
+.q4-c{
+    top:31%;
+    left:360px;
+    width:103px;
+    height:131px;
+    background:url(../images/qz4/q4-c-bg.png) no-repeat;
+}
+.q4-d{
+    top:26%;
+    left:500px;
+    width:88px;
+    height:115px;
+    background:url(../images/qz4/q4-d-bg.png) no-repeat;
+}
+.q4-right{
+    position: absolute;
+    top:26%;
+    left:50%;
+    margin-left: -279px;
+}
+.q5-main{
+    position: absolute;
+    width:100%;
+    height:75%;
+    bottom:0;
+    left:0;
+}
+.q5-cube{
+    position: absolute;
+    width:50%;
+    height:50%;
+}
+.q5-pane{
+    height:70%;
+    width:auto;
+    position: relative;
+}
+.q5-a{
+    right:50%;
+    top:0
+}
+.q5-a .q5-pane{
+    float: right;
+    margin-top:15%;
+    margin-right:10%
+}
+.q5-a .q5-word{
+    left: 5%;
+    top: 5%;
+}
+.q5-right{
+    position: absolute;
+    z-index: 10;
+    right: 15%;
+    height: 48%;
+}
+.q5-wrong{
+    position: absolute;
+    z-index: 10;
+    left: 0;
+    height: 55%;
+    top: 5%;
+}
+.q5-c .q5-wrong{
+    top: -8%;
+    right: 2%;
+    left: auto;
+}
+.q5-d .q5-wrong{
+    top:-8%;
+}
+.q5-word{
+    position: absolute;
+    z-index: 9;
+}
+.q5-b{
+    left:50%;
+    top:0;
+}
+.q5-b .q5-word{
+     left: 5%;
+     top: 5%;
+ }
+.q5-c .q5-word{
+    left: 5%;
+    top: -8%;
+}
+.q5-d .q5-word{
+    left: 5%;
+    top: -8%;
+}
+.q5-b .q5-pane{
+    float: left;
+    margin-top:15%;
+    margin-left:10%
+}
+.q5-c{
+    right:50%;
+    top:50%;
+}
+.q5-c .q5-pane{
+    float: right;
+    margin-bottom:15%;
+    margin-right:10%
+}
+.q5-d{
+    left:50%;
+    top:50%;
+}
+.q5-d .q5-pane{
+    float: left;
+    margin-bottom:15%;
+    margin-left:10%
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

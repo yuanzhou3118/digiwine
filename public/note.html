@@ -1,0 +1,289 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="Description" content="">
+    <meta name="format-detection" content="telephone=no">
+    <title>葡萄酒微课堂</title>
+    <link rel="stylesheet" href="css/global.css" type="text/css"/>
+    <link rel="stylesheet" href="css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/main2.css" rel="stylesheet">
+    <script type="text/javascript" src="js/plugin/jquery-1.11.1.min.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script type="text/javascript" src="js/template.js"></script>
+    <script type="text/javascript" src="js/plugin/mustache.min.js"></script>
+    <script type="text/javascript" src="js/request.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/loading.js"></script>
+    <script type="text/javascript" src="js/enter.js"></script>
+    <script type="text/javascript" src="js/plugin/velocity.min.js"></script>
+    <script type="text/javascript">
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                        (i[r].q = i[r].q || []).push(arguments)
+                    }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-25338682-20', 'auto');
+        ga('send', 'pageview');
+
+        $(function () {
+            var arr = [];
+            var percent = $('.loading').find('.percent-num');
+            preloadimages(arr, percent);
+        });
+    </script>
+    <!-- Acxiom AbiliTag v2.0 for site: PRC009 -->
+    <script type="text/javascript">window.acxm = {
+        api: Function(), x: function () {
+            var k = document, e = encodeURIComponent, r = "script", m = k.getElementsByTagName(r)[0], i = k.createElement(r), t = "&c=";
+            try {
+                t = t + k.cookie.match('_acxm=([^;]*)').slice(1);
+            } catch (z) {
+            }
+            ;
+            i.async = true;
+            i.src = "//t-cn.acxiom-online.com/tag/5d4f3a6a3ef951e3c72b135e8e01c2ba/st.js?l=" + e(k.location) + "&r=" + e(k.referrer) + t + "&v=2.0&z=" + Math.random();
+            m.parentNode.insertBefore(i, m)
+        }()
+    }</script>
+    <script type="text/javascript">
+        (function () {
+            window._CiQ11462 = window._CiQ11462 || [];
+            window._CiQ11462.push(['_cookieUseRootDomain', true]);
+            var c = document.createElement('script');
+            c.type = 'text/javascript';
+            c.async = true;
+            c.charset = 'utf-8';
+            c.src = '//collect.cn.miaozhen.com/ca/11462';
+            var h = document.getElementsByTagName('script')[0];
+            h.parentNode.insertBefore(c, h);
+        })();
+    </script>
+
+    <link rel="stylesheet" href="css/swiper.min.css" rel="stylesheet">
+
+</head>
+<body class="notePage f0bg">
+<div class="modal-orientation" id="orientation">
+    <img src="images/flip.jpg"/>
+</div>
+<div class="header">
+    <div class="nav" data-ga="9"></div>
+    <div class="title">品酒笔记</div>
+    </a>
+</div>
+<div class="main-wrap">
+    <div class="main-wrap-cover"></div>
+    <ul class="topic-tags-nav">
+        <li class="active right-border" sort="0" data-ga="103">
+            <span>最新排序</span>
+        </li>
+        <li tag="profile_note_favorite" sort="1" data-ga="104"><span>最热排序</span></li>
+    </ul>
+    <!--  热门话题 -->
+    <!-- 热门笔记 -->
+    <div class="note-part-wrap" id="noteWrapper">
+        <!--<div class="i-wrap-content white-bg">-->
+        <!--<div class="i-note-photos three">-->
+        <!--<div class="img"></div>-->
+        <!--<div class="img"></div>-->
+        <!--<div class="img"></div>-->
+        <!--</div>-->
+        <!--<div class="person-topic">-->
+        <!--<div class="person-frame">-->
+        <!--<img src="">-->
+        <!--</div>-->
+        <!--<div class="content">-->
+        <!--新世界葡萄酒更崇尚技术，多倾向于工业化的生产，在企业规模、资本、技术和市场上...-->
+        <!--</div>-->
+        <!--<div class="noteInfo">-->
+        <!--<span class="fav">222</span>-->
+        <!--<span class="zan">111</span>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<div class="i-wrap-content white-bg">-->
+        <!--<div class="i-note-photos two">-->
+        <!--<div class="img"></div>-->
+        <!--<div class="img"></div>-->
+        <!--</div>-->
+        <!--<div class="person-topic">-->
+        <!--<div class="person-frame">-->
+        <!--<img src="">-->
+        <!--</div>-->
+        <!--<div class="content">-->
+        <!--新世界葡萄酒更崇尚技术，多倾向于工业化的生产，在企业规模、资本、技术和市场上...-->
+        <!--</div>-->
+        <!--<div class="noteInfo">-->
+        <!--<span class="fav">222</span>-->
+        <!--<span class="zan">111</span>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<div class="i-wrap-content white-bg">-->
+        <!--<div class="i-note-photos one">-->
+        <!--<img src="">-->
+        <!--</div>-->
+        <!--<div class="person-topic">-->
+        <!--<div class="person-frame">-->
+        <!--<img src="">-->
+        <!--</div>-->
+        <!--<div class="content">-->
+        <!--新世界葡萄酒更崇尚技术，多倾向于工业化的生产，在企业规模、资本、技术和市场上...-->
+        <!--</div>-->
+        <!--<div class="noteInfo">-->
+        <!--<span class="fav">222</span>-->
+        <!--<span class="zan">111</span>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
+    </div>
+    <!-- Add Pagination -->
+    <div class="i-note-swiper-pagination three-center-pagination"></div>
+</div>
+
+<div class="question-btn">
+    <a href="noteCreate.html">
+        <img src="img2/note/create-note.png">
+    </a>
+</div>
+<div class="top-btn" data-ga="6">
+    <img src="img2/top-btn.png"/>
+</div>
+<div class="clear"></div>
+</div>
+<div id="kv-pop" class="pop-wrap hidden">
+</div>
+<!--<img src="images/other/footer-pic1.jpg" style="height: 10px;"></div>-->
+</body>
+<script type="text/javascript" src="js/plugin/swiper.min.js"></script>
+<script>
+    $().ready(function () {
+        $("#toKvPop").click(function () {
+            $("#kv-pop").show();
+        })
+
+        $(".nav-bar-backIcon").click(function () {
+            window.history.length && window.history.go(-1);
+            location.href = "account.html";
+        })
+
+        //选择话题种类
+        $(".topic-tags-nav li").click(function () {
+            var sort = $(this).attr('sort');
+            if (sort != CurrentSort) {
+                $(".topic-tags-nav li.active").removeClass("active");
+                $(this).addClass("active");
+                CurrentSort = parseInt(sort);
+                CurrentPageIndex = 1;
+                getNotice();
+            }
+        });
+
+        //加载热门话题
+        var CurrentSort = 0,
+                CurrentPageIndex = 1,
+                PageSize = 10,
+                MaxPage = 999;
+        footerHeight = $(".footer").height();
+        //滚动加载
+        $(document).scroll(function () {
+            var $this = $(this),
+                    viewH = $(window).height(),//可见高度
+                    contentH = $(this).height(),//内容高度
+                    scrollTop = $this.scrollTop();//滚动高度
+            if (contentH - (scrollTop + viewH) <= footerHeight) { //到达底部100px时,加载新内容
+                // 这里加载数据..
+                getNotice();
+            }
+        });
+
+        function getNotice() {
+            if (CurrentPageIndex > MaxPage) {
+                $(".loading").hide();
+                return;
+            } else {
+                $(".loading").show();
+            }
+            Request.note_all(function (resultData) {
+                        data = (resultData && resultData.data) || null;
+                        var $wrapper = $("#noteWrapper");
+                        if (data && data.length) {
+                            var html = [];
+                            for (var i = 0; i < data.length; i++) {
+                                var d = data[i];
+                                var imgKey = ['imga', 'imgb', 'imgc'];
+                                var imgLength = 0;
+
+                                for (j in imgKey) {
+                                    if (d[imgKey[j]]) {
+                                        ++imgLength;
+                                    }
+                                }
+                                var imgHtml = [];
+                                var imgClass = "one";
+                                if (imgLength == 2) {
+                                    imgClass = 'two';
+                                    imgHtml.push('<div class="img" style="background:url(' + d.imga + ');background-position: center center;background-size:auto 100%;"></div>')
+                                    imgHtml.push('<div class="img" style="background:url(' + d.imgb + ');background-position: center center;background-size:auto 100%;"></div>');
+
+                                } else if (imgLength == 3) {
+                                    imgClass = 'three';
+                                    imgHtml.push('<div class="img" style="background:url(' + d.imga + ');background-position: center center;background-size:100% auto;"></div>')
+                                    imgHtml.push('<div class="img" style="background:url(' + d.imgb + ');background-position: center center;background-size:100% auto;"></div>');
+                                    imgHtml.push('<div class="img" style="background:url(' + d.imgc + ');background-position: center center;background-size:100% auto;"></div>');
+                                } else {
+                                    imgHtml.push('<div class="img" style="background:url(' + d.imga + ');background-position: center center;background-size:100% auto;"></div>')
+                                }
+
+                                d.content = splitWords(d.content, 65);
+                                var template = '<div class="i-wrap-content white-bg">' +
+                                        ' <a href="noteDetail.html?noteId=' + d.note_id + '">' +
+                                        '<div class="i-note-photos ' + imgClass + '">' + imgHtml.join("") + '</div>' +
+                                        '<div class="person-topic">' +
+                                        '<div class="info"><span class="fr">' + d.created_at + '</span></div>' +
+                                        '<div class="person-frame"><img src="' + d.head_url + '"><div class="zan">' + d.note_likes + '</div></div>' +
+                                        '<div class="content">' + d.content + '</div>' +
+                                        '<div class="info"><i class="zan active">' + d.note_likes + '</i><i class="fav active">' + d.note_favorites + '</i></div>' +
+                                        '</div>' +
+                                        '</a></div>'
+                                html.push(template);
+                            }
+
+                            if (CurrentPageIndex == 1) {
+                                $wrapper.html(html.join(""));
+                            } else {
+                                $wrapper.append(html.join(""));
+                            }
+
+                            ++CurrentPageIndex;
+                            MaxPage = Math.ceil(resultData.total_count / PageSize);
+                        } else {
+                            $wrapper.html("<div class='pd20-v pd30-wrap white-bg'>暂无数据</div>").css({padding: 0});
+                        }
+                        $(".loading").hide();
+                        resize();
+                    }
+                    , CurrentPageIndex, PageSize, CurrentSort)
+        }
+
+        //load default data
+        getNotice();
+
+        var utm_source = getUrlParameter("utm_source");
+        utm_source && Cookie.setCookie("digiwine-utm_source", utm_source);
+
+        var utm_medium = getUrlParameter("utm_medium");
+        utm_medium && Cookie.setCookie("digiwine-utm_medium", utm_medium);
+    })
+</script>
+<script type="text/javascript" src="js/tracking.js"></script>
+</html>

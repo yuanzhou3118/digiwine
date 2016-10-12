@@ -1,0 +1,45 @@
+
+//创建话题。
+$.ajax({
+type: 'POST',
+url: '/api-topic-create',
+data: {tag: 1, question: 'afafafa'},
+dataType: 'json',
+success: function(data){
+  console.log(data);
+}
+});
+
+//查询所有话题。
+$.ajax({
+type: 'GET',
+url: '/api-topic-all',
+data: {tag: 1, page_index: 1, page_size: 5},
+dataType: 'json',
+success: function(data){
+  console.log(data);
+}
+});
+
+//查询我的话题。
+$.ajax({
+type: 'GET',
+url: '/api-profile-topic',
+data: {tag: 1, page_index: 1, page_size: 5},
+dataType: 'json',
+success: function(data){
+  console.log(data);
+}
+});
+
+
+//收藏话题。
+$.ajax({
+type: 'POST',
+url: '/api-topic-favorite',
+data: {topic_id:4},
+dataType: 'json',
+success: function(data){
+  console.log(data);
+}
+});

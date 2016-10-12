@@ -1,0 +1,307 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="Description" content="">
+    <meta name="format-detection" content="telephone=no">
+    <title>葡萄酒微课堂</title>
+    <link rel="stylesheet" href="css/global.css" type="text/css"/>
+    <link rel="stylesheet" href="css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/main2.css" rel="stylesheet">
+    <script type="text/javascript" src="js/plugin/jquery-1.11.1.min.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script type="text/javascript" src="js/template.js"></script>
+    <script type="text/javascript" src="js/plugin/mustache.min.js"></script>
+    <script type="text/javascript" src="js/request.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/loading.js"></script>
+    <script type="text/javascript" src="js/enter.js"></script>
+    <script type="text/javascript" src="js/plugin/velocity.min.js"></script>
+    <script type="text/javascript">
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                        (i[r].q = i[r].q || []).push(arguments)
+                    }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-25338682-20', 'auto');
+        ga('send', 'pageview');
+
+        $(function () {
+            var arr = [];
+            var percent = $('.loading').find('.percent-num');
+            preloadimages(arr, percent);
+        });
+    </script>
+    <!-- Acxiom AbiliTag v2.0 for site: PRC009 -->
+    <script type="text/javascript">window.acxm = {
+        api: Function(), x: function () {
+            var k = document, e = encodeURIComponent, r = "script", m = k.getElementsByTagName(r)[0], i = k.createElement(r), t = "&c=";
+            try {
+                t = t + k.cookie.match('_acxm=([^;]*)').slice(1);
+            } catch (z) {
+            }
+            ;
+            i.async = true;
+            i.src = "//t-cn.acxiom-online.com/tag/5d4f3a6a3ef951e3c72b135e8e01c2ba/st.js?l=" + e(k.location) + "&r=" + e(k.referrer) + t + "&v=2.0&z=" + Math.random();
+            m.parentNode.insertBefore(i, m)
+        }()
+    }</script>
+    <script type="text/javascript">
+        (function () {
+            window._CiQ11462 = window._CiQ11462 || [];
+            window._CiQ11462.push(['_cookieUseRootDomain', true]);
+            var c = document.createElement('script');
+            c.type = 'text/javascript';
+            c.async = true;
+            c.charset = 'utf-8';
+            c.src = '//collect.cn.miaozhen.com/ca/11462';
+            var h = document.getElementsByTagName('script')[0];
+            h.parentNode.insertBefore(c, h);
+        })();
+    </script>
+
+
+    <link rel="stylesheet" href="css/swiper.min.css" rel="stylesheet">
+
+</head>
+<body>
+<div class="modal-orientation" id="orientation">
+    <img src="images/flip.jpg"/>
+</div>
+<div class="header"></div>
+<div class="main-wrap">
+    <div class="main-wrap-cover"></div>
+    <div class="wine-lesson">
+        <img src="images/other/wine-lesson-title.png" class="wine-lesson-title"/>
+
+        <div class="title" data-ga="1">葡萄酒微课堂</div>
+        <div class="icons wine-cup-icon"></div>
+        <a href="courses.html" class="all-lesson-btn" data-ga="5">
+            全部课程 <span class="icons right-arrow"></span>
+        </a>
+
+        <div class="lesson-list">
+
+            <div class="lesson-item logined" lessonid="1" href="lesson1.html" style="display: none;">
+                <div class="lesson-pic">
+                    <img src="images/other/lesson1banner.png"/>
+
+                    <div class="time-tips">
+                        <div class="icons video-s-icon"></div>
+                        <span class="time">1:11</span>
+                    </div>
+                </div>
+                <div class="lesson-content">
+                    <div class="title">一分钟变身葡萄酒专家</div>
+                    <p class="opacity-text">当你面对天书般的葡萄酒单，看不懂怎么办？<br>选择葡萄酒，需要考虑哪些因素呢？</p>
+                </div>
+                <a href="lesson1.html" class="fw-btn  red-bg ft24 tx-center white letter-space btn"> 进入课程</a>
+            </div>
+
+            <div class="lesson-item logined" lessonid="2" href="lesson2.html" style="display: none;">
+                <div class="lesson-pic">
+                    <img src="images/other/lesson2banner.png"/>
+
+                    <div class="time-tips">
+                        <div class="icons video-s-icon"></div>
+                        <span class="time">1:12</span>
+                    </div>
+                </div>
+                <div class="lesson-content">
+                    <div class="title">酿酒葡萄能吃吗？</div>
+                    <p>你知道酿酒葡萄和一般葡萄的区别吗？<br>哪些因素会对葡萄的生长造成影响？</p>
+                </div>
+                <a href="lesson2.html" class="fw-btn  red-bg ft24 tx-center white letter-space btn"> 进入课程</a>
+            </div>
+
+            <div class="lesson-item logined" lessonid="3" href="lesson3.html" style="display: none;">
+                <div class="lesson-pic">
+                    <img src="images/other/lesson3banner.png"/>
+
+                    <div class="time-tips">
+                        <div class="icons video-s-icon"></div>
+                        <span class="time">1:12</span>
+                    </div>
+                </div>
+                <div class="lesson-content">
+                    <div class="title">如何专业有范地品酒</div>
+                    <p>你了解品酒的步骤吗？<br>到底什么样的酒杯才算是专业的酒具？</p>
+                </div>
+                <a href="lesson3.html" class="fw-btn  red-bg ft24 tx-center white letter-space btn"> 进入课程</a>
+            </div>
+
+            <div class="lesson-item logined" lessonid="4" href="lesson4.html" style="display: none;">
+                <div class="lesson-pic">
+                    <img src="images/other/lesson4banner.png"/>
+
+                    <div class="time-tips">
+                        <div class="icons video-s-icon"></div>
+                        <span class="time">1:12</span>
+                    </div>
+                </div>
+                <div class="lesson-content">
+                    <div class="title">如何做一个葡萄酒旅游达人</div>
+                    <p>在哪些葡萄酒产区被评为世界文化遗产？<br>澳洲最耀眼的产区又在哪里呢？</p>
+                </div>
+                <a href="lesson4.html" class="fw-btn  red-bg ft24 tx-center white letter-space btn"> 进入课程</a>
+            </div>
+
+            <div class="lesson-item logined" lessonid="5" href="lesson5.html" style="display: none;">
+                <div class="lesson-pic">
+                    <img src="images/other/lesson5banner.png"/>
+
+                    <div class="time-tips">
+                        <div class="icons video-s-icon"></div>
+                        <span class="time">1:18</span>
+                    </div>
+                </div>
+                <div class="lesson-content">
+                    <div class="title">不要轻信葡萄酒的包装</div>
+                    <p>软木塞一定比螺旋盖好吗？<br>酒瓶底的凹槽有深有浅到底有什么不同呢？</p>
+                </div>
+                <a href="lesson5.html" class="fw-btn  red-bg ft24 tx-center white letter-space btn"> 进入课程</a>
+            </div>
+
+            <div class="lesson-item logined" lessonid="6" href="lesson6.html" style="display: none;">
+                <div class="lesson-pic">
+                    <img src="images/other/lesson6banner.png"/>
+
+                    <div class="time-tips">
+                        <div class="icons video-s-icon"></div>
+                        <span class="time">1:21</span>
+                    </div>
+                </div>
+                <div class="lesson-content">
+                    <div class="title">神马是葡萄酒</div>
+                    <p>酿造葡萄酒的步骤究竟是怎样？通常我们喝的葡萄酒，酒精度都在什么范围呢？</p>
+                </div>
+                <a href="lesson6.html" class="fw-btn  red-bg ft24 tx-center white letter-space btn"> 进入课程</a>
+            </div>
+
+            <div class="lesson-item logined" lessonid="7" href="lesson7.html" style="display: none;">
+                <div class="lesson-pic">
+                    <img src="images/other/lesson7banner.png"/>
+
+                    <div class="time-tips">
+                        <div class="icons video-s-icon"></div>
+                        <span class="time">1:20</span>
+                    </div>
+                </div>
+                <div class="lesson-content">
+                    <div class="title">葡萄酒与食物的恋爱</div>
+                    <p>听说过葡萄酒配餐的15字箴言吗？酒菜搭配到底要不要在乎个人的口感呢</p>
+                </div>
+                <a href="lesson7.html" class="fw-btn  red-bg ft24 tx-center white letter-space btn"> 进入课程</a>
+            </div>
+
+            <div class="lesson-item logined" lessonid="8" href="lesson8.html" style="display: none;">
+                <div class="lesson-pic">
+                    <img src="images/other/lesson8banner.png"/>
+
+                    <div class="time-tips">
+                        <div class="icons video-s-icon"></div>
+                        <span class="time">1:19</span>
+                    </div>
+                </div>
+                <div class="lesson-content">
+                    <div class="title">盲品是真的还是骗人</div>
+                    <p>盲品的乐趣到底在哪里？葡萄大师真的能盲品出所有的葡萄酒吗？</p>
+                </div>
+                <a href="lesson8.html" class="fw-btn  red-bg ft24 tx-center white letter-space btn"> 进入课程</a>
+            </div>
+
+            <div class="lesson-item logined" lessonid="9" href="lesson9.html" style="display: none;">
+                <div class="lesson-pic">
+                    <img src="images/other/lesson9banner.png"/>
+
+                    <div class="time-tips">
+                        <div class="icons video-s-icon"></div>
+                        <span class="time">1:18</span>
+                    </div>
+                </div>
+                <div class="lesson-content">
+                    <div class="title">如何伺候一瓶葡萄酒？</div>
+                    <p>葡萄酒对于储存的条件有哪些要求？醒酒的主要目的又是什么呢？</p>
+                </div>
+                <a href="lesson9.html" class="fw-btn  red-bg ft24 tx-center white letter-space btn"> 进入课程</a>
+            </div>
+
+            <div class="lesson-item logined" lessonid="10" href="lesson10.html" style="display: none;">
+                <div class="lesson-pic">
+                    <img src="images/other/lesson10banner.png"/>
+                    <div class="time-tips">
+                        <div class="icons video-s-icon"></div>
+                        <span class="time">1:18</span>
+                    </div>
+                </div>
+                <div class="lesson-content">
+                    <div class="title">如何快速识别酒标？</div>
+                    <p>酒标通常会包含哪些信息？新世界葡萄酒的酒标和旧世界相比有哪些不同？</p>
+                </div>
+                <a href="lesson10.html" class="fw-btn  red-bg ft24 tx-center white letter-space btn"> 进入课程</a>
+            </div>
+
+
+            <a href="login.html" class="login more-btn" data-ga="7" style="display: none;">
+                登录之后，查看更多
+            </a>
+            <!--<a id="moreBtn" class="logined more-btn" style="display: none;">-->
+            <!--查看更多-->
+            <!--</a>-->
+        </div>
+        <div class="top-btn" data-ga="6">
+            <img src="images/other/top-btn.jpg"/>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div class="footer"></div>
+</div>
+<div id="kv-pop" class="pop-wrap hidden">
+</div>
+<!--<img src="images/other/footer-pic1.jpg" style="height: 10px;"></div>-->
+</body>
+<script type="text/javascript" src="js/plugin/swiper.min.js"></script>
+<script>
+    $(function () {
+        var swiper = new Swiper('.swiper-container', {
+            pagination: '.swiper-pagination',
+            paginationClickable: true
+        });
+    });
+
+    $().ready(function () {
+        $("#toKvPop").click(function () {
+            $("#kv-pop").show();
+        })
+
+        if (!User) {
+            var indexList = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+            var a = indexList.splice(Math.floor(Math.random() * indexList.length), 1);
+            var b = indexList.splice(Math.floor(Math.random() * indexList.length), 1);
+            $(".lesson-item").eq(a[0]).show();
+            $(".lesson-item").eq(b[0]).show();
+        }
+
+
+        $(".lesson-item").click(function () {
+            var href = $(this).attr("href");
+            location.href = href;
+        })
+
+        var utm_source = getUrlParameter("utm_source");
+        utm_source && Cookie.setCookie("digiwine-utm_source", utm_source);
+
+        var utm_medium = getUrlParameter("utm_medium");
+        utm_medium && Cookie.setCookie("digiwine-utm_medium", utm_medium);
+    })
+</script>
+<script type="text/javascript" src="js/tracking.js"></script>
+</html>

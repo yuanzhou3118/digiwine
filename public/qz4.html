@@ -1,0 +1,238 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="Description" content="">
+    <title>葡萄酒微课堂</title>
+    <link rel="stylesheet" href="css/global.css" type="text/css"/>
+    <link rel="stylesheet" href="css/qz_common.css" type="text/css"/>
+    <link rel="stylesheet" href="css/qz4.css" type="text/css"/>
+    <script type="text/javascript" src="js/plugin/jquery-1.11.1.min.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script type="text/javascript" src="js/template.js"></script>
+    <script type="text/javascript" src="js/plugin/mustache.min.js"></script>
+    <script type="text/javascript" src="js/request.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/loading.js"></script>
+    <script type="text/javascript" src="js/enter.js"></script>
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-25338682-20', 'auto');
+        ga('send', 'pageview');
+
+        $(function () {
+            var arr = [];
+            var percent = $('.loading').find('.percent-num');
+            preloadimages(arr, percent);
+        });
+    </script>
+    <script type="text/javascript">
+        $().ready(function () {
+//            toLogin();
+        });
+    </script>
+    <!-- Acxiom AbiliTag v2.0 for site: PRC009 -->
+    <script type="text/javascript">window.acxm={api:Function(),x:function(){var k=document,e=encodeURIComponent,r="script",m=k.getElementsByTagName(r)[0],i=k.createElement(r),t="&c=";try{t=t+k.cookie.match('_acxm=([^;]*)').slice(1);}catch(z){};i.async=true;i.src="//t-cn.acxiom-online.com/tag/5d4f3a6a3ef951e3c72b135e8e01c2ba/st.js?l="+e(k.location)+"&r="+e(k.referrer)+t+"&v=2.0&z="+Math.random();m.parentNode.insertBefore(i,m)}()}</script>
+    <script type="text/javascript">
+(function() {
+    window._CiQ11462 = window._CiQ11462 || [];
+    window._CiQ11462.push(['_cookieUseRootDomain', true]);
+    var c = document.createElement('script');
+    c.type = 'text/javascript';
+    c.async = true;
+    c.charset = 'utf-8';
+    c.src = '//collect.cn.miaozhen.com/ca/11462';
+    var h = document.getElementsByTagName('script')[0];
+    h.parentNode.insertBefore(c, h);
+})();
+</script>
+
+</head>
+<body>
+<div class="modal-orientation" id="orientation">
+    <img src="images/flip.jpg"/>
+</div>
+<div class="header"></div>
+<div class="main-wrap qz">
+    <div class="main-wrap-cover"></div>
+    <div id="main">
+        <img id="video-tip" class="hidden" src="images/nav-tip.png">
+
+        <div class="view" id="q1" style="display: none;">
+            <img class="progress" src="images/q1-progress.png">
+            <img class="q-title" src="images/qz4/q1-title.png">
+            <img class="q-score-img" src="images/score.png"/>
+            <div class="q-score">0</div>
+            <div class="q1-main">
+                <img class="q1-submit" src="images/more-submit.png">
+                <div class="q1-cube q1-a">
+                    <img src="images/qz4/q1_a-line.png">
+                </div>
+                <div class="q1-cube q1-b">
+                    <img src="images/qz4/q1_b-line.png">
+                </div>
+                <div class="q1-cube q1-c">
+                    <img src="images/qz4/q1_c-line.png">
+                </div>
+                <div class="q1-cube q1-d right">
+                    <img src="images/qz4/q1_d-line.png">
+                </div>
+                <div class="q1-cube q1-e right">
+                    <img src="images/qz4/q1_e-line.png">
+                </div>
+                <img class="q1-right hidden opacity" src="images/qz4/q1-right.png">
+                <img class="q1-right-cube1 hidden opacity" src="images/qz4/q1-e-d.png">
+                <img class="q1-right-cube2 hidden opacity" src="images/qz4/q1-e-r.png">
+                <img class="q1-wrong hidden opacity" src="images/qz4/q1-wrong.png">
+            </div>
+        </div>
+        <div class="view slideLeft" id="q2">
+            <img class="progress" src="images/q2-progress.png">
+            <img class="q-title" src="images/qz4/q2-title.png">
+            <img class="q-score-img" src="images/score.png"/>
+            <div class="q-score">0</div>
+            <div class="q2-main">
+                <img class="layer" data-depth='.7' id="q2-left" hand="left" src="images/qz1/q5-right-hand.png">
+                <img class="layer" data-depth='.7' id="q2-right" src="images/qz1/q5-left-hand.png">
+                <img class="layer" data-depth='.2' id="q2-yes" src="images/qz1/q5-yes.png">
+                <img class="layer" data-depth='.2' id="q2-no" src="images/qz1/q5-no.png">
+                <img class="layer" data-depth='.1' id="q2-phone" src="images/qz1/q5-phone.png">
+                <img class="layer" data-depth='.1' id="q2-tip" src="images/qz1/q5-phone-text.png">
+                <img id="q2-right-bg" class="hidden opacity" src="images/qz1/q5-r-bg.png">
+                <img id="q2-wrong" class="hidden opacity" src="images/qz1/q5-wrong.png">
+                <img id="q2-wrong-bg" class="hidden opacity" src="images/qz1/q5-w-bg.png">
+                <img id="q2-score" class="hidden opacity" src="images/qz1/q5-r.png">
+            </div>
+        </div>
+        <div class="view slideLeft" id="q3">
+            <img class="progress" src="images/q3-progress.png">
+            <img class="q-title" src="images/qz4/q3-title.png">
+            <img class="q-score-img" src="images/score.png"/>
+            <div class="q-score">0</div>
+            <div class="q3-main">
+                <img class="q3-bg" src="images/qz4/q3-bg.png">
+                <img class="q3-wbg hidden" src="images/qz4/q3-bg-wrong.png">
+                <div class="q3-cube q3-a right">
+                    <img class="q3-wd" src="images/qz4/q3-aw.png">
+                    <img class="q3-right-pan hidden" src="images/qz4/q3-a.png">
+                    <img class="hidden q3-wrong-word" src="images/qz3/q3-wrong.png">
+                </div>
+                <div class="q3-cube q3-b right">
+                    <img class="q3-wd" src="images/qz4/q3-bw.png">
+                    <img class="q3-right-pan hidden" src="images/qz4/q3-b.png">
+                    <img class="hidden q3-wrong-word" src="images/qz3/q3-wrong.png">
+                </div>
+                <div class="q3-cube q3-c right">
+                    <img class="q3-wd" src="images/qz4/q3-cw.png">
+                    <img class="q3-right-pan hidden" src="images/qz4/q3-c.png">
+                    <img class="hidden q3-wrong-word" src="images/qz3/q3-wrong.png">
+                </div>
+                <div class="q3-cube q3-d right">
+                    <img class="q3-wd" src="images/qz4/q3-dw.png">
+                    <img class="q3-right-pan hidden" src="images/qz4/q3-d.png">
+                    <img class="hidden q3-wrong-word" src="images/qz3/q3-wrong.png">
+                </div>
+                <div class="q3-cube q3-e">
+                    <img class="q3-wd" src="images/qz4/q3-ew.png">
+                    <img class="hidden q3-wrong-word" src="images/qz3/q3-wrong.png">
+                </div>
+                <img class="q3-right hidden opacity" src="images/qz4/q3-right.png">
+                <img class="q3-submit" src="images/more-submit.png">
+            </div>
+        </div>
+        <div class="view slideLeft" id="q4">
+            <img class="progress" src="images/q4-progress.png">
+            <img class="q-title" src="images/qz4/q4-title.png">
+            <img class="q-score-img" src="images/score.png"/>
+            <div class="q-score">0</div>
+            <div class="q4-main">
+                <img class="q4-bg" src="images/qz4/q4-bg.png">
+                <img class="hidden q4-wrong-bg" src="images/qz4/q4-bg-wrong.png">
+                <img class="hidden q4-right-bg" src="images/qz4/q4-bg-right.png">
+                <img class="q4-right hidden opacity" src="images/qz4/q4-right.png">
+                <div class="q4-cube q4-a">
+                    <img class="q4-word" src="images/qz4/q4-a.png">
+                    <img class="hidden q4-wrong-icon" src="images/qz3/q3-wrong.png">
+                </div>
+                <div class="q4-cube q4-b">
+                    <!--<img src="images/qz4/q4-bb-bg.png">-->
+                    <img class="q4-word" src="images/qz4/q4-b.png">
+                    <img class="hidden q4-wrong-icon" src="images/qz3/q3-wrong.png">
+                </div>
+                <div class="q4-cube q4-c">
+                    <img class="q4-word" src="images/qz4/q4-c.png">
+                    <img class="hidden q4-wrong-icon" src="images/qz3/q3-wrong.png">
+                </div>
+                <div class="q4-cube q4-d right">
+                    <img class="q4-word" src="images/qz4/q4-d.png">
+                    <img class="hidden q4-wrong-icon" src="images/qz3/q3-wrong.png">
+                </div>
+            </div>
+        </div>
+
+        <div class="view slideLeft" id="q5">
+            <img class="progress" src="images/q5-progress.png">
+            <img class="q-title" src="images/qz4/q5-title.png">
+            <img class="q-score-img" src="images/score.png"/>
+            <div class="q-score">0</div>
+            <div class="q5-main">
+                <div class="q5-cube q5-a right">
+                    <img class="q5-word" src="images/qz4/q5-a-w.png">
+                    <img class="q5-pane" src="images/qz4/q5-a-bg.png">
+                    <img class="q5-right hidden opacity" src="images/qz4/q5-right.png">
+                </div>
+                <div class="q5-cube q5-b">
+                    <img class="q5-word" src="images/qz4/q5-b-w.png">
+                    <img class="q5-pane" src="images/qz4/q5-b-bg.png">
+                    <img class="q5-wrong hidden opacity" src="images/qz4/q5-wrong.png">
+                </div>
+                <div class="q5-cube q5-c">
+                    <img class="q5-word" src="images/qz4/q5-c-w.png">
+                    <img class="q5-pane" src="images/qz4/q5-c-bg.png">
+                    <img class="q5-wrong hidden opacity" src="images/qz4/q5-wrong.png">
+                </div>
+                <div class="q5-cube q5-d">
+                    <img class="q5-word" src="images/qz4/q5-d-w.png">
+                    <img class="q5-pane" src="images/qz4/q5-d-bg.png">
+                    <img class="q5-wrong hidden opacity" src="images/qz4/q5-wrong.png">
+                </div>
+            </div>
+        </div>
+
+        <div class="view hidden" id="result">
+            <div class="result-score hidden">成绩
+                <div class="q-score">0</div>
+            </div>
+            <div class="result-main">
+                <a href="courses.html"><img id="result-back" class="hidden" src="images/result-back.png"></a>
+                <img id="result-badage" class="hidden opacity" src="images/result-badage.png">
+                <img id="result-badage-grew" class="hidden opacity" src="images/medal-grew.png">
+                <img id="result-word" class="hidden opacity" src="images/result-success-word.png">
+                <img id="result-share" class="share hidden" image="1" src="images/result-show-btn.png">
+                <img id="result-bg" class="hidden opacity" src="images/result-effect-bg.png">
+            </div>
+        </div>
+    </div>
+</div>
+<div id="kv-pop" class="pop-wrap hidden">
+    <img src="images/other/qr-code.jpg" style="padding-top:200px;padding-left:170px;">
+    <div class="qr-code-wrap" style="position: relative;float:left;">
+        长按二维码，关注杰卡斯官方微信<br>
+        及时获取最新资讯
+    </div>
+</div>
+</body>
+<link href="vendor/video/video-js.min.css" rel="stylesheet">
+<script type="text/javascript" src="js/plugin/velocity.min.js"></script>
+<script type="text/javascript" src="vendor/video/video.min.js"></script>
+<script type="text/javascript" src="js/plugin/jquery.parallax.custom.js"></script>
+<script type="text/javascript" src="js/View.js"></script>
+<script type="text/javascript" src="js/qz_common.js"></script>
+<script type="text/javascript" src="js/qz4.js"></script>
+<script type="text/javascript" src="js/tracking.js"></script>
+</html>

@@ -1,0 +1,351 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="Description" content="">
+    <meta name="format-detection" content="telephone=no">
+    <title>葡萄酒微课堂</title>
+    <link rel="stylesheet" href="css/global.css" type="text/css"/>
+    <link rel="stylesheet" href="css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/main2.css" rel="stylesheet">
+    <script type="text/javascript" src="js/plugin/jquery-1.11.1.min.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script type="text/javascript" src="js/template.js"></script>
+    <script type="text/javascript" src="js/plugin/mustache.min.js"></script>
+    <script type="text/javascript" src="js/plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script type="text/javascript" src="js/request.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/loading.js"></script>
+    <script type="text/javascript" src="js/enter.js"></script>
+    <script type="text/javascript" src="js/plugin/velocity.min.js"></script>
+    <script type="text/javascript">
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                        (i[r].q = i[r].q || []).push(arguments)
+                    }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-25338682-20', 'auto');
+        ga('send', 'pageview');
+
+        $(function () {
+            var arr = [];
+            var percent = $('.loading').find('.percent-num');
+            preloadimages(arr, percent);
+        });
+    </script>
+    <!-- Acxiom AbiliTag v2.0 for site: PRC009 -->
+    <script type="text/javascript">window.acxm = {
+        api: Function(), x: function () {
+            var k = document, e = encodeURIComponent, r = "script", m = k.getElementsByTagName(r)[0], i = k.createElement(r), t = "&c=";
+            try {
+                t = t + k.cookie.match('_acxm=([^;]*)').slice(1);
+            } catch (z) {
+            }
+            ;
+            i.async = true;
+            i.src = "//t-cn.acxiom-online.com/tag/5d4f3a6a3ef951e3c72b135e8e01c2ba/st.js?l=" + e(k.location) + "&r=" + e(k.referrer) + t + "&v=2.0&z=" + Math.random();
+            m.parentNode.insertBefore(i, m)
+        }()
+    }</script>
+    <script type="text/javascript">
+        (function () {
+            window._CiQ11462 = window._CiQ11462 || [];
+            window._CiQ11462.push(['_cookieUseRootDomain', true]);
+            var c = document.createElement('script');
+            c.type = 'text/javascript';
+            c.async = true;
+            c.charset = 'utf-8';
+            c.src = '//collect.cn.miaozhen.com/ca/11462';
+            var h = document.getElementsByTagName('script')[0];
+            h.parentNode.insertBefore(c, h);
+        })();
+    </script>
+
+</head>
+<body id="user-center-content">
+<div class="modal-orientation" id="orientation">
+    <img src="images/flip.jpg"/>
+</div>
+<div class="user-center-header red-bg">
+    <div class="menu-icon"></div>
+    <div class="title"></div>
+</div>
+<div class="main-wrap">
+    <div class="red-bg overflow">
+        <div class="account-userimg">
+            <img id="userAvatar" src="images/other/user-head.jpg" style="width:100%;height:auto;">
+        </div>
+        <a href="modifyUserData.html">
+            <div id="userName" class="user-name"><span>???</span><b class="right-icon-9"></b></div>
+        </a>
+        <div class="part-two-wrapper">
+            <a href="myPoints.html">
+                <div class="my-point-part fl">
+                    <span>我的积分</span><br/>
+
+                    <div class="part-value">?</div>
+                </div>
+            </a>
+            <div class="vertical-line"></div>
+            <div class="my-level-part fl">
+                <span>我的等级</span>
+
+                <div class="part-value">?</div>
+            </div>
+            <div class="clear"></div>
+        </div>
+
+    </div>
+    <div class="main-wrap-cover"></div>
+    <ul class="user-center-item">
+        <li class="hidden"><a href="#"><span class="li-icon point-icon"></span><span class="li-text">积分兑换</span> <span
+                class="right-icon"></span></a></li>
+        <li><a href="redeemRules.html"><span class="li-icon  how-point-icon"></span><span class="li-text">如何获得积分</span> <span
+                class="right-icon"></span></a></li>
+    </ul>
+    <ul class="user-center-item">
+        <li>
+            <a href="myTopic.html">
+                <span class="li-icon topic-icon"></span><span class="li-text">我的话题<em
+                    class="red-circle hidden"></em></span> <span class="right-icon"></span>
+            </a>
+        </li>
+    </ul>
+    <ul class="user-center-item">
+        <li>
+            <a href="myNote.html">
+                <span class="li-icon note-icon"></span><span class="li-text">我的品酒笔记<em
+                    class="red-circle hidden"></em></span>
+                <span class="right-icon"></span>
+            </a>
+        </li>
+    </ul>
+    <div id="historyWrap" class="history-course-wrapper">
+        <div class="history-item">
+            <span class="li-icon history-icon"></span><span class="li-text">历史课程</span>
+        </div>
+        <div id="history-iscroll">
+            <div class="history-lesson-list">
+                <div class="history-lesson-item lesson-item lesson1 hidden">
+                    <a href="lesson1.html">
+                        <div class="lesson-pic">
+                            <img src="images/other/lesson1banner.png"/>
+                        </div>
+                        <div class="lesson-content">
+                            <div class="title ellipsis">
+                                一分钟变身葡萄酒专家
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="history-lesson-item lesson-item lesson2 hidden">
+                    <a href="lesson2.html">
+                        <div class="lesson-pic">
+                            <img src="images/other/lesson2banner.png"/>
+                        </div>
+                        <div class="lesson-content">
+                            <div class="title ellipsis">
+                                酿酒葡萄能吃吗？
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="history-lesson-item lesson-item lesson3 hidden">
+                    <a href="lesson3.html">
+                        <div class="lesson-pic">
+                            <img src="images/other/lesson3banner.png"/>
+                        </div>
+                        <div class="lesson-content">
+                            <div class="title ellipsis">
+                                如何专业有范儿的品酒
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="history-lesson-item lesson-item lesson4 hidden">
+                    <a href="lesson4.html">
+                        <div class="lesson-pic">
+                            <img src="images/other/lesson4banner.png"/>
+                        </div>
+                        <div class="lesson-content">
+                            <div class="title ellipsis">
+                                如何做一个葡萄酒旅游达人
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="history-lesson-item lesson-item lesson5 hidden">
+                    <a href="lesson5.html">
+                        <div class="lesson-pic">
+                            <img src="images/other/lesson5banner.png"/>
+                        </div>
+                        <div class="lesson-content">
+                            <div class="title ellipsis">
+                                不要轻信葡萄酒的包装
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="history-lesson-item lesson-item lesson6 hidden">
+                    <a href="lesson6.html">
+                        <div class="lesson-pic">
+                            <img src="images/other/lesson6banner.png"/>
+                        </div>
+                        <div class="lesson-content">
+                            <div class="title ellipsis">
+                                神马是葡萄酒
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="history-lesson-item lesson-item lesson7 hidden">
+                    <a href="lesson7.html">
+                        <div class="lesson-pic">
+                            <img src="images/other/lesson7banner.png"/>
+                        </div>
+                        <div class="lesson-content">
+                            <div class="title ellipsis">
+                                葡萄酒与食物的恋爱
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="history-lesson-item lesson-item lesson8 hidden">
+                    <a href="lesson8.html">
+                        <div class="lesson-pic">
+                            <img src="images/other/lesson8banner.png"/>
+                        </div>
+                        <div class="lesson-content">
+                            <div class="title ellipsis">
+                                盲品是真的还是骗人
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="history-lesson-item lesson-item lesson9 hidden">
+                    <a href="lesson9.html">
+                        <div class="lesson-pic">
+                            <img src="images/other/lesson9banner.png"/>
+                        </div>
+                        <div class="lesson-content">
+                            <div class="title ellipsis">
+                                如何伺候一瓶葡萄酒?
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="history-lesson-item lesson-item lesson10 hidden">
+                    <a href="lesson10.html">
+                        <div class="lesson-pic">
+                            <img src="images/other/lesson10banner.png"/>
+                        </div>
+                        <div class="lesson-content">
+                            <div class="title ellipsis">
+                                如何快速识别酒标?
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="hr logout-btn clear">
+        <div id="logoutBtn" class="fw-btn  red-bg ft22 tx-center white letter-space btn" data-ga="46">退出账户</div>
+    </div>
+
+    <div class="top-btn" data-ga="6">
+        <img src="img2/top-btn.png"/>
+    </div>
+    <div class="footer"></div>
+</div>
+<div id="kv-pop" class="pop-wrap hidden">
+    <img src="images/other/qr-code.jpg" style="padding-top:200px;padding-left:170px;">
+
+    <div class="qr-code-wrap" style="position: relative;float:left;">
+        长按二维码，关注杰卡斯官方微信<br>
+        及时获取最新资讯
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="js/plugin/masonry.pkgd.min.js"></script>
+<script type="text/javascript">
+
+    toLogin();
+
+    $().ready(function () {
+        User.avatarurl && $("#userAvatar").attr("src", User.avatarurl);
+
+        var $nickName = $("#userName span"), $point = $(".my-point-part .part-value"), $level = $(".my-level-part .part-value"), $topicStatus = $(".user-center-item").eq(1).find(".red-circle"), $noteStatus = $(".user-center-item").eq(2).find(".red-circle");
+        Request.profile_basic(function (resultData) {
+            $nickName.html(decodeURIComponent(resultData.nick_name));
+            $point.html(resultData.points);
+            $level.html(resultData.level);
+            if (!resultData.topic_status) {
+                $topicStatus.hide();
+            }
+            if (!resultData.note_status) {
+                $noteStatus.hide();
+            }
+        })
+
+        var lesson_histroy = getLessonHistroy();
+        if (lesson_histroy && lesson_histroy.length) {
+            $("#historyWrap").show();
+            for (var j = 1; j <= 10; j++) {
+                var exist = false;
+                for (var i = 0; i < lesson_histroy.length; i++) {
+                    var lid = parseInt(lesson_histroy[i]);
+                    if (lid == j) {
+                        exist = true;
+                        if (lesson_histroy.length == 1) {
+                            $(".lesson" + lid).removeClass("hidden").css({
+                                'margin-left': "145px"
+                            })
+                        }
+                        else {
+                            $(".lesson" + lid).removeClass("hidden");
+                        }
+                    }
+                }
+                if (!exist) {
+                    $(".lesson" + j).remove()
+                }
+                if (lesson_histroy.length > 2) {
+                    $('.history-lesson-list').css('width', 275 * $('.history-lesson-item').length + $('.history-lesson-item').length * 15 + 15);
+                    $("#history-iscroll").mCustomScrollbar({
+                        horizontalScroll: true
+                    });
+                } else {
+                    $("#history-iscroll").css({"margin-bottom": 0});
+                    $("#user-center-content .history-lesson-list").css({"margin-left": "40px"});
+                }
+            }
+        }
+        else {
+            $("#history-iscroll").hide();
+            $("#historyWrap").append("<span class='ft18' style='padding-left:35px;'>暂无数据</span>").css({"height": "auto"});
+        }
+
+        $("#logoutBtn").click(function () {
+            Request.logout(function () {
+                clearLessonHistory();
+                clearUser();
+                clearWechar();
+                location.href = "index.html"
+            })
+
+        });
+    })
+
+</script>
+<script type="text/javascript" src="js/tracking.js"></script>
+</html>

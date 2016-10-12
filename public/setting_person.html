@@ -1,0 +1,170 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="Description" content="">
+    <meta name="format-detection" content="telephone=no">
+    <title>葡萄酒微课堂</title>
+    <link rel="stylesheet" href="css/global.css" type="text/css"/>
+    <link rel="stylesheet" href="css/main.css" rel="stylesheet">
+    <script type="text/javascript" src="js/plugin/jquery-1.11.1.min.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script type="text/javascript" src="js/template.js"></script>
+    <script type="text/javascript" src="js/plugin/mustache.min.js"></script>
+    <script type="text/javascript" src="js/request.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/loading.js"></script>
+    <script type="text/javascript" src="js/enter.js"></script>
+    <script type="text/javascript" src="js/plugin/velocity.min.js"></script>
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-25338682-20', 'auto');
+        ga('send', 'pageview');
+
+        $(function () {
+            var arr = [];
+            var percent = $('.loading').find('.percent-num');
+            preloadimages(arr, percent);
+        });
+    </script>
+    <!-- Acxiom AbiliTag v2.0 for site: PRC009 -->
+    <script type="text/javascript">window.acxm={api:Function(),x:function(){var k=document,e=encodeURIComponent,r="script",m=k.getElementsByTagName(r)[0],i=k.createElement(r),t="&c=";try{t=t+k.cookie.match('_acxm=([^;]*)').slice(1);}catch(z){};i.async=true;i.src="//t-cn.acxiom-online.com/tag/5d4f3a6a3ef951e3c72b135e8e01c2ba/st.js?l="+e(k.location)+"&r="+e(k.referrer)+t+"&v=2.0&z="+Math.random();m.parentNode.insertBefore(i,m)}()}</script>
+    <script type="text/javascript">
+(function() {
+    window._CiQ11462 = window._CiQ11462 || [];
+    window._CiQ11462.push(['_cookieUseRootDomain', true]);
+    var c = document.createElement('script');
+    c.type = 'text/javascript';
+    c.async = true;
+    c.charset = 'utf-8';
+    c.src = '//collect.cn.miaozhen.com/ca/11462';
+    var h = document.getElementsByTagName('script')[0];
+    h.parentNode.insertBefore(c, h);
+})();
+</script>
+
+</head>
+<body>
+<div class="modal-orientation" id="orientation">
+    <img src="images/flip.jpg"/>
+</div>
+<div class="main-wrap">
+    <div class="main-wrap-cover"></div>
+    <div class="header">
+        <div class="nav"></div>
+        <div class="title"></div>
+    </div>
+    <div class="main pdv35">
+        <div class="setting-nav pdh30 hr">
+            <div class="fl ft28 text">头像</div>
+            <div class="fr setting-icon" style="position:relative;">
+                <img src="" id="updateImg" width="100%;position:absolute;top:0;" style="border-radius:100%"/>
+
+                <div id="cameraButton" style="position:absolute;width:100%;top:0;"><input type="file" data-ga="27" id="takepicture"
+                                                                                          accept="image/*"
+                                                                                          capture="camera"/></div>
+            </div>
+        </div>
+        <div class="setting-nav pdh30 hr">
+            <div class="fl ft28 text">昵称</div>
+            <input type="text" class="fr ft28 text tx-right" id="s-username2" value="XALEXX" data-ga="28"/>
+        </div>
+        <div class="pdh30">
+            <div class="fw-btn  red-bg ft22 tx-center white letter-space btn" id="set-p-n-btn"> 提交</div>
+        </div>
+    </div>
+    <div id="photoCanvasBlock">
+        <canvas id="photoCanvas" width="300" height="300" style="margin:150px 150px 100px 150px;"></canvas>
+        <div id="canvasButtonBlock">
+            <input type="button" value="取消" class="canvasButton" id="cancelPhoto"/>
+            <input type="button" value="确认" class="canvasButton" id="submitPhoto"/>
+        </div>
+    </div>
+</div>
+
+<div id="kv-pop" class="pop-wrap hidden">
+    <img src="images/other/qr-code.jpg" style="padding-top:200px;padding-left:170px;">
+    <div class="qr-code-wrap" style="position: relative;float:left;">
+        长按二维码，关注杰卡斯官方微信<br>
+        及时获取最新资讯
+    </div>
+</div>
+<img src="" id="resImg" style="display:none;"/>
+</body>
+<script src="js/plugin/preloadImg.js"></script>
+<script src="js/plugin/createjs.js"></script>
+<script src="js/plugin/megapix-image.js"></script>
+<script src="js/plugin/exif.js"></script>
+<script src="js/plugin/binaryajax.js"></script>
+<script src="js/plugin/hammer.min.js"></script>
+<script src="js/plugin/camera.js"></script>
+<script type="text/javascript">
+    $().ready(function () {
+        toLogin();
+        $('#s-username2').val(User.name);
+        $('#updateImg').attr('src', User.avatarurl).show();
+
+//        $('#avatar').on('change', function(){
+//            var file=this.files[0];
+//            if(file.type.indexOf('image') < 0){
+//                //must be image
+//                return;
+//            }
+//            //console.log(file);return;
+//            var reader=new FileReader();
+//            reader.onload=function(){
+//                var img = new Image();
+//                img.onload = function(){
+//                    var rate = img.width/img.height;
+//                    var tarwidth;
+//                    var tarheight;
+//                    var context = $('#canvas1')[0].getContext('2d');
+//                    if(img.width<img.height){
+//                        tarwidth = 300;
+//                        tarheight = tarwidth/rate;
+//                    }else{
+//                        tarheight = 300;
+//                        tarwidth = tarheight*rate;
+//                    }
+//                    context.drawImage(img,0,0,img.width,img.height,0,0,tarwidth,tarheight);
+//                    var data = $('#canvas1')[0].toDataURL();
+//                    data=data.split(',')[1];
+//                    data=window.atob(data);
+//                    var ia = new Uint8Array(data.length);
+//                    for (var i = 0; i < data.length; i++) {
+//                        ia[i] = data.charCodeAt(i);
+//                    };
+//                    var blob = new Blob([ia], {type:"image/png"});
+//
+//                    var fd = new FormData();
+//                    fd.append('action','updateuseravatar');
+//                    fd.append('file',blob);
+//                    fd.append('id','1');
+//
+//                    $.ajax({
+//                        'url' : 'api/index.php',
+//                        'type' : 'POST',
+//                        'enctype': 'multipart/form-data',
+//                        'dataType' : 'json',
+//                        'processData' : false,
+//                        'contentType': false,
+//                        'data' : fd,
+//                        'success' : function(data){
+//                            console.log(data);
+//                        }
+//                    });
+//
+//                }
+//                img.src=reader.result;
+//            };
+//            reader.readAsDataURL(file);
+//        });
+    })
+</script>
+<script type="text/javascript" src="js/tracking.js"></script>
+</html>

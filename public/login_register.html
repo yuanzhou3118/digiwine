@@ -1,0 +1,406 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="Description" content="">
+    <title>apidemo</title>
+    <script src="js/plugin/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+    <canvas id='canvas1' width="300" height="300"></canvas>
+    <input type="file" name="file" id="avatar" />
+    <script>
+    function getQueryString(name) { 
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i"); 
+        var r = window.location.search.substr(1).match(reg); 
+        if (r != null) return unescape(r[2]); return null; 
+    }
+
+
+    /*
+    login with mobile & code  
+    */
+    // $.ajax({
+    //     'url' : 'api/index.php',
+    //     'type' : 'POST',
+    //     'dataType' : 'json',
+    //     'data' : {
+    //         'action' : 'loginbymobile',
+    //         'mobile' : '18621969517',
+    //         'code' : '2810'
+    //     },
+    //     'success' : function(data){
+    //         console.log(data);
+    //     }
+    // });
+
+    /*
+    register with mobile & code  
+    */
+    // $.ajax({
+    //     'url' : 'api/index.php',
+    //     'type' : 'POST',
+    //     'dataType' : 'json',
+    //     'data' : {
+    //         'action' : 'registbymobile',
+    //         'mobile' : '18621969518',
+    //         'code' : '2810'
+    //     },
+    //     'success' : function(data){
+    //         console.log(data);
+    //     }
+    // });
+
+    
+    /*
+    wechat get userinfo interface, reurl should set to your develop environment
+    */
+    //location.href = 'http://glp.nurunci.com/wc/skip.php?type=userinfo&reurl='+encodeURIComponent('http://192.168.199.157:8080/digiwine/login_register.html');
+
+    var name = decodeURIComponent(getQueryString('nickname'));
+    var name = '那片浮云';
+    var avatarurl = getQueryString('headimgurl');
+    var avatarurl = 'http://wx.qlogo.cn/mmopen/ajNVdqHZLLBUQ1B3pbFzZpQe9yXxQ91twHqamjTrRDXicIW6icNdKQgAImhyibsGXicdZBBkPSib19aibNjIV0jndpfQ/0';
+    var openid = getQueryString('openid');
+    var openid = 'otWGmt6SWrrOuGhfOzH3-gQUYBBg';
+    var mobile = '18621969518';
+
+    /*
+    At first, should try login with wechat openid, if get false, then need register with wechat
+    */
+    // $.ajax({
+    //     'url' : 'api/index.php',
+    //     'type' : 'POST',
+    //     'dataType' : 'json',
+    //     'data' : {
+    //         'action' : 'loginbywc',
+    //         'openid' : openid
+    //     },
+    //     'success' : function(data){
+    //         console.log(data);
+    //     }
+    // });
+    
+    /*
+    register for wechat
+    */
+
+    // $.ajax({
+    //     'url' : 'api/index.php',
+    //     'type' : 'POST',
+    //     'dataType' : 'json',
+    //     'data' : {
+    //         'action' : 'registbywc',
+    //         'name' : name,
+    //         'avatarurl' : avatarurl,
+    //         'openid' : openid
+    //     },
+    //     'success' : function(data){
+    //         console.log(data);
+    //     }
+    // });
+
+    /*
+    bind to wechat
+    */
+    // $.ajax({
+    //     'url' : 'api/index.php',
+    //     'type' : 'POST',
+    //     'dataType' : 'json',
+    //     'data' : {
+    //         'action' : 'bindwc',
+    //         'uid' : '21',
+    //         'name' : name,
+    //         'avatarurl' : avatarurl,
+    //         'openid' : openid
+    //     },
+    //     'success' : function(data){
+    //         console.log(data);
+    //     }
+    // });
+
+    /*
+    update user name
+    */
+    // var name = 'changename';
+    // var id = '20';
+    // $.ajax({
+    //     'url' : 'api/index.php',
+    //     'type' : 'POST',
+    //     'dataType' : 'json',
+    //     'data' : {
+    //         'action' : 'updateusername',
+    //         'name' : name,
+    //         'id' : id
+    //     },
+    //     'success' : function(data){
+    //         console.log(data);
+    //     }
+    // });
+
+    /*
+    update user avatar, transfer blob to server, canvas should be hidden
+    */
+    $('#avatar').on('change', function(){
+        var file=this.files[0];
+        if(file.type.indexOf('image') < 0){
+            //must be image
+            return;
+        }
+        //console.log(file);return;
+        var reader=new FileReader();
+        reader.onload=function(){
+            var img = new Image();
+            img.onload = function(){
+                var rate = img.width/img.height;
+                var tarwidth;
+                var tarheight;
+                var context = $('#canvas1')[0].getContext('2d');
+                if(img.width<img.height){
+                    tarwidth = 300;
+                    tarheight = tarwidth/rate;
+                }else{
+                    tarheight = 300;
+                    tarwidth = tarheight*rate;
+                }
+                context.drawImage(img,0,0,img.width,img.height,0,0,tarwidth,tarheight);
+                var data = $('#canvas1')[0].toDataURL();
+                data=data.split(',')[1];
+                data=window.atob(data);
+                var ia = new Uint8Array(data.length);
+                for (var i = 0; i < data.length; i++) {
+                    ia[i] = data.charCodeAt(i);
+                };
+                var blob = new Blob([ia], {type:"image/png"});
+                
+                var fd = new FormData();
+                fd.append('action','updateuseravatar');
+                fd.append('file',blob);
+                fd.append('id','1');
+
+                $.ajax({
+                    'url' : 'api/index.php',
+                    'type' : 'POST',
+                    'enctype': 'multipart/form-data',
+                    'dataType' : 'json',
+                    'processData' : false,
+                    'contentType': false,
+                    'data' : fd,
+                    'success' : function(data){
+                        console.log(data);
+                    }
+                });
+                
+            }
+            img.src=reader.result;
+        };
+        reader.readAsDataURL(file);
+    });
+
+
+    /*
+    get validate code for mobile
+    */
+    // $.ajax({
+    //     'url' : 'api/index.php',
+    //     'type' : 'POST',
+    //     'dataType' : 'json',
+    //     'data' : {
+    //         'action' : 'getvalicode',
+    //         'mobile' : '18621969518'
+    //     },
+    //     'success' : function(data){
+    //         console.log(data);
+    //     }
+    // });
+
+    /*
+    update user mobile
+    */
+    // $.ajax({
+    //     'url' : 'api/index.php',
+    //     'type' : 'POST',
+    //     'dataType' : 'json',
+    //     'data' : {
+    //         'action' : 'updateusermobile',
+    //         'mobile' : '18621969518',
+    //         'code' : '2810',
+    //         'id' : '22'
+    //     },
+    //     'success' : function(data){
+    //         console.log(data);
+    //     }
+    // });
+
+    /*
+    win medal
+    */
+    // $.ajax({
+    //     'url' : 'api/index.php',
+    //     'type' : 'POST',
+    //     'dataType' : 'json',
+    //     'data' : {
+    //         'action' : 'winmedal',
+    //         'lid' : '2',
+    //         'id' : '16'
+    //     },
+    //     'success' : function(data){
+    //         console.log(data);
+    //     }
+    // });
+    
+    /*
+    get getuserinfo
+    */
+    // $.ajax({
+    //     'url' : 'api/index.php',
+    //     'type' : 'POST',
+    //     'dataType' : 'json',
+    //     'data' : {
+    //         'action' : 'getuserinfo',
+    //         'id' : '20'
+    //     },
+    //     'success' : function(data){
+    //         console.log(data);
+    //     }
+    // });
+
+    /*
+    add view num
+    */
+    // $.ajax({
+    //     'url' : 'api/index.php',
+    //     'type' : 'POST',
+    //     'dataType' : 'json',
+    //     'data' : {
+    //         'action' : 'addview',
+    //         'lid' : '1'
+    //     },
+    //     'success' : function(data){
+    //         console.log(data);
+    //     }
+    // });
+
+    /*
+    add share num
+    */
+    // $.ajax({
+    //     'url' : 'api/index.php',
+    //     'type' : 'POST',
+    //     'dataType' : 'json',
+    //     'data' : {
+    //         'action' : 'addshare',
+    //         'lid' : '1',
+    //         'uid' : '20'
+    //     },
+    //     'success' : function(data){
+    //         console.log(data);
+    //     }
+    // });
+
+    /*
+    add comment
+    */
+    // $.ajax({
+    //     'url' : 'api/index.php',
+    //     'type' : 'POST',
+    //     'dataType' : 'json',
+    //     'data' : {
+    //         'action' : 'addcomment',
+    //         'lid' : '1',
+    //         'uid' : '20',
+    //         'comment' : '内容'
+    //     },
+    //     'success' : function(data){
+    //         console.log(data);
+    //     }
+    // });
+
+    /*
+    get view, comment, share number by lesson
+    */
+    // $.ajax({
+    //     'url' : 'api/index.php',
+    //     'type' : 'POST',
+    //     'dataType' : 'json',
+    //     'data' : {
+    //         'action' : 'getlessoninfos',
+    //         'lid' : '1' //without lid to get basic info for all lessons
+    //     },
+    //     'success' : function(data){
+    //         console.log(data);
+    //     }
+    // });
+
+    /*
+    get comments by lesson
+    */
+    // $.ajax({
+    //     'url' : 'api/index.php',
+    //     'type' : 'POST',
+    //     'dataType' : 'json',
+    //     'data' : {
+    //         'action' : 'getcomments',
+    //         'lid' : '1',
+    //         'page' : '0' //every page list 5 comments, start from 0
+    //     },
+    //     'success' : function(data){
+    //         console.log(data);
+    //     }
+    // });
+
+    /*
+    add score type 1='lesson', 2='video'
+    */
+    // $.ajax({
+    //     'url' : 'api/index.php',
+    //     'type' : 'POST',
+    //     'dataType' : 'json',
+    //     'data' : {
+    //         'action' : 'addscore',
+    //         'type' : '1',
+    //         'uid' : '20',
+    //         'lid' : '1' //just for type=1/2
+    //     },
+    //     'success' : function(data){
+    //         console.log(data);
+    //     }
+    // });
+    
+    /*
+    get ranking
+    */
+    // $.ajax({
+    //     'url' : 'api/index.php',
+    //     'type' : 'POST',
+    //     'dataType' : 'json',
+    //     'data' : {
+    //         'action' : 'getuserranking',
+    //         'page' : '0', //every page list 10 users, start from 0
+    //         'type' : '1' // 1 = all ranking, 2 = ranking by week
+    //     },
+    //     'success' : function(data){
+    //         console.log(data);
+    //     }
+    // });
+
+    /*
+    get video
+    */
+    // $.ajax({
+    //     'url' : 'api/index.php',
+    //     'type' : 'POST',
+    //     'dataType' : 'json',
+    //     'data' : {
+    //         'action' : 'getvideo',
+    //         'videoid' : 'XMTM5MDMzMjU3Mg=='
+    //     },
+    //     'success' : function(data){
+    //         console.log(data);
+    //     }
+    // });
+
+    </script>
+</body>
+</html>

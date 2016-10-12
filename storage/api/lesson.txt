@@ -1,0 +1,56 @@
+
+//查看课程评论。
+$.ajax({
+type: 'GET',
+url: '/api-lesson-query-comment',
+data: {page_index: 1, page_size: 5, lesson_id: 1},
+dataType: 'json',
+cache: false,
+success: function(data){
+  console.log(data);
+}
+});
+
+//提交课程评论。
+$.ajax({
+type: 'POST',
+url: '/api-lesson-comment',
+data: {lesson_id: 1, comment: '听我说分<afaf12>ee;af'},
+dataType: 'json',
+success: function(data){
+  console.log(data);
+}
+});
+
+//添加分享课程。
+$.ajax({
+type: 'POST',
+url: '/api-lesson-share',
+data: {lesson_id: 1},
+dataType: 'json',
+success: function(data){
+  console.log(data);
+}
+});
+
+//添加看课程视频。
+$.ajax({
+type: 'POST',
+url: '/api-video-point',
+data: {lesson_id: 1},
+dataType: 'json',
+success: function(data){
+  console.log(data);
+}
+});
+
+//添加回答课程问题。
+$.ajax({
+type: 'POST',
+url: '/api-lesson-point',
+data: {lesson_id: 1},
+dataType: 'json',
+success: function(data){
+  console.log(data);
+}
+});

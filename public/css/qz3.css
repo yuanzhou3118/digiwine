@@ -1,0 +1,444 @@
+.q1-main{
+    position: absolute;
+    bottom:0;
+    width:100%;
+    height:85%;
+}
+.q1-cube{
+    width:50%;
+    height:50%;
+    float: left;
+    position: relative;
+}
+.q1-cube>div{
+    width:190px;
+    height:80%;
+    margin:10%;
+    position: relative;
+}
+.q1-cube .word{
+    position: absolute;
+    bottom:0;
+}
+.q1-cube .cube{
+    position: absolute;
+    bottom:85px;
+    left:50%;
+}
+.q1-cube .pant{
+    position: absolute;
+}
+.q1-a{
+    position: absolute;
+    bottom:0;
+    right:0;
+}
+.q1-b{
+    position:absolute;
+    bottom:0;
+    left:0;
+}
+.q1-c{
+    position:absolute;
+    right:0;
+    top:0;
+}
+.q1-d{
+    position:absolute;
+    top:0;
+    left:0;
+}
+.q1-right-bg{
+    position: absolute;
+    left: -39px;
+    bottom: 90px;
+}
+/* q2 */
+.q2-main{
+    position: absolute;
+    width:100%;
+    height:100%;
+    bottom:0;
+    left:0;
+}
+.q2-bg{
+    position: absolute;
+    bottom:0;
+}
+.q2-cube{
+    position: absolute;
+    top:50%;
+}
+.q2-a{
+    left: 50px;
+    margin-top: -50px;
+}
+.q2-b{
+    left:165px;
+    margin-top:50px;
+}
+.q2-c{
+    left:275px;
+    margin-top:-33px;
+}
+.q2-d{
+    left:400px;
+    margin-top:-70px;
+}
+.q2-e{
+    left:505px;
+    margin-top: -69px;
+}
+.q2-wr,.q2-wl{
+    position: absolute;
+    top:50%;
+}
+.q2-bottle-wrap{
+    position: absolute;
+    top: 50%;
+    left: 134px;
+    width: 409px;
+    height: 350px;
+    overflow: hidden;
+    margin-top: -260px;
+}
+.q2-bottle{
+    position: absolute;
+    top:0;
+    right:0;
+}
+.q2-line{
+    position: absolute;
+    top: 152px;
+    left: 4px;
+}
+.q2-right{
+    position: absolute;
+    top: 50%;
+    margin-top: -155px;
+    left: 192px;
+}
+.q2-wrong{
+    position: absolute;
+    top:50%;
+}
+
+/* q3 */
+.q3-bg{
+    position: absolute;
+    bottom:0;
+    left:45px;
+}
+.q3-submit{
+
+}
+.q3-cube{
+
+}
+
+.q3-a{
+    position: absolute;
+    width:106px;
+    height:106px;
+    top:30%;
+    left:50px;
+    background:#ff6752;
+    border-radius: 106px;
+}
+.q3-a .q3-border{
+    position: absolute;
+    top:50%;
+    left:50%;
+    margin-left:-70px;
+    margin-top:-96px;
+}
+.q3-b{
+    position: absolute;
+    width:102px;
+    height:102px;
+    left:190px;
+    top:20%;
+    background:#35b2b6;
+    border-radius: 102px;
+}
+.q3-b .q3-border{
+    position: absolute;
+    top:50%;
+    left:50%;
+    margin-left: -74px;
+    margin-top: -72px;
+}
+.q3-c{
+    position: absolute;
+    width:87px;
+    height: 87px;
+    left:348px;
+    top:28%;
+    background:#ffbe4e;
+    border-radius: 87px;
+}
+.q3-c .q3-border{
+    position: absolute;
+    top:50%;
+    left:50%;
+    margin-left:-62px;
+    margin-top: -82px;
+}
+.q3-d{
+    position: absolute;
+    width:90px;
+    height:90px;
+    left:480px;
+    top:16%;
+    background:#01d870;
+    border-radius: 90px;
+}
+.q3-d .q3-border{
+    position: absolute;
+    top:50%;
+    left:50%;
+    margin-left:-66px;
+    margin-top: -94px;
+}
+.q3-e{
+    position:absolute;
+    width:90px;
+    height:90px;
+    left:500px;
+    top:34%;
+    background:#0089da;
+    border-radius: 90px;
+}
+.q3-e .q3-border{
+    position: absolute;
+    top:50%;
+    left:50%;
+    margin-left:-63px;
+    margin-top: -89px;
+}
+.q3-submit{
+    position: absolute;
+    background:#b70031;
+    bottom:5%;
+    left:50%;
+    margin-left:-164px;
+}
+.q3-wrong{
+    position: absolute;
+    width: 90%;
+    top: 10%;
+    left: 5%;
+}
+.q3-right{
+    top: 20%;
+    position: absolute;
+    left: 50px;
+}
+
+
+.q4-main{
+    position: absolute;
+    bottom:0;
+    width:100%;
+    height:100%;
+}
+.q4-main img{
+    position: absolute;
+}
+.q4-bg{
+    bottom:0;
+    left:0;
+}
+.q4-glass{
+    bottom: 155px;
+    left: 50%;
+    margin-left: -116px;
+}
+.q4-clock{
+    bottom: 489px;
+    left: 50%;
+    margin-left: -20px;
+}
+.q4-wrong{
+    bottom: 680px;
+    left: 40px;
+}
+.q4-right{
+    bottom: 550px;
+    left: 50px;
+}
+.q4-wrong-text{
+    left: 50%;
+    margin-left: -96px;
+    top: 30%;
+}
+.q4-right-word{
+    top: 30%;
+    left: 50%;
+    margin-left: -102px;
+}
+.q4-pan{
+    width:156px;
+    height:156px;
+    background:url(../images/qz3/q4-pan.png) no-repeat;
+    position: absolute;
+    right:30px;
+    bottom:270px;
+}
+.q4-point{
+    top: 56px;
+    left: 78px;
+    transform-origin: left center;
+    -webkit-transform-origin: left center;
+    transform: rotateZ(180deg);;
+}
+.q4-clock{
+    transform-origin: bottom right;
+    -webkit-transform-origin: bottom right;
+    animation: circle 8s infinite linear;
+    -webkit-animation: circle 8s infinite linear;
+}
+@keyframes circle
+{
+    from {transform: rotateZ(0deg)}
+    to {transform: rotateZ(360deg)}
+}
+@-webkit-keyframes circle /* Safari 和 Chrome */
+{
+    from {-webkit-transform: rotateZ(0deg)}
+    to {-webkit-transform: rotateZ(360deg)}
+}
+
+
+/* q5 */
+.q5-main img{
+    position: absolute;
+}
+.q5-bg,.q5-wrong-cup{
+    bottom:6%;
+    left:130px;
+}
+/*.q5-wrong{*/
+    /*width:90%;*/
+    /*left:5%*/
+/*}*/
+.q5-a{
+    position: absolute;
+    left:310px;
+    top:16%;
+}
+.q5-b{
+    position: absolute;
+    left:20px;
+    top:23%;
+}
+.q5-c{
+    position: absolute;
+    left:516px;
+    top:17%;
+
+}
+.q5-d{
+    position: absolute;
+    left:450px;
+    top:43%;
+
+}
+.q5-aa{
+    position: absolute;
+    left:180px;
+    top:17%;
+    width:173px;
+    height:173px;
+    border-radius:173px;
+    background:#8816ff;
+}
+.q5-bb{
+    position: absolute;
+    left:35px;
+    top:27%;
+    width:142px;
+    height:142px;
+    border-radius:142px;
+    background:#55e9ed;
+
+}
+.q5-cc{
+    position: absolute;
+    left:430px;
+    top:18%;
+    width: 131px;
+    height:131px;
+    border-radius:131px;
+    background:#e70f5a
+
+}
+.q5-dd{
+    position: absolute;
+    left:355px;
+    top:33%;
+    width:131px;
+    height:131px;
+    border-radius: 131px;
+    background:#fcd800;
+
+}
+.q5-right{
+    top: 20%;
+    left: 30px;
+}
+.q5-wrong{
+    top:0;
+    left:0;
+    width:80%;
+    margin:10%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

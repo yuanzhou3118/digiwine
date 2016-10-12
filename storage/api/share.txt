@@ -1,0 +1,10 @@
+
+//用户分享接口。
+$.ajax({
+type: 'POST',
+url: '/api-share',
+dataType: 'json',
+success: function(data){
+  console.log(data);
+}
+});

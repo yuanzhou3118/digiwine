@@ -1,0 +1,462 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="Description" content="">
+    <meta name="format-detection" content="telephone=no">
+    <title>葡萄酒微课堂</title>
+    <link rel="stylesheet" href="css/global.css" type="text/css"/>
+    <link rel="stylesheet" href="css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/main2.css" rel="stylesheet">
+    <script type="text/javascript" src="js/plugin/jquery-1.11.1.min.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script type="text/javascript" src="js/template.js"></script>
+    <script type="text/javascript" src="js/plugin/mustache.min.js"></script>
+    <script type="text/javascript" src="js/request.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/loading.js"></script>
+    <script type="text/javascript" src="js/enter.js"></script>
+    <script type="text/javascript" src="js/plugin/velocity.min.js"></script>
+    <script type="text/javascript">
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                        (i[r].q = i[r].q || []).push(arguments)
+                    }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-25338682-20', 'auto');
+        ga('send', 'pageview');
+
+        $(function () {
+            var arr = [];
+            var percent = $('.loading').find('.percent-num');
+            preloadimages(arr, percent);
+        });
+    </script>
+    <!-- Acxiom AbiliTag v2.0 for site: PRC009 -->
+    <script type="text/javascript">window.acxm = {
+        api: Function(), x: function () {
+            var k = document, e = encodeURIComponent, r = "script", m = k.getElementsByTagName(r)[0], i = k.createElement(r), t = "&c=";
+            try {
+                t = t + k.cookie.match('_acxm=([^;]*)').slice(1);
+            } catch (z) {
+            }
+            ;
+            i.async = true;
+            i.src = "//t-cn.acxiom-online.com/tag/5d4f3a6a3ef951e3c72b135e8e01c2ba/st.js?l=" + e(k.location) + "&r=" + e(k.referrer) + t + "&v=2.0&z=" + Math.random();
+            m.parentNode.insertBefore(i, m)
+        }()
+    }</script>
+    <script type="text/javascript">
+        (function () {
+            window._CiQ11462 = window._CiQ11462 || [];
+            window._CiQ11462.push(['_cookieUseRootDomain', true]);
+            var c = document.createElement('script');
+            c.type = 'text/javascript';
+            c.async = true;
+            c.charset = 'utf-8';
+            c.src = '//collect.cn.miaozhen.com/ca/11462';
+            var h = document.getElementsByTagName('script')[0];
+            h.parentNode.insertBefore(c, h);
+        })();
+    </script>
+
+
+    <link rel="stylesheet" href="css/swiper.min.css" rel="stylesheet">
+
+</head>
+<body class="indexPage">
+<div class="modal-orientation" id="orientation">
+    <img src="images/flip.jpg"/>
+</div>
+<div class="header"></div>
+<div class="main-wrap">
+    <div class="main-wrap-cover"></div>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="img2/kv0805.png"/>
+            </div>
+            <!--<div class="swiper-slide">-->
+            <!--<a href="kvinner.html" data-ga="3">-->
+            <!--<img src="images/other/kv2.jpg"/>-->
+            <!--</a>-->
+            <!--</div>-->
+            <!--<div class="swiper-slide" data-ga="3">-->
+                <!--<a href="redeemRules.html">-->
+                    <!--<img src="images/other/kv0325.jpg"/>-->
+                <!--</a>-->
+            <!--</div>-->
+            <!--<div class="swiper-slide" data-ga="4">-->
+                <!--<a href="http://www.wemart.cn/v2/weimao/index.html?disableCache=true&shopId=shop000201508069955&from=singlemessage&isappinstalled=0#mad/shop000201508069955/214">-->
+                    <!--<img src="images/other/kv3.jpg"/>-->
+                <!--</a>-->
+            <!--</div>-->
+        </div>
+        <!-- Add Pagination -->
+        <!-- 判断kv长度, 大于1时 显示 -->
+        <!--<div class="swiper-pagination"></div>-->
+    </div>
+    <div class="i-part-bar">
+        <a class="lesson" href="courses.html">课程</a>
+        <a class="topic" href="topic.html">话题</a>
+        <a class="notice" href="note.html">笔记</a>
+        <a class="person" href="account.html">个人中心</a>
+    </div>
+    <!--<div class="i-part-wrap">-->
+    <!--<div class="i-wrap-header benefits" >-->
+    <!--</div>-->
+    <!--</div>-->
+    <!-- 热门课程 -->
+    <div class="i-part-wrap">
+        <div class="i-wrap-header lesson">
+            <a href="courses.html" class="moreBtn">更多&nbsp;&nbsp;+ </a>
+        </div>
+        <div id="index-lesson" class="i-wrap-content lesson" style="width:630px;">
+            <div class="i-lesson-swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="i-lesson-part">
+                            <a href="lesson2.html">
+                                <div class="i-lesson">
+                                    <img src="img2/index/i-l1.png">
+                                    <p class="subTitle">酿酒葡萄能吃吗?</p>
+                                    <i class="border"></i>
+                                </div>
+                            </a>
+                            <a href="lesson3.html">
+                                <div class="i-lesson">
+                                    <img src="img2/index/i-l2.png">
+                                    <p class="subTitle">如何专业有范地品酒</p>
+                                    <i class="border"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="i-lesson-part">
+
+                            <a href="lesson1.html">
+                                <div class="i-lesson">
+                                    <img src="img2/index/i-l3.png">
+                                    <p class="subTitle">一秒钟变身葡萄酒专家</p>
+                                    <i class="border"></i>
+                                </div>
+                            </a>
+                            <a href="lesson4.html">
+                                <div class="i-lesson">
+                                    <img src="img2/index/i-l4.png">
+                                    <p class="subTitle">如何做一个葡萄酒旅游达人</p>
+                                    <i class="border"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="i-lesson-part">
+                            <a href="lesson5.html">
+                                <div class="i-lesson">
+                                    <img src="img2/index/i-l5.png">
+                                    <p class="subTitle">不要轻信葡萄酒的包装</p>
+                                    <i class="border"></i>
+                                </div>
+                            </a>
+                            <a href="lesson6.html">
+                                <div class="i-lesson">
+                                    <img src="img2/index/i-l6.png">
+                                    <p class="subTitle">神马是葡萄酒</p>
+                                    <i class="border"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide hidden">
+                        <div class="i-lesson-part">
+                            <a href="lesson7.html">
+                                <div class="i-lesson">
+                                    <img src="images/other/lesson7banner.png">
+                                    <p class="subTitle">葡萄酒与食物的恋爱</p>
+                                    <i class="border"></i>
+                                </div>
+                            </a>
+                            <a href="lesson8.html">
+                                <div class="i-lesson">
+                                    <img src="images/other/lesson8banner.png">
+                                    <p class="subTitle">盲品是真的还是骗人</p>
+                                    <i class="border"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide hidden">
+                        <div class="i-lesson-part">
+                            <a href="lesson9.html">
+                                <div class="i-lesson">
+                                    <img src="images/other/lesson9banner.png">
+                                    <p class="subTitle">如何伺候一瓶葡萄酒?</p>
+                                    <i class="border"></i>
+                                </div>
+                            </a>
+                            <a href="lesson10.html">
+                                <div class="i-lesson">
+                                    <img src="images/other/lesson10banner.png">
+                                    <p class="subTitle">如何快速识别酒标?</p>
+                                    <i class="border"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add Pagination -->
+                <div class="i-lesson-swiper-pagination three-center-pagination" style="margin-left:-46px!important;"></div>
+            </div>
+        </div>
+    </div>
+
+    <!--  热门话题 -->
+    <div class="i-part-wrap">
+        <div class="i-wrap-header topic">
+            <a href="topic.html" class="moreBtn">更多&nbsp;&nbsp;+ </a>
+        </div>
+        <div id="index-topic" class="i-wrap-content topic white-bg">
+            <!--<img src="img2/loading.gif" class="loading">-->
+            <!--<div class="i-topic-li">-->
+            <!--<h4>哪里有葡萄酒的盲品会？想去品点,了解更多的葡萄酒,最好是进口的。</h4>-->
+            <!--<div class="person-topic">-->
+            <!--<div class="person-frame">-->
+            <!--<img src="TODO">-->
+            <!--<div class="zan">-->
+            <!--56-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--<div class="content">-->
+            <!--新世界葡萄酒更崇尚技术，多倾向于工业化的生产，在企业规模、资本、技术和市场上...-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
+        </div>
+    </div>
+
+    <!-- 热门笔记 -->
+    <div class="i-part-wrap note">
+        <div class="i-wrap-header note">
+            <a href="note.html" class="moreBtn">更多&nbsp;&nbsp;+ </a>
+        </div>
+
+        <div id="index-note" class="i-wrap-content white-bg">
+            <img src="img2/loading.gif" class="loading">
+            <!--<div class="of-hidden">-->
+            <!--<div class="i-note-swiper-container">-->
+            <!--<div class="swiper-wrapper">-->
+
+
+            <!--<div class="swiper-slide">-->
+            <!--<div class="i-note-photos">-->
+            <!--//TODO-->
+            <!--</div>-->
+            <!--<div class="person-topic">-->
+            <!--<div class="person-frame">-->
+            <!--<img src="TODO">-->
+            <!--<div class="zan">-->
+            <!--56-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--<div class="content">-->
+            <!--新世界葡萄酒更崇尚技术，多倾向于工业化的生产，在企业规模、资本、技术和市场上...-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!---->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
+        </div>
+        <!-- Add Pagination -->
+        <div class="i-note-swiper-pagination three-center-pagination"></div>
+    </div>
+    <div class="top-btn" data-ga="6">
+        <img src="img2/top-btn.png"/>
+    </div>
+    <div class="clear"></div>
+    <div class="footer"></div>
+</div>
+<div id="kv-pop" class="pop-wrap hidden">
+</div>
+<!--<img src="images/other/footer-pic1.jpg" style="height: 10px;"></div>-->
+</body>
+<script type="text/javascript" src="js/plugin/swiper.min.js"></script>
+<script>
+    $(function () {
+        var swiper = new Swiper('.swiper-container', {
+            pagination: '.swiper-pagination',
+            paginationClickable: true
+        });
+
+        var lessonSwiper = new Swiper(".i-lesson-swiper-container", {
+            pagination: '.i-lesson-swiper-pagination',
+            paginationClickable: true
+        });
+    });
+
+    $().ready(function () {
+        $("#toKvPop").click(function () {
+            $("#kv-pop").show();
+        });
+
+        //加载热门话题
+        Request.topic_home(function (data) {
+            $wrapper = $("#index-topic");
+            data = (data && data.data) || null;;
+            if (data && data.length) {
+                var html = [], userTemplate = "";
+                for (var i = 0; i < data.length; i++) {
+                    var d = data[i];
+                    if (d.comment_user_id) {
+                        d.content = splitWords(d.content,65);
+                        userTemplate =
+                                '<div class="person-topic"><div class="person-frame"><img src="' + d.head_url + '"><div class="zan">' + (d.comment_bang || 0) + '</div></div><div class="content">' + d.content + '</div></div>';
+                    }else{
+                        userTemplate = "暂无评论";
+                    }
+                    d.question = splitWords(d.question,75);
+                    var template = '<a class="i-topic-li" href="topicDetail.html?topicId=' + d.topic_id + '"><h4>' + d.question + '</h4>' + userTemplate + '</a>';
+                    html.push(template)
+                }
+                $wrapper.html(html.join(""));
+            } else {
+                $wrapper.html("暂无数据")
+            }
+        });
+
+        //加载热门笔记
+        Request.note_home(function (resultData) {
+            $wrapper = $("#index-note");
+            data = (resultData && resultData.data)|| null;
+            if (data && data.length) {
+                var html = [];
+                //add slid wrapper
+                html.push('<div class="of-hidden"><div class="i-note-swiper-container"><div class="swiper-wrapper">');
+
+                for (var i = 0; i < data.length; i++) {
+                    var d = data[i];
+                    var imgKey = ['imga', 'imgb', 'imgc'];
+                    var imgLength = 0;
+
+                    for (j in imgKey) {
+                        if (d[imgKey[j]]) {
+                            ++imgLength;
+                        }
+                    }
+                    var imgHtml = [];
+                    var imgClass = "one";
+                    if (imgLength == 2) {
+                        imgClass = 'two';
+                        imgHtml.push('<div class="img" style="background:url(' + d.imga + ');background-position: center center;background-size:auto 100%;"></div>')
+                        imgHtml.push('<div class="img" style="background:url(' + d.imgb + ');background-position: center center;background-size:auto 100%;"></div>');
+
+                    } else if (imgLength == 3) {
+                        imgClass = 'three';
+                        imgHtml.push('<div class="img" style="background:url(' + d.imga + ');background-position: center center;background-size:100% auto;"></div>')
+                        imgHtml.push('<div class="img" style="background:url(' + d.imgb + ');background-position: center center;background-size:100% auto;"></div>');
+                        imgHtml.push('<div class="img" style="background:url(' + d.imgc + ');background-position: center center;background-size:100% auto;"></div>');
+                    } else {
+                        imgHtml.push('<div class="img" style="background:url(' + d.imga + ');background-position: center center;background-size:100% auto;"></div>')
+                    }
+                    d.content = splitWords(d.content,65);
+                    var template = '<div class="swiper-slide"> <a href="noteDetail.html?noteId='+ d.note_id+'"><div class="i-note-photos ' + imgClass + '">' + imgHtml.join("") + '</div>' +
+                            '<div class="person-topic"><div class="person-frame"><img src="' + d.head_url + '"><div class="zan">' + d.note_likes + '</div></div>' +
+                            '<div class="content">' + d.content + '</div></div></a></div>'
+                    html.push(template);
+                }
+
+                html.push('</div></div></div>')
+
+                $wrapper.html(html.join(""));
+                if(data.length>1){
+                    var noteSwiper = new Swiper(".i-note-swiper-container", {
+                        pagination: '.i-note-swiper-pagination',
+                        paginationClickable: true
+                    });
+                }
+            } else {
+                $wrapper.html("暂无数据");
+            }
+        })
+
+
+        if (!User) {
+            var indexList = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+            var a = indexList.splice(Math.floor(Math.random() * indexList.length), 1);
+            var b = indexList.splice(Math.floor(Math.random() * indexList.length), 1);
+            $(".lesson-item").eq(a[0]).show();
+            $(".lesson-item").eq(b[0]).show();
+        }
+
+        //        if (User) {
+        /*
+         Request.get_ranking(1, 0, {
+         success: function (data) {
+         if (data.haserror) {
+         //                        alert(data.msg);
+         } else {
+         var ranklist = data.rankinginfo;
+         if (ranklist.length > 5) {
+         ranklist.length = 5;
+         }
+         var html = "";
+         for (var i = 0; i < ranklist.length; i++) {
+         var rank = ranklist[i];
+         var rank_no = i + 1;
+         var htmlTemp = '<div class="rank-item"><div class="fl user-head">';
+         if (rank.useravatar) {
+         if (rank.useravatar.indexOf("http") != -1) {
+         htmlTemp += '<img src="' + rank.useravatar + '"/>';
+         } else {
+         htmlTemp += '<img src="' + ImageUrlHeader + rank.useravatar + '"/>';
+         }
+         } else {
+         htmlTemp += '<img src="images/other/user-head.jpg"/>';
+         }
+         htmlTemp += '</div><div class="fl text"><div>No.' + rank_no + '<br/>';
+         if (rank.username) {
+         htmlTemp += rank.username;
+         } else {
+         htmlTemp += "匿名用户";
+         }
+         htmlTemp += '</div></div><div class="fl score">' + rank.score + '</div><div class="icons rank-num fr"><span>' + rank.medal + '</span></div><div class="clear"></div></div>';
+         html += htmlTemp;
+         }
+
+         $("#rankList").html(html);
+         }
+         }
+         })
+         //        }
+
+         $(".lesson-item").click(function () {
+         var href = $(this).attr("href");
+         location.href = href;
+         })
+
+         $("#moreBtn").click(function () {
+         $(".lesson-item.hidden").removeClass("hidden");
+         $(this).remove();
+         });
+         */
+
+        var utm_source = getUrlParameter("utm_source");
+        utm_source && Cookie.setCookie("digiwine-utm_source", utm_source);
+
+        var utm_medium = getUrlParameter("utm_medium");
+        utm_medium && Cookie.setCookie("digiwine-utm_medium", utm_medium);
+    })
+</script>
+<script type="text/javascript" src="js/tracking.js"></script>
+</html>

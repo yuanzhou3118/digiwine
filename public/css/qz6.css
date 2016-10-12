@@ -1,0 +1,404 @@
+/* Q1 start */
+
+.q1-main{
+    width:100%;
+    height:100%;
+    position: absolute;
+    bottom:0;
+    left:0;
+}
+#q1-left {
+    position: absolute;
+    right: 52%;
+    bottom:20%;
+}
+
+#q1-right {
+    position: absolute;
+    left: 52%;
+    bottom:20%;
+}
+#q1-yes{
+    position: absolute;
+    left:140px;
+    bottom:43%;
+}
+#q1-no{
+    position: absolute;
+    right:140px;
+    bottom:43%;
+}
+#q1-phone{
+    position: absolute;
+    left: 250px;
+    bottom:10%;
+}
+#q1-tip{
+    position: absolute;
+    left:200px;
+    bottom:5%;
+}
+#q1-right-bg{
+    position: absolute;
+    left:57px;
+    bottom:40%;
+}
+#q1-score{
+    position: absolute;
+    left:220px;
+    bottom:-3%;
+}
+#q1-wrong-bg{
+    position: absolute;
+    left:80px;
+    bottom:7%;
+}
+#q1-wrong{
+    position: absolute;
+    left: 115px;
+    bottom: 12%;
+}
+
+/* Q1 end */
+
+
+/* Q2 start */
+.q2-a{
+    position: absolute;
+    width:167px;
+    height:198px;
+    top:22%;
+    left:65px;
+    background:url(../images/qz6/q2-a-border.png) no-repeat;
+}
+.q2-a .q2-content{
+    position: absolute;
+    width:125px;
+    height:125px;
+    border-radius: 125px;
+    background:#fd6858;
+    top: 49px;
+    left: 20px;
+}
+.q2-b{
+    position: absolute;
+    width:141px;
+    height:168px;
+    top:14%;
+    left:275px;
+    background:url(../images/qz6/q2-b-border.png) no-repeat;
+}
+.q2-b .q2-content{
+    position: absolute;
+    width:105px;
+    height:105px;
+    border-radius: 105px;
+    background:#8758fd;
+    top: 44px;
+    left: 18px;
+}
+.q2-word{
+    position: absolute;
+    top:0;
+    left:0;
+}
+.q2-bg{
+    position: absolute;
+    bottom: 0;
+    left:0;
+}
+.q2-right{
+    position: absolute;
+    top: 20%;
+    left: 37px;
+}
+.q2-w{
+    position: absolute;
+    width: 90%;
+    left: 5%;
+    top: 15%;
+}
+/* Q2 end */
+
+
+/* Q3 start */
+.q3-bg{
+    position: absolute;
+    width:538px;
+    height:575px;
+    top:22%;
+    left:51px;
+    background:url(../images/qz6/q3-bg.png) no-repeat;
+}
+.q3-point{
+    position: absolute;
+    left: 269px;
+    top: 290px;
+    pointer-events: none;
+    transform-origin: left center;
+    -webkit-transform-origin: left center;
+    -webkit-transform: rotateZ(-146deg);
+}
+.q3-right{
+    position: absolute;
+    top: 15%;
+    left: 75px;
+}
+.q3-wrong{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.q3-w{
+    position: absolute;
+    top: 16%;
+    left: 50%;
+    margin-left: -96px;
+}
+.q3-cloud1{
+    position: absolute;
+    top: 30%;
+    left: 60px;
+}
+.q3-cloud2{
+    position: absolute;
+    top: 27%;
+    left: 325px;
+}
+.q3-cloud3{
+    position: absolute;
+    top: 30%;
+    right: 13px;
+    width: 100px;
+}
+/* Q3 end */
+
+
+/* Q4 start */
+.q4-main img{
+    position: absolute;
+}
+.q4-more-submit{
+    left:156px;
+    bottom:5%;
+    background:#b70031;
+}
+.q4-bg{
+    left:158px;
+    top:16%;
+}
+.q4-cube img{
+    width:100%;
+    height:auto;
+    top:0;
+    left:0;
+
+}
+.q4-cube.selected{
+    border:5px solid #fff;
+}
+.q4-cube{
+    border-radius: 300px;
+    box-sizing: border-box;
+}
+.q4-a{
+    position: absolute;
+    left: 70px;
+    top: 22%;
+    width: 149px;
+    height: 149px;
+}
+.q4-b{
+    position: absolute;
+    left: 405px;
+    top: 35%;
+    width: 144px;
+    height: 144px;
+}
+.q4-c{
+    position: absolute;
+    left: 95px;
+    top: 41%;
+    width: 147px;
+    height: 147px;
+}
+.q4-d{
+    position: absolute;
+    left: 354px;
+    top: 54%;
+    width: 147px;
+    height: 147px;
+}
+.q4-e{
+    position: absolute;
+    left: 177px;
+    top: 66%;
+    width: 147px;
+    height: 147px;
+}
+.q4-right{
+    top: 26%;
+    left: 50px;
+}
+.q4-wrong{
+    top: 47%;
+    left: 169px;
+}
+.q4-wrong-bg{
+    top: 16%;
+    left: 119px;
+}
+.q4-a-word{
+    left: 50px;
+    top: 21%;
+}
+.q4-b-word{
+    left: 495px;
+    top: 45%;
+}
+.q4-c-word{
+    left: 67px;
+    top: 41%;
+}
+.q4-d-word{
+    right: 55px;
+    top: 63%;
+}
+.q4-e-word{
+    left: 269px;
+    top: 75%;
+}
+/* Q4 end */
+
+/* Q5 start */
+.q5-glass{
+    position: absolute;
+    width:231px;
+    height:387px;
+    top:45%;
+    left:50%;
+    margin-left:-116px;
+}
+.q5-glass img{
+    position: absolute;
+    top:0;
+    left:0;
+}
+.q5-bottom{
+    position: absolute;
+    left:0;
+    top:75%;
+}
+.q5-cube{
+    position:absolute;
+}
+.q5-a{
+    width:141px;
+    height: 167px;
+    top:26%;
+    left:21px;
+    background:url(../images/qz6/q5-a.png) no-repeat;
+}
+.q5-a .q5-circle{
+    width:106px;
+    height:105px;
+    border-radius: 110px;
+    background:#fd6858;
+    position: absolute;
+    top: 43px;
+    left: 17px;
+}
+.q5-b{
+    width:154px;
+    height: 146px;
+    top:18%;
+    left:167px;
+    background:url(../images/qz6/q5-b.png) no-repeat;
+}
+.q5-b .q5-circle{
+    width:90px;
+    height:89px;
+    border-radius: 110px;
+    background:#3cb2b5;
+    position: absolute;
+    top: 23px;
+    left: 23px;
+}
+.q5-c{
+    width:124px;
+    height: 144px;
+    top:25%;
+    left:320px;
+    background:url(../images/qz6/q5-c.png) no-repeat;
+}
+.q5-c .q5-circle{
+    width:90px;
+    height:89px;
+    border-radius: 110px;
+    background:#fdbd58;
+    position: absolute;
+    top: 37px;
+    left: 16px;
+}
+.q5-d{
+    width:132px;
+    height: 160px;
+    top:11%;
+    left:450px;
+    background:url(../images/qz6/q5-d.png) no-repeat;
+}
+.q5-d .q5-circle{
+    width:90px;
+    height:89px;
+    border-radius: 110px;
+    background:#12d673;
+    position: absolute;
+    top: 49px;
+    left: 20px;
+}
+.q5-e{
+    width:126px;
+    height: 153px;
+    top:30%;
+    left:480px;
+    background:url(../images/qz6/q5-e.png) no-repeat;
+}
+.q5-e .q5-circle{
+    position: absolute;
+    width:90px;
+    height:89px;
+    border-radius: 100px;
+    background:#128ad6;
+    position: absolute;
+    top: 45px;
+    left: 17px;
+}
+.q5-w{
+    position: absolute;
+    top: 10px;
+    left: 5%;
+    width: 90%;
+}
+.q5-right{
+    position: absolute;
+    top: 25%;
+    left: 58px;
+    z-index:9;
+}
+.q5-r-zoom{
+    width: 514px;
+    /*height: 564px;*/
+    height:300px;
+    position: absolute;
+    overflow: hidden;
+    top: 7%;
+    left: 300px;
+}
+.q5-g2{
+    position: absolute;
+    top:0;
+    left:0;
+}
+/* Q5 end */

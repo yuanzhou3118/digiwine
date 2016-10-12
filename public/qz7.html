@@ -1,0 +1,202 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="Description" content="">
+    <title>葡萄酒微课堂</title>
+    <link rel="stylesheet" href="css/global.css" type="text/css"/>
+    <link rel="stylesheet" href="css/qz_common.css" type="text/css"/>
+    <link rel="stylesheet" href="css/qz7.css" type="text/css"/>
+    <script type="text/javascript" src="js/plugin/jquery-1.11.1.min.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script type="text/javascript" src="js/template.js"></script>
+    <script type="text/javascript" src="js/plugin/mustache.min.js"></script>
+    <script type="text/javascript" src="js/request.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/loading.js"></script>
+    <script type="text/javascript" src="js/enter.js"></script>
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-25338682-20', 'auto');
+        ga('send', 'pageview');
+
+        $(function () {
+            var arr = [];
+            var percent = $('.loading').find('.percent-num');
+            preloadimages(arr, percent);
+        });
+    </script>
+    <script type="text/javascript">
+        $().ready(function () {
+//            toLogin();
+        });
+    </script>
+    <!-- Acxiom AbiliTag v2.0 for site: PRC009 -->
+    <script type="text/javascript">window.acxm={api:Function(),x:function(){var k=document,e=encodeURIComponent,r="script",m=k.getElementsByTagName(r)[0],i=k.createElement(r),t="&c=";try{t=t+k.cookie.match('_acxm=([^;]*)').slice(1);}catch(z){};i.async=true;i.src="//t-cn.acxiom-online.com/tag/5d4f3a6a3ef951e3c72b135e8e01c2ba/st.js?l="+e(k.location)+"&r="+e(k.referrer)+t+"&v=2.0&z="+Math.random();m.parentNode.insertBefore(i,m)}()}</script>
+    <script type="text/javascript">
+(function() {
+    window._CiQ11462 = window._CiQ11462 || [];
+    window._CiQ11462.push(['_cookieUseRootDomain', true]);
+    var c = document.createElement('script');
+    c.type = 'text/javascript';
+    c.async = true;
+    c.charset = 'utf-8';
+    c.src = '//collect.cn.miaozhen.com/ca/11462';
+    var h = document.getElementsByTagName('script')[0];
+    h.parentNode.insertBefore(c, h);
+})();
+</script>
+
+</head>
+<body>
+<div class="modal-orientation" id="orientation">
+    <img src="images/flip.jpg"/>
+</div>
+<div class="header"></div>
+<div class="main-wrap qz">
+    <div class="main-wrap-cover"></div>
+    <div id="main">
+        <img id="video-tip" class="hidden" src="images/nav-tip.png">
+
+        <div class="view" id="q1" style="display: none;">
+            <img class="progress" src="images/q1-progress.png">
+            <img class="q-title" src="images/qz7/q1-title.png">
+            <img class="q-score-img" src="images/score.png"/>
+            <div class="q-score">0</div>
+            <div class="q1-main">
+                <img class="q1-bg" src="images/qz7/q1-bg.png">
+                <img class="q1-bottle q1-bottle-a" src="images/qz7/q1-a-bottle.png">
+                <img class="q1-bottle q1-bottle-b" src="images/qz7/q1-b-bottle.png">
+                <img class="q1-bottle q1-bottle-c" src="images/qz7/q1-c-bottle.png">
+                <img class="q1-cube q1-a" tag="a" src="images/qz7/q1-a.png">
+                <img class="q1-cube q1-b" tag="b" src="images/qz7/q1-b.png">
+                <img class="q1-cube q1-c" tag="c" src="images/qz7/q1-c.png">
+                <img class="q1-wrong-a q1-wrong hidden" src="images/qz7/q1-wrong.png">
+                <img class="q1-wrong-b q1-wrong hidden" src="images/qz7/q1-wrong.png">
+                <img class="q1-wrong-c q1-wrong hidden" src="images/qz7/q1-wrong.png">
+                <img class="q1-right hidden opacity" src="images/qz7/q1-right.png">
+                <img class="q1-submit" src="images/more-submit.png">
+            </div>
+        </div>
+        <div class="view slideLeft" id="q2">
+            <img class="progress" src="images/q2-progress.png">
+            <img class="q-title" src="images/qz7/q2-title.png">
+            <img class="q-score-img" src="images/score.png"/>
+            <div class="q-score">0</div>
+            <div class="q2-main">
+                <img class="layer" data-depth='.7' id="q2-left" hand="left" src="images/qz1/q5-right-hand.png">
+                <img class="layer" data-depth='.7' id="q2-right" src="images/qz1/q5-left-hand.png">
+                <img class="layer" data-depth='.2' id="q2-yes" src="images/qz1/q5-yes.png">
+                <img class="layer" data-depth='.2' id="q2-no" src="images/qz1/q5-no.png">
+                <img class="layer" data-depth='.1' id="q2-phone" src="images/qz1/q5-phone.png">
+                <img class="layer" data-depth='.1' id="q2-tip" src="images/qz1/q5-phone-text.png">
+                <img id="q2-right-bg" class="hidden opacity" src="images/qz1/q5-r-bg.png">
+                <img id="q2-wrong" class="hidden opacity" src="images/qz1/q5-wrong.png">
+                <img id="q2-wrong-bg" class="hidden opacity" src="images/qz1/q5-w-bg.png">
+                <img id="q2-score" class="hidden opacity" src="images/qz1/q5-r.png">
+            </div>
+        </div>
+        <div class="view slideLeft" id="q3">
+            <img class="progress" src="images/q3-progress.png">
+            <img class="q-title" src="images/qz7/q3-title.png">
+            <img class="q-score-img" src="images/score.png"/>
+            <div class="q-score">0</div>
+            <div class="q3-main">
+                <img class="q1-bg" src="images/qz7/q1-bg.png">
+                <img class="q3-bottle" src="images/qz7/q3-bottle.png">
+                <img class="q3-cube q3-a" src="images/qz7/q3-a.png">
+                <img class="q3-cube q3-b" src="images/qz7/q3-b.png">
+                <img class="q3-cube q3-c" src="images/qz7/q3-c.png">
+                <img class="q3-cube q3-d right" src="images/qz7/q3-d.png">
+                <img class="q3-a-word q3-word" src="images/qz7/q3-a-word.png">
+                <img class="q3-b-word q3-word" src="images/qz7/q3-b-word.png">
+                <img class="q3-c-word q3-word" src="images/qz7/q3-c-word.png">
+                <img class="q3-d-word q3-word" src="images/qz7/q3-d-word.png">
+                <img class="q3-right hidden opacity" src="images/qz7/q3-right.png">
+                <img class="q3-wrong hidden opacity" src="images/qz7/q3-wrong.png">
+            </div>
+        </div>
+        <div class="view slideLeft" id="q4">
+            <img class="progress" src="images/q4-progress.png">
+            <img class="q-title" src="images/qz7/q4-title.png">
+            <img class="q-score-img" src="images/score.png"/>
+            <div class="q-score">0</div>
+            <div class="q4-main">
+                <img class="q4-bg" src="images/qz7/q4-bg.png">
+                <img class="q4-flower" src="images/qz7/q4-flower.png">
+                <img class="q4-flower-right hidden opacity" src="images/qz7/q4-flower-right.png">
+                <img class="q4-flower-wrong hidden opacity" src="images/qz7/q4-flower-wrong.png">
+                <img class="q4-pan" src="images/qz7/q4-pan.png">
+                <img class="q4-bottle q4-ba" src="images/qz7/q4-ba.png">
+                <img class="q4-bottle q4-bb" src="images/qz7/q4-bb.png">
+                <img class="q4-bottle q4-bc" src="images/qz7/q4-bc.png">
+                <img class="q4-bottle q4-bd" src="images/qz7/q4-bd.png">
+                <img class="q4-cube q4-a" tag="a" src="images/qz7/q4-a.png">
+                <img class="q4-cube q4-b" tag="b" src="images/qz7/q4-b.png">
+                <img class="q4-cube q4-c right" tag="c" src="images/qz7/q4-c.png">
+                <img class="q4-cube q4-d" tag="d" src="images/qz7/q4-d.png">
+                <div class="q4-liu">
+                    <img src="images/qz7/q4-liu.png">
+                </div>
+                <img class="q4-right opacity hidden" src="images/qz7/q4-right.png">
+                <img class="q4-wrong opacity hidden" src="images/qz7/q4-wrong.png">
+            </div>
+        </div>
+
+        <div class="view slideLeft" id="q5">
+            <img class="progress" src="images/q5-progress.png">
+            <img class="q-title" src="images/qz7/q5-title.png">
+            <img class="q-score-img" src="images/score.png"/>
+            <div class="q-score">0</div>
+            <div class="q5-main">
+                <img class="q1-bg" src="images/qz7/q1-bg.png">
+                <img class="q5-guo" src="images/qz7/q5-bg.png">
+                <div class="q5-cube q5-a ">
+                    <img class="q5-word" src="images/qz7/q5-ok.png">
+                    <img class="q5-w hidden" src="images/qz3/q3-wrong.png">
+                </div>
+                <div class="q5-cube q5-b right">
+                    <img class="q5-word" src="images/qz7/q5-no.png">
+                    <img class="q5-w hidden" src="images/qz3/q3-wrong.png">
+                </div>
+                <img class="q5-right hidden opacity" src="images/qz7/q5-right.png">
+            </div>
+        </div>
+
+        <div class="view hidden" id="result">
+            <div class="result-score hidden">成绩
+                <div class="q-score">0</div>
+            </div>
+            <div class="result-main">
+                <a href="courses.html"><img id="result-back" class="hidden" src="images/result-back.png"></a>
+                <img id="result-badage" class="hidden opacity" src="images/result-badage.png">
+                <img id="result-badage-grew" class="hidden opacity" src="images/medal-grew.png">
+                <img id="result-word" class="hidden opacity" src="images/result-success-word.png">
+                <img id="result-share" class="share hidden" image="1" src="images/result-show-btn.png">
+                <img id="result-bg" class="hidden opacity" src="images/result-effect-bg.png">
+            </div>
+        </div>
+    </div>
+</div>
+<div id="kv-pop" class="pop-wrap hidden">
+    <img src="images/other/qr-code.jpg" style="padding-top:200px;padding-left:170px;">
+    <div class="qr-code-wrap" style="position: relative;float:left;">
+        长按二维码，关注杰卡斯官方微信<br>
+        及时获取最新资讯
+    </div>
+</div>
+</body>
+<link href="vendor/video/video-js.min.css" rel="stylesheet">
+<script type="text/javascript" src="js/plugin/velocity.min.js"></script>
+<script type="text/javascript" src="vendor/video/video.min.js"></script>
+<script type="text/javascript" src="js/plugin/jquery.parallax.custom.js"></script>
+<script type="text/javascript" src="js/View.js"></script>
+<script type="text/javascript" src="js/qz_common.js"></script>
+<script type="text/javascript" src="js/qz7.js"></script>
+<script type="text/javascript" src="js/tracking.js"></script>
+</html>

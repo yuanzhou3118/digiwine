@@ -1,0 +1,1979 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>digiwine接口文档</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h1>digiwine接口文档</h1>
+<hr />
+<h2>首页模块</h2>
+<blockquote>
+<p><strong>热门话题接口</strong></p>
+</blockquote>
+<hr />
+<ul>
+<li>
+<p><strong>url：</strong></p>
+<p><code>/api-topic-home</code></p>
+</li>
+<li>
+<p><strong>请求方式：</strong></p>
+<p><code>http + ajax + GET</code></p>
+</li>
+<li>
+<p><strong>请求参数：</strong></p>
+<p><code>无</code></p>
+</li>
+<li>
+<p><strong>响应类型：</strong></p>
+<p><code>application/json;charset=utf-8</code></p>
+</li>
+<li>
+<p><strong>返回值:</strong></p>
+<p><code>{&quot;result&quot;:1,&quot;data&quot;:[{&quot;topic_id&quot;:12,&quot;tag&quot;:1,&quot;question&quot;:&quot;afafafa&quot;,&quot;favorite&quot;:0,&quot;created_at&quot;:&quot;2016-07-15 14:34:49&quot;,&quot;comment_count&quot;:0,&quot;comment_bang&quot;:null,&quot;comment_user_id&quot;:null,&quot;content&quot;:null,&quot;head_url&quot;:null,&quot;kol&quot;:null}],&quot;total_count&quot;:7}</code></p>
+</li>
+<li>
+<p><strong>返回值说明：</strong></p>
+<p><code>result：1（成功）；0（失败）；2(参数错误)；3（没有数据）</code></p>
+<p><code>data：笔记数组9条数据</code></p>
+<p><code>note_id：笔记的id</code></p>
+<p><code>user_id：该用户的id</code></p>
+<p><code>head_url：用户头像</code></p>
+<p><code>content：笔记内容</code></p>
+<p><code>imga：图片A的url</code></p>
+<p><code>imgb：图片B的url</code></p>
+<p><code>imgc：图片C的url</code></p>
+<p><code>note_likes：笔记点赞数</code></p>
+<p><code>note_favorite：笔记收藏数</code></p>
+<p><code>total_count：总条数</code></p>
+</li>
+</ul>
+<hr />
+<p><strong>热门笔记接口</strong></p>
+<hr />
+<ul>
+<li>
+<p><strong>url：</strong></p>
+<p>`/api-note-home</p>
+</li>
+<li>
+<p><strong>请求方式：</strong></p>
+<p><code>http + ajax + GET</code></p>
+</li>
+<li>
+<p><strong>请求参数：</strong></p>
+<p><code>无</code></p>
+</li>
+<li>
+<p><strong>响应类型：</strong></p>
+<p><code>application/json;charset=utf-8</code></p>
+</li>
+<li>
+<p><strong>返回值:</strong></p>
+<p><code>{&quot;result&quot;:1,&quot;data&quot;:[{&quot;note_id&quot;:1,&quot;user_id&quot;:1,&quot;head_url&quot;:&quot;1号头像&quot;,&quot;content&quot;:&quot;sdfsdf&quot;,&quot;imga&quot;:null,&quot;imgb&quot;:null,&quot;imgc&quot;:null,&quot;note_likes&quot;:32,&quot;note_favorite&quot;:2}],&quot;total_count&quot;:1}</code></p>
+</li>
+<li>
+<p><strong>返回值说明：</strong></p>
+<p><code>result：1（成功）；0（失败）;2(参数错误)；3（没有数据）</code></p>
+<p><code>data：笔记数组9条数据</code></p>
+<p><code>note_id：笔记的id</code></p>
+<p><code>user_id：用户的id</code></p>
+<p><code>head_url：用户头像</code></p>
+<p><code>content：笔记内容</code></p>
+<p><code>imga：图片A的url</code></p>
+<p><code>imgb：图片B的url</code></p>
+<p><code>imgc：图片C的url</code></p>
+<p><code>note_likes：笔记点赞数</code></p>
+<p><code>note_favorite：笔记收藏数</code></p>
+<p><code>total_count：总条数</code></p>
+</li>
+</ul>
+<hr />
+<h2>话题模块</h2>
+<blockquote>
+<p><strong>查询所有话题接口</strong></p>
+</blockquote>
+<hr />
+<ul>
+<li>
+<p><strong>url：</strong></p>
+<p><code>/api-topic-all</code></p>
+</li>
+<li>
+<p><strong>请求方式：</strong></p>
+<p><code>http + ajax + GET</code></p>
+</li>
+<li>
+<p><strong>请求参数：</strong></p>
+<p><code>page_index:int类型，页码，默认从1开始</code></p>
+<p><code>page_size:int类型，分页显示数</code></p>
+<p><code>tag:int类型,标签，热门（999）其它标签分别为1，2，3，4..</code></p>
+</li>
+<li>
+<p><strong>响应类型：</strong></p>
+<p><code>application/json;charset=utf-8</code></p>
+</li>
+<li>
+<p><strong>返回值:</strong></p>
+<p><code>{&quot;result&quot;:1,&quot;data&quot;:[{&quot;topic_id&quot;:12,&quot;tag&quot;:1,&quot;question&quot;:&quot;afafafa&quot;,&quot;favorite&quot;:0,&quot;created_at&quot;:&quot;2016-07-15 14:34:49&quot;,&quot;comment_count&quot;:0,&quot;comment_bang&quot;:null,&quot;comment_user_id&quot;:null,&quot;content&quot;:null,&quot;head_url&quot;:null,&quot;kol&quot;:null}],&quot;total_count&quot;:7}</code></p>
+</li>
+<li>
+<p><strong>返回值说明：</strong></p>
+<p><code>result：1（成功）；0（失败）；2(参数错误)；3（没有数据）</code></p>
+<p><code>data：笔记数组9条数据</code></p>
+<p><code>note_id：笔记的id</code></p>
+<p><code>user_id：该用户的id</code></p>
+<p><code>head_url：用户头像</code></p>
+<p><code>content：笔记内容</code></p>
+<p><code>imga：图片A的url</code></p>
+<p><code>imgb：图片B的url</code></p>
+<p><code>imgc：图片C的url</code></p>
+<p><code>note_likes：笔记点赞数</code></p>
+<p><code>note_favorite：笔记收藏数</code></p>
+<p><code>total_count：总条数</code></p>
+</li>
+</ul>
+<hr />
+<blockquote>
+<p><strong>查询话题接口</strong></p>
+</blockquote>
+<hr />
+<ul>
+<li>
+<p><strong>url：</strong></p>
+<p><code>/api-topic-view</code></p>
+</li>
+<li>
+<p><strong>请求方式：</strong></p>
+<p><code>http + ajax + GET</code></p>
+</li>
+<li>
+<p><strong>请求参数：</strong></p>
+<p><code>topic_id:int类型，是话题的id</code></p>
+</li>
+<li>
+<p><strong>响应类型：</strong></p>
+<p><code>application/json;charset=utf-8</code></p>
+</li>
+<li>
+<p><strong>返回值:</strong></p>
+<p><code>{&quot;result&quot;:1,&quot;topic&quot;:[{&quot;question&quot;:&quot;话题一&quot;,&quot;tag&quot;:1,&quot;favorite&quot;:2,&quot;created_at&quot;:&quot;0000-00-00 00:00:00&quot;,&quot;comment_count&quot;:4}]}</code></p>
+</li>
+<li>
+<p><strong>返回值说明：</strong></p>
+<p><code>result：1（成功）；0（失败）</code></p>
+<p><code>topic：话题数组3条数据</code></p>
+<p><code>question：话题的内容</code></p>
+<p><code>favorite：收藏数</code></p>
+<p><code>created_at：话题创建时间</code></p>
+<p><code>comment_count：评论数量</code></p>
+</li>
+</ul>
+<hr />
+<blockquote>
+<p><strong>查询话题评论接口（带分页）</strong></p>
+</blockquote>
+<hr />
+<ul>
+<li>
+<p><strong>url：</strong></p>
+<p><code>/api-topic-query-comment</code></p>
+</li>
+<li>
+<p><strong>请求方式：</strong></p>
+<p><code>http + ajax + GET</code></p>
+</li>
+<li>
+<p><strong>请求参数：</strong></p>
+<p><code>topic_id:int类型，是话题的id</code></p>
+<p><code>page_index:int类型，页码，默认从1开始</code></p>
+<p><code>page_size:int类型，分页显示数</code></p>
+</li>
+<li>
+<p><strong>响应类型：</strong></p>
+<p><code>application/json;charset=utf-8</code></p>
+</li>
+<li>
+<p><strong>返回值:</strong></p>
+<p><code>{&quot;result&quot;:1,&quot;commentData&quot;:[{&quot;comment_id&quot;:3,&quot;user_id&quot;:1,&quot;content&quot;:&quot;话题一评论二&quot;,&quot;comment_bang&quot;:20,&quot;head_url&quot;:&quot;1号头像&quot;,&quot;nick_name&quot;:&quot;评论话题一&quot;,&quot;kol&quot;:10}]}</code></p>
+</li>
+<li>
+<p><strong>返回值说明：</strong></p>
+<p><code>result：1（成功）；0（失败）</code></p>
+<p><code>commentData：话题数组3条数据</code></p>
+<p><code>comment_id：评论的id</code></p>
+<p><code>user_id：评论者头像url</code></p>
+<p><code>content:评论内容</code></p>
+<p><code>comment_bang:评论的点赞数</code></p>
+<p><code>head_url:用户的头像</code></p>
+<p><code>nick_name:用户的名字</code></p>
+<p><code>kol:用户是否是专家</code></p>
+</li>
+</ul>
+<hr />
+<blockquote>
+<p><strong>创建话题接口</strong></p>
+</blockquote>
+<hr />
+<ul>
+<li>
+<p><strong>url：</strong></p>
+<p><code>/api-topic-create</code></p>
+</li>
+<li>
+<p><strong>请求方式：</strong></p>
+<p><code>http + ajax + POST</code></p>
+</li>
+<li>
+<p><strong>请求参数：</strong></p>
+<p><code>tag:int类型,标签编号</code></p>
+<p><code>question:话题内容</code></p>
+</li>
+<li>
+<p><strong>响应类型：</strong></p>
+<p><code>application/json;charset=utf-8</code></p>
+</li>
+<li>
+<p><strong>返回值:</strong></p>
+<p><code>{&quot;result&quot;:1}</code></p>
+</li>
+<li>
+<p><strong>返回值说明：</strong></p>
+<p><code>result：1（成功）；0（失败）；2（话题内容字数超限15~150）</code></p>
+</li>
+</ul>
+<hr />
+<blockquote>
+<p><strong>收藏话题接口</strong></p>
+</blockquote>
+<hr />
+<ul>
+<li>
+<p><strong>url：</strong></p>
+<p><code>/api-topic-favorite</code></p>
+</li>
+<li>
+<p><strong>请求方式：</strong></p>
+<p><code>http + ajax + GET</code></p>
+</li>
+<li>
+<p><strong>请求参数：</strong></p>
+<p><code>topic_id:int类型，是话题的id</code></p>
+</li>
+<li>
+<p><strong>响应类型：</strong></p>
+<p><code>application/json;charset=utf-8</code></p>
+</li>
+<li>
+<p><strong>返回值:</strong></p>
+<p><code>{&quot;result&quot;:1}</code></p>
+</li>
+<li>
+<p><strong>返回值说明：</strong></p>
+<p><code>result：1（成功）；0（失败）；2（重复收藏）；3（话题id错误）</code></p>
+</li>
+</ul>
+<hr />
+<blockquote>
+<p><strong>评论话题接口</strong></p>
+</blockquote>
+<hr />
+<ul>
+<li>
+<p><strong>url：</strong></p>
+<p><code>/api-topic-comment</code></p>
+</li>
+<li>
+<p><strong>请求方式：</strong></p>
+<p><code>http + ajax + POST</code></p>
+</li>
+<li>
+<p><strong>请求参数：</strong></p>
+<p><code>topic_id:int类型，是话题的id</code></p>
+<p><code>content:string类型（不超过150字），评论内容</code></p>
+</li>
+<li>
+<p><strong>响应类型：</strong></p>
+<p><code>application/json;charset=utf-8</code></p>
+</li>
+<li>
+<p><strong>返回值:</strong></p>
+<p><code>{&quot;result&quot;:1}</code></p>
+</li>
+<li>
+<p><strong>返回值说明：</strong></p>
+<p><code>result：1（成功）；0（失败）；2（评论内容超限15~150）</code></p>
+</li>
+</ul>
+<hr />
+<blockquote>
+<p><strong>评论话题点赞接口</strong></p>
+</blockquote>
+<hr />
+<ul>
+<li>
+<p><strong>url：</strong></p>
+<p><code>/api-topic-comment-like</code></p>
+</li>
+<li>
+<p><strong>请求方式：</strong></p>
+<p><code>http + ajax + POST</code></p>
+</li>
+<li>
+<p><strong>请求参数：</strong></p>
+<p><code>comment_id:int类型，是评论的id</code></p>
+<p><code>topic_id:int类型，是评论话题的id</code></p>
+</li>
+<li>
+<p><strong>响应类型：</strong></p>
+<p><code>application/json;charset=utf-8</code></p>
+</li>
+<li>
+<p><strong>返回值:</strong></p>
+<p><code>{&quot;result&quot;:1}</code></p>
+</li>
+<li>
+<p><strong>返回值说明：</strong></p>
+<p><code>result：1（成功）；0（失败）；2（已经点过赞了）</code></p>
+</li>
+</ul>
+<hr />
+<blockquote>
+<p><strong>查看是否已收藏话题接口</strong></p>
+</blockquote>
+<hr />
+<ul>
+<li>
+<p><strong>url：</strong></p>
+<p><code>/api-topic-favorite-status</code></p>
+</li>
+<li>
+<p><strong>请求方式：</strong></p>
+<p><code>http + ajax + GET</code></p>
+</li>
+<li>
+<p><strong>请求参数：</strong></p>
+<p><code>topic_id:int类型，是评论话题的id</code></p>
+</li>
+<li>
+<p><strong>响应类型：</strong></p>
+<p><code>application/json;charset=utf-8</code></p>
+</li>
+<li>
+<p><strong>返回值:</strong></p>
+<p><code>{&quot;status&quot;:1,&quot;result&quot;:1}</code></p>
+</li>
+<li>
+<p><strong>返回值说明：</strong></p>
+<p><code>status：1（已收藏）；0（未收藏）；</code></p>
+<p><code>result：1（成功）；0（失败）；</code></p>
+</li>
+</ul>
+<hr />
+<blockquote>
+<p><strong>查看是否已点赞话题评论接口</strong></p>
+</blockquote>
+<hr />
+<ul>
+<li>
+<p><strong>url：</strong></p>
+<p><code>/api-comment-bang-status</code></p>
+</li>
+<li>
+<p><strong>请求方式：</strong></p>
+<p><code>http + ajax + GET</code></p>
+</li>
+<li>
+<p><strong>请求参数：</strong></p>
+<p><code>comment_id_array:评论id的列表，例如：2-3-10-23</code></p>
+</li>
+<li>
+<p><strong>响应类型：</strong></p>
+<p><code>application/json;charset=utf-8</code></p>
+</li>
+<li>
+<p><strong>返回值:</strong></p>
+<p><code>{&quot;status_array&quot;:[{&quot;2&quot;:1,&quot;3&quot;:1,&quot;10&quot;:0,&quot;23&quot;:1}],&quot;result&quot;:1}</code></p>
+</li>
+<li>
+<p><strong>返回值说明：</strong></p>
+<p><code>status_array：数组中2，3，10，23分别代表评论id，后边跟的数字1（已点赞）0（未点赞）；</code></p>
+<p><code>result：1（成功）；0（失败）；</code></p>
+</li>
+</ul>
+<hr />
+<h2>笔记模块</h2>
+<blockquote>
+<p><strong>所有笔记接口</strong></p>
+</blockquote>
+<hr />
+<ul>
+<li>
+<p><strong>url：</strong></p>
+<p><code>/api-note-all</code></p>
+</li>
+<li>
+<p><strong>请求方式：</strong></p>
+<p><code>http + ajax + GET</code></p>
+</li>
+<li>
+<p><strong>请求参数：</strong></p>
+<p><code>sort:int类型，0：最热排序，1:最新排序</code></p>
+<p><code>page_index:int类型，页码</code></p>
+<p><code>page_size:int类型，分页显示数</code></p>
+</li>
+<li>
+<p><strong>响应类型：</strong></p>
+<p><code>application/json;charset=utf-8</code></p>
+</li>
+<li>
+<p><strong>返回值:</strong></p>
+<p><code>{&quot;result&quot;:1,&quot;data&quot;:[{&quot;note_id&quot;:1,&quot;user_id&quot;:1,&quot;head_url&quot;:&quot;1号头像&quot;,&quot;content&quot;:&quot;sdfsdf&quot;,&quot;imga&quot;:null,&quot;imgb&quot;:null,&quot;imgc&quot;:null,&quot;note_likes&quot;:32,&quot;note_favorite&quot;:2}],&quot;total_count&quot;:1}</code></p>
+</li>
+<li>
+<p><strong>返回值说明：</strong></p>
+<p><code>result：1（成功）；0（失败）;2(参数错误)；3（没有数据）</code></p>
+<p><code>data：笔记数组9条数据</code></p>
+<p><code>note_id：笔记的id</code></p>
+<p><code>user_id：用户的id</code></p>
+<p><code>head_url：用户头像</code></p>
+<p><code>content：笔记内容</code></p>
+<p><code>imga：图片A的url</code></p>
+<p><code>imgb：图片B的url</code></p>
+<p><code>imgc：图片C的url</code></p>
+<p><code>note_likes：笔记点赞数</code></p>
+<p><code>note_favorite：笔记收藏数</code></p>
+<p><code>total_count：总条数</code></p>
+</li>
+</ul>
+<hr />
+<blockquote>
+<p><strong>查看笔记接口</strong></p>
+</blockquote>
+<hr />
+<ul>
+<li>
+<p><strong>url：</strong></p>
+<p><code>/api-note-view</code></p>
+</li>
+<li>
+<p><strong>请求方式：</strong></p>
+<p><code>http + ajax + GET</code></p>
+</li>
+<li>
+<p><strong>请求参数：</strong></p>
+<p><code>sort:int类型，0：最热排序，1:最新排序</code></p>
+<p><code>page_index:int类型，页码</code></p>
+<p><code>page_size:int类型，分页显示数</code></p>
+</li>
+<li>
+<p><strong>响应类型：</strong></p>
+<p><code>application/json;charset=utf-8</code></p>
+</li>
+<li>
+<p><strong>返回值:</strong></p>
+<p><code>{&quot;result&quot;:1,&quot;data&quot;:[{&quot;note_id&quot;:1,&quot;content&quot;:&quot;dfsf&quot;,&quot;imga&quot;:null,&quot;imgb&quot;:null,&quot;imgc&quot;:null,&quot;note_likes&quot;:1,&quot;created_at&quot;:&quot;0000-00-00 00:00:00&quot;,&quot;wine_name&quot;:&quot;杰卡斯西拉干红葡萄酒&quot;,&quot;grape_varieties&quot;:&quot;西拉&quot;,&quot;country&quot;:&quot;澳大利亚&quot;,&quot;place_of_origin&quot;:&quot;东南奥&quot;,&quot;price&quot;:&quot;RMB 324&quot;,&quot;years&quot;:&quot;2015&quot;,&quot;score&quot;:1,&quot;color&quot;:&quot;1&quot;,&quot;aroma_characteristics&quot;:&quot;10-20-30&quot;,&quot;flavor_characteristics&quot;:&quot;20-21-31&quot;,&quot;acid&quot;:1,&quot;tannic&quot;:2,&quot;texture&quot;:3,&quot;wine_body&quot;:1,&quot;sweetness&quot;:2,&quot;aftertaste&quot;:1,&quot;head_url&quot;:&quot;1号头像&quot;,&quot;note_favorite&quot;:2,&quot;nickname&quot;:'dfsd'}]}</code></p>
+</li>
+<li>
+<p><strong>返回值说明：</strong></p>
+<p><code>result：1（成功）；0（失败）</code></p>
+<p><code>data：笔记数组9条数据</code></p>
+<p><code>note_id：笔记的id</code></p>
+<p><code>content：笔记内容</code></p>
+<p><code>imga：图片A的url</code></p>
+<p><code>imgb：图片B的url</code></p>
+<p><code>imgc：图片C的url</code></p>
+<p><code>note_likes：笔记点赞数</code></p>
+<p><code>created_at：创建时间（y-M-d h:m:s）</code></p>
+<p><code>wine_name：酒名</code></p>
+<p><code>grape_varieties：葡萄品种</code></p>
+<p><code>country：国家</code></p>
+<p><code>place_of_origin：产区</code></p>
+<p><code>price：价格</code></p>
+<p><code>years：年份</code></p>
+<p><code>score：评分（1-5），默认为1分</code></p>
+<p><code>color：int类型，外观</code></p>
+<p><code>aroma_characteristics：香气特征，例如：10-20-30表示：柠檬-菠萝-麝香葡萄</code></p>
+<p><code>flavor_characteristics：风味特征，例如：20-21-31表示：菠萝-香蕉-苹果</code></p>
+<p><code>acid：int类型，范围是（1-3）</code></p>
+<p><code>tannic：int类型，范围是（1-3）</code></p>
+<p><code>texture：int类型，范围是（1-3）</code></p>
+<p><code>wine_body：int类型，范围是（1-3）</code></p>
+<p><code>sweetness：int类型，范围是（1-4）</code></p>
+<p><code>aftertaste：int类型，范围是（1-3）</code></p>
+<p><code>head_url：用户头像</code></p>
+<p><code>note_favorite：笔记收藏数</code></p>
+<p><code>nickname:用户昵称</code></p>
+</li>
+</ul>
+<hr />
+<blockquote>
+<p><strong>创建笔记接口</strong></p>
+</blockquote>
+<hr />
+<ul>
+<li>
+<p><strong>url：</strong></p>
+<p><code>/api-note-create</code></p>
+</li>
+<li>
+<p><strong>请求方式：</strong></p>
+<p><code>http + ajax + POST</code></p>
+</li>
+<li>
+<p><strong>请求参数：</strong></p>
+<p><code>content：笔记内容</code></p>
+<p><code>imga：base64,图片A的url</code></p>
+<p><code>imgb：base64,图片B的url</code></p>
+<p><code>imgc：base64,图片C的url</code></p>
+<p><code>wine_name：酒名</code></p>
+<p><code>grape_varieties：葡萄品种</code></p>
+<p><code>country：国家</code></p>
+<p><code>place_of_origin：产区</code></p>
+<p><code>price：价格</code></p>
+<p><code>years：年份</code></p>
+<p><code>score：评分（1-5），默认为1分</code></p>
+<p><code>color：int类型，外观</code></p>
+<p><code>aroma_characteristics：香气特征，例如：10-20-30表示：柠檬-菠萝-麝香葡萄</code></p>
+<p><code>flavor_characteristics：风味特征，例如：20-21-31表示：菠萝-香蕉-苹果</code></p>
+<p><code>acid：int类型，范围是（1-3）</code></p>
+<p><code>tannic：int类型，范围是（1-3）</code></p>
+<p><code>texture：int类型，范围是（1-3）</code></p>
+<p><code>wine_body：int类型，范围是（1-3）</code></p>
+<p><code>sweetness：int类型，范围是（1-4）</code></p>
+<p><code>aftertaste：int类型，范围是（1-3）</code></p>
+</li>
+<li>
+<p><strong>响应类型：</strong></p>
+<p><code>application/json;charset=utf-8</code></p>
+</li>
+<li>
+<p><strong>返回值:</strong></p>
+<p><code>{&quot;result&quot;:1}</code></p>
+</li>
+<li>
+<p><strong>返回值说明：</strong></p>
+<p><code>result：1（成功）；0（失败）；2（图片上传失败）；3（数字超出范围）;4(笔记内容字数超限15~150)</code></p>
+</li>
+</ul>
+<hr />
+<blockquote>
+<p><strong>收藏笔记接口</strong></p>
+</blockquote>
+<hr />
+<ul>
+<li>
+<p><strong>url：</strong></p>
+<p><code>/api-note-favorite</code></p>
+</li>
+<li>
+<p><strong>请求方式：</strong></p>
+<p><code>http + ajax + POST</code></p>
+</li>
+<li>
+<p><strong>请求参数：</strong></p>
+<p><code>note_id:int类型，是笔记的id</code></p>
+</li>
+<li>
+<p><strong>响应类型：</strong></p>
+<p><code>application/json;charset=utf-8</code></p>
+</li>
+<li>
+<p><strong>返回值:</strong></p>
+<p><code>{&quot;result&quot;:1}</code></p>
+</li>
+<li>
+<p><strong>返回值说明：</strong></p>
+<p><code>result：1（成功）；0（错误）；2（重复收藏）</code></p>
+</li>
+</ul>
+<hr />
+<blockquote>
+<p><strong>点赞笔记接口</strong></p>
+</blockquote>
+<hr />
+<ul>
+<li>
+<p><strong>url：</strong></p>
+<p><code>/api-note-like</code></p>
+</li>
+<li>
+<p><strong>请求方式：</strong></p>
+<p><code>http + ajax + POST</code></p>
+</li>
+<li>
+<p><strong>请求参数：</strong></p>
+<p><code>note_id:int类型，是笔记的id</code></p>
+</li>
+<li>
+<p><strong>响应类型：</strong></p>
+<p><code>application/json;charset=utf-8</code></p>
+</li>
+<li>
+<p><strong>返回值:</strong></p>
+<p><code>{&quot;result&quot;:1}</code></p>
+</li>
+<li>
+<p><strong>返回值说明：</strong></p>
+<p><code>result：1（成功）；0（失败）；2（已经点过赞了）</code></p>
+</li>
+</ul>
+<hr />
+<blockquote>
+<p><strong>查看笔记的收藏点赞状态接口</strong></p>
+</blockquote>
+<hr />
+<ul>
+<li>
+<p><strong>url：</strong></p>
+<p><code>/api-note-status</code></p>
+</li>
+<li>
+<p><strong>请求方式：</strong></p>
+<p><code>http + ajax + GET</code></p>
+</li>
+<li>
+<p><strong>请求参数：</strong></p>
+<p><code>note_id:int类型，是笔记的id</code></p>
+</li>
+<li>
+<p><strong>响应类型：</strong></p>
+<p><code>application/json;charset=utf-8</code></p>
+</li>
+<li>
+<p><strong>返回值:</strong></p>
+<p><code>{&quot;note_like_status&quot;:1,&quot;note_favorite_status&quot;:1}</code></p>
+</li>
+<li>
+<p><strong>返回值说明：</strong></p>
+<p><code>note_like_status：1（已点赞）；0（未点赞）；</code></p>
+<p><code>note_favorite_status：1（已收藏）；0（未收藏）；</code></p>
+</li>
+</ul>
+<hr />
+<h2>用户模块</h2>
+<blockquote>
+<p><strong>获取验证码接口</strong></p>
+</blockquote>
+<hr />
+<ul>
+<li>
+<p><strong>url：</strong></p>
+<p><code>/api-captcha</code></p>
+</li>
+<li>
+<p><strong>请求方式：</strong></p>
+<p><code>http + ajax + POST</code></p>
+</li>
+<li>
+<p><strong>请求参数：</strong></p>
+<p><code>mobile：手机号，正则匹配（^1[34578]\d{9}$）</code></p>
+</li>
+<li>
+<p><strong>响应类型：</strong></p>
+<p><code>application/json;charset=utf-8</code></p>
+</li>
+<li>
+<p><strong>返回值:</strong></p>
+<p><code>{&quot;result&quot;:1}</code></p>
+</li>
+<li>
+<p><strong>返回值说明：</strong></p>
+<p><code>result：1（成功）；0（失败）；-1（参数不合法）</code></p>
+</li>
+</ul>
+<hr />
+<blockquote>
+<p><strong>用户登陆接口</strong></p>
+</blockquote>
+<hr />
+<ul>
+<li>
+<p><strong>url：</strong></p>
+<p><code>/api-mb-login</code></p>
+</li>
+<li>
+<p><strong>请求方式：</strong></p>
+<p><code>http + ajax + POST</code></p>
+</li>
+<li>
+<p><strong>请求参数：</strong></p>
+<p><code>mobile：手机号，正则匹配（^1[34578]\d{9}$）</code></p>
+<p><code>captcha：验证码，4位数字</code></p>
+</li>
+<li>
+<p><strong>响应类型：</strong></p>
+<p><code>application/json;charset=utf-8</code></p>
+</li>
+<li>
+<p><strong>返回值:</strong></p>
+<p><code>{&quot;result&quot;:1}</code></p>
+</li>
+<li>
+<p><strong>返回值说明：</strong></p>
+<p><code>result：1（成功）；0（失败）；2（验证码不对）；-1（参数不合法）</code></p>
+</li>
+</ul>
+<hr />
+<blockquote>
+<p><strong>微信登陆接口</strong></p>
+</blockquote>
+<hr />
+<ul>
+<li>
+<p><strong>url：</strong></p>
+<p><code>/api-wechat-login</code></p>
+</li>
+<li>
+<p><strong>请求方式：</strong></p>
+<p><code>http + ajax + POST</code></p>
+</li>
+<li>
+<p><strong>请求参数：</strong></p>
+<p><code>openid：微信openid</code></p>
+<p><code>nick_name：微信昵称</code></p>
+<p><code>head_url：微信头像</code></p>
+</li>
+<li>
+<p><strong>响应类型：</strong></p>
+<p><code>application/json;charset=utf-8</code></p>
+</li>
+<li>
+<p><strong>返回值:</strong></p>
+<p><code>{&quot;result&quot;:1}</code></p>
+</li>
+<li>
+<p><strong>返回值说明：</strong></p>
+<p><code>result：1（成功）；0（失败）；-1（参数不合法）</code></p>
+</li>
+</ul>
+<hr />
+<blockquote>
+<p><strong>退出登录接口</strong></p>
+</blockquote>
+<hr />
+<ul>
+<li>
+<p><strong>url：</strong></p>
+<p><code>/api-logout</code></p>
+</li>
+<li>
+<p><strong>请求方式：</strong></p>
+<p><code>http + ajax + POST</code></p>
+</li>
+<li>
+<p><strong>请求参数：</strong></p>
+<p><code>无</code></p>
+</li>
+<li>
+<p><strong>响应类型：</strong></p>
+<p><code>application/json;charset=utf-8</code></p>
+</li>
+<li>
+<p><strong>返回值:</strong></p>
+<p><code>{&quot;result&quot;:1}</code></p>
+</li>
+<li>
+<p><strong>返回值说明：</strong></p>
+<p><code>result：1（成功）</code></p>
+</li>
+</ul>
+<hr />
+<blockquote>
+<p><strong>用户分享接口</strong></p>
+</blockquote>
+<hr />
+<ul>
+<li>
+<p><strong>url：</strong></p>
+<p><code>/api-share</code></p>
+</li>
+<li>
+<p><strong>请求方式：</strong></p>
+<p><code>http + ajax + POST</code></p>
+</li>
+<li>
+<p><strong>请求参数：</strong></p>
+<p><code>无</code></p>
+</li>
+<li>
+<p><strong>响应类型：</strong></p>
+<p><code>application/json;charset=utf-8</code></p>
+</li>
+<li>
+<p><strong>返回值:</strong></p>
+<p><code>{&quot;result&quot;:1}</code></p>
+</li>
+<li>
+<p><strong>返回值说明：</strong></p>
+<p><code>result：1（成功）</code></p>
+</li>
+</ul>
+<hr />
+<h2>个人中心模块</h2>
+<blockquote>
+<p><strong>绑定手机号接口</strong></p>
+</blockquote>
+<hr />
+<ul>
+<li>
+<p><strong>url：</strong></p>
+<p><code>/api-binding-mobile</code></p>
+</li>
+<li>
+<p><strong>请求方式：</strong></p>
+<p><code>http + ajax + POST</code></p>
+</li>
+<li>
+<p><strong>请求参数：</strong></p>
+<p><code>mobile：手机号，正则匹配（^1[34578]\d{9}$）</code></p>
+<p><code>captcha：验证码，4位数字</code></p>
+</li>
+<li>
+<p><strong>响应类型：</strong></p>
+<p><code>application/json;charset=utf-8</code></p>
+</li>
+<li>
+<p><strong>返回值:</strong></p>
+<p><code>{&quot;result&quot;:1}</code></p>
+</li>
+<li>
+<p><strong>返回值说明：</strong></p>
+<p><code>result：1（成功）；0（失败）；-1（参数不合法）；2（验证码不对）；3（用户已经绑定过手机号了）；4（手机号被别的用户绑定了）；5（提示用户是否要绑定高积分账号）</code></p>
+</li>
+</ul>
+<hr />
+<blockquote>
+<p><strong>绑定高积分账号接口（mobile）</strong></p>
+</blockquote>
+<hr />
+<ul>
+<li>
+<p><strong>url：</strong></p>
+<p><code>/api-binding-mobile-merge</code></p>
+</li>
+<li>
+<p><strong>请求方式：</strong></p>
+<p><code>http + ajax + POST</code></p>
+</li>
+<li>
+<p><strong>请求参数：</strong></p>
+<p><code>merge_type：是否绑定高积分账号，1：切换；2：不切换</code></p>
+</li>
+<li>
+<p><strong>响应类型：</strong></p>
+<p><code>application/json;charset=utf-8</code></p>
+</li>
+<li>
+<p><strong>返回值:</strong></p>
+<p><code>{&quot;result&quot;:1}</code></p>
+</li>
+<li>
+<p><strong>返回值说明：</strong></p>
+<p><code>result：1（成功）；0（失败）；-1（参数不合法）</code></p>
+</li>
+</ul>
+<hr />
+<blockquote>
+<p><strong>绑定微信账号接口</strong></p>
+</blockquote>
+<hr />
+<ul>
+<li>
+<p><strong>url：</strong></p>
+<p><code>/api-binding-wechat</code></p>
+</li>
+<li>
+<p><strong>请求方式：</strong></p>
+<p><code>http + ajax + POST</code></p>
+</li>
+<li>
+<p><strong>请求参数：</strong></p>
+<p><code>openid：微信openid</code></p>
+<p><code>nick_name：微信昵称</code></p>
+<p><code>head_url：微信头像</code></p>
+</li>
+<li>
+<p><strong>响应类型：</strong></p>
+<p><code>application/json;charset=utf-8</code></p>
+</li>
+<li>
+<p><strong>返回值:</strong></p>
+<p><code>{&quot;result&quot;:1}</code></p>
+</li>
+<li>
+<p><strong>返回值说明：</strong></p>
+<p><code>result：1（成功）；0（失败）；2（验证码不对）；-1（参数不合法）；3（用户已经绑定过微信账号了）；4（微信账号被别的用户绑定了）；5（提示用户是否要绑定高积分账号）</code></p>
+</li>
+</ul>
+<hr />
+<blockquote>
+<p><strong>绑定高积分账号接口（微信账号）</strong></p>
+</blockquote>
+<hr />
+<ul>
+<li>
+<p><strong>url：</strong></p>
+<p><code>/api-binding-wechat-merge</code></p>
+</li>
+<li>
+<p><strong>请求方式：</strong></p>
+<p><code>http + ajax + POST</code></p>
+</li>
+<li>
+<p><strong>请求参数：</strong></p>
+<p><code>merge_type：是否绑定高积分账号，1：切换；2：不切换</code></p>
+</li>
+<li>
+<p><strong>响应类型：</strong></p>
+<p><code>application/json;charset=utf-8</code></p>
+</li>
+<li>
+<p><strong>返回值:</strong></p>
+<p><code>{&quot;result&quot;:1}</code></p>
+</li>
+<li>
+<p><strong>返回值说明：</strong></p>
+<p><code>result：1（成功）；0（失败）；-1（参数不合法）</code></p>
+</li>
+</ul>
+<hr />
+<blockquote>
+<p><strong>获取个人中心信息接口</strong></p>
+</blockquote>
+<hr />
+<ul>
+<li>
+<p><strong>url：</strong></p>
+<p><code>/api-profile-basic</code></p>
+</li>
+<li>
+<p><strong>请求方式：</strong></p>
+<p><code>http + ajax + GET</code></p>
+</li>
+<li>
+<p><strong>请求参数：</strong></p>
+<p><code>无</code></p>
+</li>
+<li>
+<p><strong>响应类型：</strong></p>
+<p><code>application/json;charset=utf-8</code></p>
+</li>
+<li>
+<p><strong>返回值:</strong></p>
+<p><code>{&quot;result&quot;:1,&quot;nick_name&quot;:&quot;名字&quot;,&quot;topic_status&quot;：1,&quot;note_status&quot;:1,&quot;points&quot;:10,&quot;level&quot;:1}</code></p>
+</li>
+<li>
+<p><strong>返回值说明：</strong></p>
+<p><code>result：1（成功）</code></p>
+<p><code>nick_name： 用户昵称</code></p>
+<p><code>topic_status：我的话题是否有更新，1：有，0：无</code></p>
+<p><code>note_status: 我的品酒笔记是否有更新，1：有，0：无</code></p>
+<p><code>points: 我的积分总数</code></p>
+<p><code>level: 积分等级，1-4</code></p>
+</li>
+</ul>
+<hr />
+<blockquote>
+<p><strong>获取个人基本信息接口</strong></p>
+</blockquote>
+<hr />
+<ul>
+<li>
+<p><strong>url：</strong></p>
+<p><code>/api-profile-detail</code></p>
+</li>
+<li>
+<p><strong>请求方式：</strong></p>
+<p><code>http + ajax + GET</code></p>
+</li>
+<li>
+<p><strong>请求参数：</strong></p>
+<p><code>无</code></p>
+</li>
+<li>
+<p><strong>响应类型：</strong></p>
+<p><code>application/json;charset=utf-8</code></p>
+</li>
+<li>
+<p><strong>返回值:</strong></p>
+<p><code>{&quot;result&quot;:1,&quot;data&quot;:{&quot;nick_name&quot;:&quot;名字&quot;,&quot;binding_mobile_status&quot;：1,&quot;binding_wechat_status&quot;:1,&quot;area&quot;:&quot;上海&quot;,&quot;gender&quot;:0,&quot;birthday&quot;:&quot;1980-10-10&quot;,&quot;interest&quot;:&quot;14005,14006&quot;,&quot;profession&quot;:&quot;13002&quot;,&quot;mobile&quot;:&quot;13636367264&quot;}}</code></p>
+</li>
+<li>
+<p><strong>返回值说明：</strong></p>
+<p><code>result：1（成功）</code></p>
+<p><code>data：用户个人信息数据</code></p>
+<p><code>nick_name：用户昵称</code></p>
+<p><code>binding_mobile_status：绑定手机状态，1（已绑定），0（未绑定）</code></p>
+<p><code>binding_wechat_status:绑定微信账号状态，1（已绑定），0（未绑定）</code></p>
+<p><code>mobile：绑定的手机号，未绑定时为空</code></p>
+<p><code>area：地区</code></p>
+<p><code>gender：性别，0（男）；1（女）</code></p>
+<p><code>birthday：生日，格式（Y-m-d），没有时为空</code></p>
+<p><code>interest：兴趣，可以多选，中间用逗号(英文)隔开
+      14001	阅读/图书馆
+      14002	旅行
+      14003	电影 
+      14004	演唱会
+      14005	派对
+      14006	摄影
+      14007	画画
+      14008	唱歌
+      14009	逛街
+      14010	社交
+      14011	博物馆/画廊
+      14012	烹饪
+      14013	其他</code></p>
+<p><code>profession：职业，为空时提示请选择，
+    13001	其他
+    13002	总监/总经理
+    13003	部门主管/副总经理
+    13004	经理/主管
+    13005	普通员工</code></p>
+</li>
+</ul>
+<hr />
+<blockquote>
+<p><strong>更新个人基本信息接口</strong></p>
+</blockquote>
+<hr />
+<ul>
+<li>
+<p><strong>url：</strong></p>
+<p><code>/api-profile-update</code></p>
+</li>
+<li>
+<p><strong>请求方式：</strong></p>
+<p><code>http + ajax + POST</code></p>
+</li>
+<li>
+<p><strong>请求参数：</strong></p>
+<p><code>nick_name：用户昵称，必选，最大长度100</code></p>
+<p><code>area：地区，必填，最大长度20</code></p>
+<p><code>interest：兴趣，必选，可以多选，中间用逗号(英文)隔开
+      14001	阅读/图书馆
+      14002	旅行
+      14003	电影 
+      14004	演唱会
+      14005	派对
+      14006	摄影
+      14007	画画
+      14008	唱歌
+      14009	逛街
+      14010	社交
+      14011	博物馆/画廊
+      14012	烹饪
+      14013	其他</code></p>
+<p><code>profession:职业，必选，
+    13001	其他
+    13002	总监/总经理
+    13003	部门主管/副总经理
+    13004	经理/主管
+    13005	普通员工</code></p>
+<p><code>gender:性别，必选,0（男），1（女）</code></p>
+<p><code>birthday：生日，必选，格式（Y-m-d），如1980-01-16</code></p>
+</li>
+<li>
+<p><strong>响应类型：</strong></p>
+<p><code>application/json;charset=utf-8</code></p>
+</li>
+<li>
+<p><strong>返回值:</strong></p>
+<p><code>{&quot;result&quot;:1}</code></p>
+</li>
+<li>
+<p><strong>返回值说明：</strong></p>
+<p><code>result：1（成功）；0（失败）；-1（参数不合法）</code></p>
+</li>
+</ul>
+<hr />
+<blockquote>
+<p><strong>更换头像接口</strong></p>
+</blockquote>
+<hr />
+<ul>
+<li>
+<p><strong>url：</strong></p>
+<p><code>/api-profile-head</code></p>
+</li>
+<li>
+<p><strong>请求方式：</strong></p>
+<p><code>http + ajax + POST</code></p>
+</li>
+<li>
+<p><strong>请求参数：</strong></p>
+<p><code>head_url：上传的头像，base64格式</code></p>
+</li>
+<li>
+<p><strong>响应类型：</strong></p>
+<p><code>application/json;charset=utf-8</code></p>
+</li>
+<li>
+<p><strong>返回值:</strong></p>
+<p><code>{&quot;result&quot;:1}</code></p>
+</li>
+<li>
+<p><strong>返回值说明：</strong></p>
+<p><code>result：1（成功）；0（失败）；-1（参数不合法）</code></p>
+</li>
+</ul>
+<hr />
+<blockquote>
+<p><strong>用户访问我的话题接口</strong></p>
+</blockquote>
+<hr />
+<ul>
+<li>
+<p><strong>url：</strong></p>
+<p><code>/api-profile-topic-access</code></p>
+</li>
+<li>
+<p><strong>请求方式：</strong></p>
+<p><code>http + ajax + POST</code></p>
+</li>
+<li>
+<p><strong>请求参数：</strong></p>
+<p><code>无</code></p>
+</li>
+<li>
+<p><strong>响应类型：</strong></p>
+<p><code>application/json;charset=utf-8</code></p>
+</li>
+<li>
+<p><strong>返回值:</strong></p>
+<p><code>{&quot;result&quot;:1}</code></p>
+</li>
+<li>
+<p><strong>返回值说明：</strong></p>
+<p><code>result：1（成功）</code></p>
+</li>
+</ul>
+<hr />
+<blockquote>
+<p><strong>用户访问我的品酒笔记接口</strong></p>
+</blockquote>
+<hr />
+<ul>
+<li>
+<p><strong>url：</strong></p>
+<p><code>/api-profile-note-access</code></p>
+</li>
+<li>
+<p><strong>请求方式：</strong></p>
+<p><code>http + ajax + POST</code></p>
+</li>
+<li>
+<p><strong>请求参数：</strong></p>
+<p><code>无</code></p>
+</li>
+<li>
+<p><strong>响应类型：</strong></p>
+<p><code>application/json;charset=utf-8</code></p>
+</li>
+<li>
+<p><strong>返回值:</strong></p>
+<p><code>{&quot;result&quot;:1}</code></p>
+</li>
+<li>
+<p><strong>返回值说明：</strong></p>
+<p><code>result：1（成功）</code></p>
+</li>
+</ul>
+<hr />
+<blockquote>
+<p><strong>获取我的积分基本信息接口</strong></p>
+</blockquote>
+<hr />
+<ul>
+<li>
+<p><strong>url：</strong></p>
+<p><code>/api-profile-point-basic</code></p>
+</li>
+<li>
+<p><strong>请求方式：</strong></p>
+<p><code>http + ajax + GET</code></p>
+</li>
+<li>
+<p><strong>请求参数：</strong></p>
+<p><code>无</code></p>
+</li>
+<li>
+<p><strong>响应类型：</strong></p>
+<p><code>application/json;charset=utf-8</code></p>
+</li>
+<li>
+<p><strong>返回值:</strong></p>
+<p><code>{&quot;result&quot;:1,&quot;points&quot;:1000,&quot;level&quot;:1}</code></p>
+</li>
+<li>
+<p><strong>返回值说明：</strong></p>
+<p><code>result：1（成功）</code></p>
+<p><code>points:我的积分总数</code></p>
+<p><code>level:积分等级，1-4</code></p>
+</li>
+</ul>
+<hr />
+<blockquote>
+<p><strong>获取我的积分明细接口</strong></p>
+</blockquote>
+<hr />
+<ul>
+<li>
+<p><strong>url：</strong></p>
+<p><code>/api-profile-point-detail</code></p>
+</li>
+<li>
+<p><strong>请求方式：</strong></p>
+<p><code>http + ajax + GET</code></p>
+</li>
+<li>
+<p><strong>请求参数：</strong></p>
+<p><code>page_index：int类型，页码，默认从1开始</code></p>
+<p><code>page_size：int类型，每页显示条数，默认</code></p>
+</li>
+<li>
+<p><strong>响应类型：</strong></p>
+<p><code>application/json;charset=utf-8</code></p>
+</li>
+<li>
+<p><strong>返回值:</strong></p>
+<p><code>{&quot;result&quot;:1,&quot;data&quot;:[{&quot;content&quot;:&quot;完成LESSON3&quot;,&quot;created_at&quot;:2014/10/21,&quot;point&quot;:&quot;+50&quot;}],&quot;total_count&quot;:7}</code></p>
+</li>
+<li>
+<p><strong>返回值说明：</strong></p>
+<p><code>result：1（成功）；0（没有数据）；-1（参数不合法）；3（超出分页数）</code></p>
+<p><code>data：话题数组11条数据</code></p>
+<p><code>content：获得积分项目内容</code></p>
+<p><code>created_at：时间</code></p>
+<p><code>point：获得积分</code></p>
+<p><code>total_count：信息总条数</code></p>
+</li>
+</ul>
+<hr />
+<blockquote>
+<p><strong>查询我的话题接口</strong></p>
+</blockquote>
+<hr />
+<ul>
+<li>
+<p><strong>url：</strong></p>
+<p><code>/api-profile-topic</code></p>
+</li>
+<li>
+<p><strong>请求方式：</strong></p>
+<p><code>http + ajax + GET</code></p>
+</li>
+<li>
+<p><strong>请求参数：</strong></p>
+<p><code>page_index:int类型，页码，默认从1开始</code></p>
+<p><code>page_size:int类型，分页显示数</code></p>
+</li>
+<li>
+<p><strong>响应类型：</strong></p>
+<p><code>application/json;charset=utf-8</code></p>
+</li>
+<li>
+<p><strong>返回值:</strong></p>
+<p><code>{&quot;result&quot;:1,&quot;data&quot;:[{&quot;topic_id&quot;:12,&quot;tag&quot;:1,&quot;question&quot;:&quot;afafafa&quot;,&quot;favorite&quot;:0,&quot;created_at&quot;:&quot;2016-07-15 14:34:49&quot;,&quot;comment_count&quot;:0,&quot;comment_bang&quot;:null,&quot;comment_user_id&quot;:null,&quot;content&quot;:null,&quot;head_url&quot;:null,&quot;kol&quot;:null}],&quot;total_count&quot;:7}</code></p>
+</li>
+<li>
+<p><strong>返回值说明：</strong></p>
+<p><code>result：1（成功）；0（失败）;2(参数错误)；3（没有数据）</code></p>
+<p><code>data：话题数组11条数据</code></p>
+<p><code>topic_id：话题的id</code></p>
+<p><code>tag：标签</code></p>
+<p><code>question：话题的内容</code></p>
+<p><code>favorite：收藏数</code></p>
+<p><code>created_at：话题创建时间</code></p>
+<p><code>comment_count：评论总数</code></p>
+<p><code>comment_bang：评论的点赞数</code></p>
+<p><code>comment_user_id：评论的用户id</code></p>
+<p><code>content：评论内容</code></p>
+<p><code>head_url：用户头像</code></p>
+<p><code>kol：用户是否是专家</code></p>
+<p><code>total_count：信息总条数</code></p>
+</li>
+</ul>
+<hr />
+<blockquote>
+<p><strong>查询我收藏的话题接口</strong></p>
+</blockquote>
+<hr />
+<ul>
+<li>
+<p><strong>url：</strong></p>
+<p><code>/api-profile-topic-favorite</code></p>
+</li>
+<li>
+<p><strong>请求方式：</strong></p>
+<p><code>http + ajax + GET</code></p>
+</li>
+<li>
+<p><strong>请求参数：</strong></p>
+<p><code>page_index:int类型，页码，默认从1开始</code></p>
+<p><code>page_size:int类型，分页显示数</code></p>
+</li>
+<li>
+<p><strong>响应类型：</strong></p>
+<p><code>application/json;charset=utf-8</code></p>
+</li>
+<li>
+<p><strong>返回值:</strong></p>
+<p><code>{&quot;result&quot;:1,&quot;data&quot;:[{&quot;topic_id&quot;:12,&quot;tag&quot;:1,&quot;question&quot;:&quot;afafafa&quot;,&quot;favorite&quot;:0,&quot;created_at&quot;:&quot;2016-07-15 14:34:49&quot;,&quot;comment_count&quot;:0,&quot;comment_bang&quot;:null,&quot;comment_user_id&quot;:null,&quot;content&quot;:null,&quot;head_url&quot;:null,&quot;kol&quot;:null}],&quot;total_count&quot;:7}</code></p>
+</li>
+<li>
+<p><strong>返回值说明：</strong></p>
+<p><code>result：1（成功）；0（失败）;2(参数错误)；3（没有数据）</code></p>
+<p><code>data：话题数组11条数据</code></p>
+<p><code>topic_id：话题的id</code></p>
+<p><code>topic_favorite_id：收藏该话题的id</code></p>
+<p><code>tag：标签</code></p>
+<p><code>question：话题的内容</code></p>
+<p><code>favorite：收藏数</code></p>
+<p><code>created_at：话题创建时间</code></p>
+<p><code>comment_count：评论总数</code></p>
+<p><code>comment_bang：评论的点赞数</code></p>
+<p><code>comment_user_id：评论的用户id</code></p>
+<p><code>content：评论内容</code></p>
+<p><code>head_url：用户头像</code></p>
+<p><code>kol：用户是否是专家</code></p>
+<p><code>total_count：信息总条数</code></p>
+</li>
+</ul>
+<hr />
+<blockquote>
+<p><strong>删除我收藏的话题接口</strong></p>
+</blockquote>
+<hr />
+<ul>
+<li>
+<p><strong>url：</strong></p>
+<p><code>/api-profile-topic-delete</code></p>
+</li>
+<li>
+<p><strong>请求方式：</strong></p>
+<p><code>http + ajax + POST</code></p>
+</li>
+<li>
+<p><strong>请求参数：</strong></p>
+<p><code>topic_favorite_id：（要删除的收藏话题的id）</code></p>
+</li>
+<li>
+<p><strong>响应类型：</strong></p>
+<p><code>application/json;charset=utf-8</code></p>
+</li>
+<li>
+<p><strong>返回值:</strong></p>
+<p><code>{&quot;result&quot;:1}</code></p>
+</li>
+<li>
+<p><strong>返回值说明：</strong></p>
+<p><code>result：1（成功）；0（失败）</code></p>
+</li>
+</ul>
+<hr />
+<blockquote>
+<p><strong>查询我的笔记接口</strong></p>
+</blockquote>
+<hr />
+<ul>
+<li>
+<p><strong>url：</strong></p>
+<p><code>/api-profile-note</code></p>
+</li>
+<li>
+<p><strong>请求方式：</strong></p>
+<p><code>http + ajax + GET</code></p>
+</li>
+<li>
+<p><strong>请求参数：</strong></p>
+<p><code>page_index:int类型，页码</code></p>
+<p><code>page_size:int类型，分页显示数</code></p>
+</li>
+<li>
+<p><strong>响应类型：</strong></p>
+<p><code>application/json;charset=utf-8</code></p>
+</li>
+<li>
+<p><strong>返回值:</strong></p>
+<p><code>{&quot;result&quot;:1,&quot;data&quot;:[{&quot;note_id&quot;:4,&quot;user_id&quot;:3,&quot;head_url&quot;:&quot;&quot;,&quot;content&quot;:&quot;笔记内容&quot;,&quot;imga&quot;:&quot;uploads\/notes\/3_1468555111a.jpg&quot;,&quot;imgb&quot;:null,&quot;imgc&quot;:null,&quot;note_likes&quot;:0,&quot;note_favorite&quot;:0}],&quot;total_count&quot;:4}</code></p>
+</li>
+<li>
+<p><strong>返回值说明：</strong></p>
+<p><code>result：1（成功）；0（失败）;2(参数错误)；3（没有数据）</code></p>
+<p><code>data：笔记数组9条数据</code></p>
+<p><code>note_id：笔记的id</code></p>
+<p><code>user_id：该用户的id</code></p>
+<p><code>head_url：用户头像</code></p>
+<p><code>content：笔记内容</code></p>
+<p><code>imga：图片A的url</code></p>
+<p><code>imgb：图片B的url</code></p>
+<p><code>imgc：图片C的url</code></p>
+<p><code>note_likes：笔记点赞数</code></p>
+<p><code>note_favorite：笔记收藏数</code></p>
+<p><code>total_count：总条数</code></p>
+</li>
+</ul>
+<hr />
+<blockquote>
+<p><strong>查询我收藏的笔记接口</strong></p>
+</blockquote>
+<hr />
+<ul>
+<li>
+<p><strong>url：</strong></p>
+<p><code>/api-profile-note-favorite</code></p>
+</li>
+<li>
+<p><strong>请求方式：</strong></p>
+<p><code>http + ajax + GET</code></p>
+</li>
+<li>
+<p><strong>请求参数：</strong></p>
+<p><code>page_index:int类型，页码</code></p>
+<p><code>page_size:int类型，分页显示数</code></p>
+</li>
+<li>
+<p><strong>响应类型：</strong></p>
+<p><code>application/json;charset=utf-8</code></p>
+</li>
+<li>
+<p><strong>返回值:</strong></p>
+<p><code>{&quot;result&quot;:1,&quot;data&quot;:[{&quot;note_id&quot;:4,&quot;user_id&quot;:3,&quot;head_url&quot;:&quot;&quot;,&quot;content&quot;:&quot;笔记内容&quot;,&quot;imga&quot;:&quot;uploads\/notes\/3_1468555111a.jpg&quot;,&quot;imgb&quot;:null,&quot;imgc&quot;:null,&quot;note_likes&quot;:0,&quot;note_favorite&quot;:0}],&quot;total_count&quot;:4}</code></p>
+</li>
+<li>
+<p><strong>返回值说明：</strong></p>
+<p><code>result：1（成功）；0（失败）;2(参数错误)；3（没有数据）</code></p>
+<p><code>data：笔记数组9条数据</code></p>
+<p><code>note_id：笔记的id</code></p>
+<p><code>user_id：该用户的id</code></p>
+<p><code>head_url：用户头像</code></p>
+<p><code>content：笔记内容</code></p>
+<p><code>imga：图片A的url</code></p>
+<p><code>imgb：图片B的url</code></p>
+<p><code>imgc：图片C的url</code></p>
+<p><code>note_likes：笔记点赞数</code></p>
+<p><code>note_favorite：笔记收藏数</code></p>
+<p><code>total_count：总条数</code></p>
+</li>
+</ul>
+<hr />
+<blockquote>
+<p><strong>删除我收藏的笔记接口</strong></p>
+</blockquote>
+<hr />
+<ul>
+<li>
+<p><strong>url：</strong></p>
+<p><code>/api-profile-note-delete</code></p>
+</li>
+<li>
+<p><strong>请求方式：</strong></p>
+<p><code>http + ajax + POST</code></p>
+</li>
+<li>
+<p><strong>请求参数：</strong></p>
+<p><code>note_favorite_id：（要删除的收藏笔记的id）</code></p>
+</li>
+<li>
+<p><strong>响应类型：</strong></p>
+<p><code>application/json;charset=utf-8</code></p>
+</li>
+<li>
+<p><strong>返回值:</strong></p>
+<p><code>{&quot;result&quot;:1}</code></p>
+</li>
+<li>
+<p><strong>返回值说明：</strong></p>
+<p><code>result：1（成功）；0（失败）</code></p>
+</li>
+</ul>
+<hr />
+<blockquote>
+<p><strong>查询当前用户的话题和笔记的状态</strong></p>
+</blockquote>
+<hr />
+<ul>
+<li>
+<p><strong>url：</strong></p>
+<p><code>/api-status-basic</code></p>
+</li>
+<li>
+<p><strong>请求方式：</strong></p>
+<p><code>http + ajax + GET</code></p>
+</li>
+<li>
+<p><strong>请求参数：</strong></p>
+<p><code>无</code></p>
+</li>
+<li>
+<p><strong>响应类型：</strong></p>
+<p><code>application/json;charset=utf-8</code></p>
+</li>
+<li>
+<p><strong>返回值:</strong></p>
+<p><code>{&quot;result&quot;:1,&quot;status&quot;:1}</code></p>
+</li>
+<li>
+<p><strong>返回值说明：</strong></p>
+<p><code>result：1（成功）；0（失败）</code></p>
+<p><code>status: 1 (话题和笔记状态有更新)；0（无更新）</code></p>
+</li>
+</ul>
+<hr />
+<h2>课程模块</h2>
+<blockquote>
+<p><strong>查询课程评论接口</strong></p>
+</blockquote>
+<hr />
+<ul>
+<li>
+<p><strong>url：</strong></p>
+<p><code>/api-lesson-query-comment</code></p>
+</li>
+<li>
+<p><strong>请求方式：</strong></p>
+<p><code>http + ajax + GET</code></p>
+</li>
+<li>
+<p><strong>请求参数：</strong></p>
+<p><code>page_index:数字，页码，从1开始</code></p>
+<p><code>page_size:数字，每页显示的条数，默认为5</code></p>
+<p><code>lesson_id：数字，课程的id，1-10</code></p>
+</li>
+<li>
+<p><strong>响应类型：</strong></p>
+<p><code>application/json;charset=utf-8</code></p>
+</li>
+<li>
+<p><strong>返回值:</strong></p>
+<p><code>{&quot;result&quot;:1,&quot;data&quot;:[{&quot;comment&quot;:&quot;话题一&quot;,&quot;created_at&quot;:&quot;05-01 12:14&quot;,&quot;nick_name&quot;:2,&quot;head_url&quot;:&quot;/uploads/heads/1.jpg&quot;}],&quot;total_count&quot;:20}</code></p>
+</li>
+<li>
+<p><strong>返回值说明：</strong></p>
+<p><code>result：1（成功，有评论数据）；0（没有评论数据）；2（课程不存在）；3(超出分页数)</code></p>
+<p><code>total_count：评论总条数</code></p>
+<p><code>data:评论数据格式的数组，数据结构为下面四个属性：</code></p>
+<p><code>comment：评论内容</code></p>
+<p><code>created_at：创建时间，格式为05-01 12:14</code></p>
+<p><code>nick_name:用户的昵称</code></p>
+<p><code>head_url:用户的头像url</code></p>
+</li>
+</ul>
+<hr />
+<blockquote>
+<p><strong>添加评论课程接口</strong></p>
+</blockquote>
+<hr />
+<ul>
+<li>
+<p><strong>url：</strong></p>
+<p><code>/api-lesson-comment</code></p>
+</li>
+<li>
+<p><strong>请求方式：</strong></p>
+<p><code>http + ajax + POST</code></p>
+</li>
+<li>
+<p><strong>请求参数：</strong></p>
+<p><code>lesson_id：数字，课程的id，1-10</code></p>
+<p><code>comment：课程的评论内容，必填，最大长度250</code></p>
+</li>
+<li>
+<p><strong>响应类型：</strong></p>
+<p><code>application/json;charset=utf-8</code></p>
+</li>
+<li>
+<p><strong>返回值:</strong></p>
+<p><code>{&quot;result&quot;:1}</code></p>
+</li>
+<li>
+<p><strong>返回值说明：</strong></p>
+<p><code>result：1（成功）；0（失败）；2（课程不存在）；-1（参数不合法）</code></p>
+</li>
+</ul>
+<hr />
+<blockquote>
+<p><strong>分享课程加分接口（弃用）</strong></p>
+</blockquote>
+<hr />
+<ul>
+<li>
+<p><strong>url：</strong></p>
+<p><code>/api-lesson-share</code></p>
+</li>
+<li>
+<p><strong>请求方式：</strong></p>
+<p><code>http + ajax + POST</code></p>
+</li>
+<li>
+<p><strong>请求参数：</strong></p>
+<p><code>lesson_id：课程的id</code></p>
+</li>
+<li>
+<p><strong>响应类型：</strong></p>
+<p><code>application/json;charset=utf-8</code></p>
+</li>
+<li>
+<p><strong>返回值:</strong></p>
+<p><code>{&quot;result&quot;:1}</code></p>
+</li>
+<li>
+<p><strong>返回值说明：</strong></p>
+<p><code>result：1（成功）；0（失败）；2（课程不存在）</code></p>
+</li>
+</ul>
+<hr />
+<blockquote>
+<p><strong>添加看课程视频接口</strong></p>
+</blockquote>
+<hr />
+<ul>
+<li>
+<p><strong>url：</strong></p>
+<p><code>/api-video-point</code></p>
+</li>
+<li>
+<p><strong>请求方式：</strong></p>
+<p><code>http + ajax + POST</code></p>
+</li>
+<li>
+<p><strong>请求参数：</strong></p>
+<p><code>lesson_id：数字，课程的id，1-10</code></p>
+</li>
+<li>
+<p><strong>响应类型：</strong></p>
+<p><code>application/json;charset=utf-8</code></p>
+</li>
+<li>
+<p><strong>返回值:</strong></p>
+<p><code>{&quot;result&quot;:1}</code></p>
+</li>
+<li>
+<p><strong>返回值说明：</strong></p>
+<p><code>result：1（成功）；2（课程不存在）</code></p>
+</li>
+</ul>
+<hr />
+<blockquote>
+<p><strong>添加回答课程问题接口</strong></p>
+</blockquote>
+<hr />
+<ul>
+<li>
+<p><strong>url：</strong></p>
+<p><code>/api-lesson-point</code></p>
+</li>
+<li>
+<p><strong>请求方式：</strong></p>
+<p><code>http + ajax + POST</code></p>
+</li>
+<li>
+<p><strong>请求参数：</strong></p>
+<p><code>lesson_id：数字，课程的id，1-10</code></p>
+</li>
+<li>
+<p><strong>响应类型：</strong></p>
+<p><code>application/json;charset=utf-8</code></p>
+</li>
+<li>
+<p><strong>返回值:</strong></p>
+<p><code>{&quot;result&quot;:1}</code></p>
+</li>
+<li>
+<p><strong>返回值说明：</strong></p>
+<p><code>result：1（成功）；2（课程不存在）</code></p>
+</li>
+</ul>
+<hr />
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

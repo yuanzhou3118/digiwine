@@ -1,0 +1,322 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="Description" content="">
+    <meta name="format-detection" content="telephone=no">
+    <title>葡萄酒微课堂</title>
+    <link rel="stylesheet" href="css/global.css" type="text/css"/>
+    <link rel="stylesheet" href="css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/main2.css" rel="stylesheet">
+    <script type="text/javascript" src="js/plugin/jquery-1.11.1.min.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script type="text/javascript" src="js/template.js"></script>
+    <script type="text/javascript" src="js/plugin/mustache.min.js"></script>
+    <script type="text/javascript" src="js/request.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/loading.js"></script>
+    <script type="text/javascript" src="js/enter.js"></script>
+    <script type="text/javascript" src="js/plugin/velocity.min.js"></script>
+    <script type="text/javascript">
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                        (i[r].q = i[r].q || []).push(arguments)
+                    }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-25338682-20', 'auto');
+        ga('send', 'pageview');
+
+        $(function () {
+            var arr = [];
+            var percent = $('.loading').find('.percent-num');
+            preloadimages(arr, percent);
+        });
+    </script>
+    <!-- Acxiom AbiliTag v2.0 for site: PRC009 -->
+    <script type="text/javascript">window.acxm = {
+        api: Function(), x: function () {
+            var k = document, e = encodeURIComponent, r = "script", m = k.getElementsByTagName(r)[0], i = k.createElement(r), t = "&c=";
+            try {
+                t = t + k.cookie.match('_acxm=([^;]*)').slice(1);
+            } catch (z) {
+            }
+            ;
+            i.async = true;
+            i.src = "//t-cn.acxiom-online.com/tag/5d4f3a6a3ef951e3c72b135e8e01c2ba/st.js?l=" + e(k.location) + "&r=" + e(k.referrer) + t + "&v=2.0&z=" + Math.random();
+            m.parentNode.insertBefore(i, m)
+        }()
+    }</script>
+    <script type="text/javascript">
+        (function () {
+            window._CiQ11462 = window._CiQ11462 || [];
+            window._CiQ11462.push(['_cookieUseRootDomain', true]);
+            var c = document.createElement('script');
+            c.type = 'text/javascript';
+            c.async = true;
+            c.charset = 'utf-8';
+            c.src = '//collect.cn.miaozhen.com/ca/11462';
+            var h = document.getElementsByTagName('script')[0];
+            h.parentNode.insertBefore(c, h);
+        })();
+    </script>
+
+
+    <link rel="stylesheet" href="css/swiper.min.css" rel="stylesheet">
+
+</head>
+<body class="topicDetailPage">
+<div class="modal-orientation" id="orientation">
+    <img src="images/flip.jpg"/>
+</div>
+<div class="header">
+    <div class="back-nav"></div>
+    <div class="title">0个回答</div>
+</div>
+<div class="main-wrap">
+    <div class="main-wrap-cover"></div>
+    <!--  热门话题 -->
+    <ul class="topic-wrapper">
+        <li class="topic-li" id="topDetail">
+            <!--<div class="info">-->
+            <!--<span>2015/5/6</span>-->
+            <!--<i class="comment">123</i>-->
+            <!--<i class="fav">123</i>-->
+            <!--</div>-->
+            <!--<h4>哪里有葡萄酒的盲品会？想去品点,了解更多的葡萄酒,最好是进口的。</h4>-->
+            <!--<div class="tag">标签:<span>品鉴</span></div>-->
+        </li>
+    </ul>
+    <ul class="comment-wrapper">
+        <!--<li class="person-topic">-->
+        <!--<div class="person-frame">-->
+        <!--<img src="">-->
+        <!--<div class="zan">-->
+        <!--56-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<div class="content">-->
+        <!--新世界葡萄酒更崇尚技术，多倾向于工业化的生产，在企业规模、资本、技术和市场上...-->
+        <!--</div>-->
+        <!--</li>-->
+    </ul>
+    <img src="img2/loading.gif" class="loading">
+    <div class="question-btn" style="bottom:220px;">
+            <img src="img2/topic/question-btn.png">
+    </div>
+    <div class="top-btn" data-ga="6" style="bottom:110px;">
+        <img src="img2/top-btn.png"/>
+    </div>
+    <div class="status-bar">
+        <ul class="status-bar-ul-topic">
+            <li class="fav" data-ga="89">收藏</li>
+            <li class="share" data-ga="90">分享</li>
+            <li class="answer" data-ga="911">我来回答</li>
+        </ul>
+    </div>
+    <div class="clear"></div>
+    <div class="footer"></div>
+</div>
+<div id="kv-pop" class="pop-wrap hidden">
+</div>
+<!--<img src="images/other/footer-pic1.jpg" style="height: 10px;"></div>-->
+</body>
+<script type="text/javascript" src="js/plugin/swiper.min.js"></script>
+<script>
+    $().ready(function () {
+        var topicId = getUrlParameter("topicId");
+
+        $("#toKvPop").click(function () {
+            $("#kv-pop").show();
+        })
+
+        //返回
+        $(".back-nav").click(function () {
+            window.history.length && window.history.go(-1);
+            location.href = "topic.html";
+        });
+
+        $(".question-btn").click(function(){
+            if(getUser()){
+                location.href = "topicCreate.html";
+            }else{
+                alert("请先登录");
+                location.href = "login.html";
+            }
+        })
+
+        //收藏
+        var $favBtn = $(".status-bar .fav");
+        $favBtn.click(function () {
+            if (!$(this).hasClass("actived")) {
+                Request.topic_favorite(function (resultData) {
+                    $favBtn.addClass("actived").html("已收藏");
+                    $(".info .fav").html(parseInt($(".info .fav").html())+1)
+                }, topicId)
+            }
+//            else{
+//                Request.profile_topic_delete(function (resultData) {
+//                    $favBtn.removeClass("actived").html("收藏");
+//                },topicId)
+//            }
+
+        })
+
+        //加载话题内容
+        if (!topicId) {
+            alert("没有找到响应话题内容!");
+            window.history.length && window.history.go(-1);
+            location.href = "topic.html";
+        }
+        var topicWrapper = $("#topDetail"), $commentNumber = $(".header .title");
+
+        Request.topic_view(function (resultData) {
+            if (resultData.topic) {
+                var topic = resultData.topic;
+                topicWrapper.html('<div class="info"><span>' + topic.created_at + '</span><i class="comment">' + topic.comment_count + '</i><i class="fav">' + topic.favorite + '</i></div><h4>' + topic.question + '</h4><div class="tag">标签:<span>' + TagMap[topic.tag] + '</span></div>');
+                $commentNumber.html(topic.comment_count + "个回答");
+
+                //我来回答
+                $(".status-bar .answer").click(function () {
+                    if(getUser()){
+                        location.href = "topicAnswer.html?topicId=" + topicId + "&content=" + encodeURIComponent(topic.question);
+                    }else{
+                        alert("请先登录");
+                        location.href = 'login.html';
+                    }
+                });
+            } else {
+                topicWrapper.html("数据异常");
+            }
+        }, topicId);
+
+        //分页加载评论
+        //加载热门话题
+        var CurrentPageIndex = 1,
+                PageSize = 10,
+                MaxPage = 999;
+        footerHeight = $(".footer").height();
+        //滚动加载
+        $(document).scroll(function () {
+            var $this = $(this),
+                    viewH = $(window).height(),//可见高度
+                    contentH = $(this).height(),//内容高度
+                    scrollTop = $this.scrollTop();//滚动高度
+            //if(contentH - viewH - scrollTop <= 100) { //到达底部100px时,加载新内容
+            if (contentH - (scrollTop + viewH) <= footerHeight) { //到达底部100px时,加载新内容
+                // 这里加载数据..
+                getTopicComment();
+            }
+        });
+        var topicCommentLoading = false;
+
+        function getTopicComment() {
+            if (CurrentPageIndex > MaxPage) {
+                $(".loading").hide();
+                return;
+            } else {
+                $(".loading").show();
+            }
+            if (topicCommentLoading) {
+                return;
+            }
+            topicCommentLoading = false;
+            Request.topic_query_comment(function (resultData) {
+                        topicCommentLoading = true;
+                        data = (resultData && resultData.commentData) || null;
+                        var $wrapper = $(".comment-wrapper");
+                        var commentIdList = [];
+                        if (data && data.length) {
+                            var html = [];
+                            for (var i = 0; i < data.length; i++) {
+                                var d = data[i];
+                                var kol = '';
+                                if (d.kol != '0') {
+                                    kol = '<span class="tag">杰卡斯专家</span>';
+                                }
+                                html.push('<li class="person-topic" commentId="' + d.id +
+                                        '"><div class="person-frame"><img src="' + d.head_url +
+                                        '"><div class="zan" data-ga="88" commentId="' + d.id + '">' + d.bang +
+                                        '</div></div><div class="person-info"><span class="name">' + decodeURIComponent(d.nick_name) +
+                                        '</span>' + kol + '</div><div class="content">' + d.content + '</div></li>')
+                                commentIdList.push(d.id);
+                            }
+                            if (CurrentPageIndex == 1) {
+                                $wrapper.html(html.join(""));
+                            } else {
+                                $wrapper.append(html.join(""));
+                            }
+
+                            ++CurrentPageIndex;
+
+                            $(".person-frame .zan").unbind("click").bind("click", function () {
+                                var $this = $(this);
+                                if (!$this.hasClass("active")) {
+                                    var commentId = $(this).parents(".person-topic").attr("commentid");
+                                    Request.topic_comment_like(function (resultData) {
+                                        $this.addClass("active");
+                                        $this.html(parseInt($this.html()) + 1);
+                                    }, commentId);
+                                }
+                            })
+                            MaxPage = Math.ceil(resultData.totalCount / PageSize);
+                        } else {
+                            $wrapper.html("<div class='pd20-v'>暂无评论</div>")
+                        }
+
+                        if (getUser()) {
+                            Request.comment_bang_status(function (resultData) {
+                                if (resultData.result == 1) {
+                                    for (var i in resultData.status_array) {
+                                        var commentId = i;
+                                        if (resultData.status_array[i] != 0) {
+                                            $(".person-frame .zan[commentid='" + commentId + "']").addClass("active");
+                                        }
+                                    }
+                                } else {
+                                    console.log("是否已点赞话题评论接口错误")
+                                }
+                            }, commentIdList.join("-"));
+                        }
+                        $(".loading").hide();
+                        resize();
+                    }
+                    , topicId, CurrentPageIndex, PageSize)
+        }
+
+        if (getUser()) {
+            //是否已收藏
+            Request.topic_favorite_status(function (resultData) {
+                if (resultData.result == 1) {
+                    if (resultData.status == 1) {
+                        //已点赞
+                        $favBtn.html("已收藏").addClass("actived");
+                    } else {
+                        //未点赞
+                        $favBtn.html("收藏").removeClass("actived");
+                    }
+                }
+            }, topicId);
+        }
+
+
+        //load default data
+        getTopicComment();
+
+
+        var utm_source = getUrlParameter("utm_source");
+        utm_source && Cookie.setCookie("digiwine-utm_source", utm_source);
+
+        var utm_medium = getUrlParameter("utm_medium");
+        utm_medium && Cookie.setCookie("digiwine-utm_medium", utm_medium);
+    })
+</script>
+<script type="text/javascript" src="js/tracking.js"></script>
+</html>

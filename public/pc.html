@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="Description" content="">
+    <title>葡萄酒微课堂</title>
+    <link rel="stylesheet" href="css/global.css" type="text/css"/>
+    <script type="text/javascript" src="js/plugin/jquery-1.11.1.min.js"></script>
+    <style>
+        body{
+            width:100%;
+            height:100%;
+            position: absolute;
+            background:url(images/bg.png);
+        }
+        .h{
+            height:100%;
+            width:auto;
+            display: block;
+        }
+    </style>
+    <script>
+        $().ready(function () {
+            resize();
+        })
+        function resize(){
+            var height = document.body.clientHeight;
+            var width = document.body.clientWidth;
+            console.log(height+" "+width);
+            var $pic = $("#pic");
+
+            var imageHeight = 780,imageWidth = 1500,
+                    actualWidth = height/imageHeight*imageWidth;
+
+            var scaleH = height/imageHeight,scaleW = width/imageWidth;
+            if(scaleH>scaleW){
+                var right_dis = 110/1500 * actualWidth;
+                var act_right = (width -actualWidth)/2*-1
+                if(right_dis>=act_right){
+                    $pic.css({
+                        "margin-left":(width-actualWidth)/2
+                    })
+                }else{
+                    $pic.css({
+                        "margin-left":(width - actualWidth)/2 -(act_right - right_dis)
+                    })
+                }
+            }else{
+                $pic.css({
+                    "margin-left":(width-actualWidth)/2
+                })
+            }
+
+
+        }
+    </script>
+    <!-- Acxiom AbiliTag v2.0 for site: PRC009 -->
+    <script type="text/javascript">window.acxm={api:Function(),x:function(){var k=document,e=encodeURIComponent,r="script",m=k.getElementsByTagName(r)[0],i=k.createElement(r),t="&c=";try{t=t+k.cookie.match('_acxm=([^;]*)').slice(1);}catch(z){};i.async=true;i.src="//t-cn.acxiom-online.com/tag/7e5cd672b00b555511ccb2aa145e2548/st.js?l="+e(k.location)+"&r="+e(k.referrer)+t+"&v=2.0&z="+Math.random();m.parentNode.insertBefore(i,m)}()}</script>
+    <script type="text/javascript">
+(function() {
+    window._CiQ11462 = window._CiQ11462 || [];
+    window._CiQ11462.push(['_cookieUseRootDomain', true]);
+    var c = document.createElement('script');
+    c.type = 'text/javascript';
+    c.async = true;
+    c.charset = 'utf-8';
+    c.src = '//collect.cn.miaozhen.com/ca/11462';
+    var h = document.getElementsByTagName('script')[0];
+    h.parentNode.insertBefore(c, h);
+})();
+</script>
+
+</head>
+<body onresize="resize()">
+    <img id="pic" class="h" src="images/other/desktop.jpg">
+    <div class="text" style="position:absolute;right:30px;bottom:30px;color:#fff;font-size:24px;">
+        乐享美酒需理性
+    </div>
+</body>
+
+
+</html>
